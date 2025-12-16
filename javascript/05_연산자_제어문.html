@@ -126,20 +126,76 @@
     <h3>switch문</h3>
     <script>
         // switch(값){case break; default break;}
-        let menu = Number(prompt("메뉴선택")); // prompt는 문자열로 받아옴
-        switch (menu) { // 동등비교, === 으로 비교
-            case 1: console.log("1번선택"); break;
-            case 2: console.log("2번선택"); break;
-            case 3: console.log("3번선택"); break;
-            case 4: console.log("4번선택"); break;
-            default: console.log("없는 메뉴입니다."); break;
-        }
+        // let menu = Number(prompt("메뉴선택")); // prompt는 문자열로 받아옴
+        // switch (menu) { // 동등비교, === 으로 비교
+        //     case 1: console.log("1번선택"); break;
+        //     case 2: console.log("2번선택"); break;
+        //     case 3: console.log("3번선택"); break;
+        //     case 4: console.log("4번선택"); break;
+        //     default: console.log("없는 메뉴입니다."); break;
+        // }
 
-        switch (menu % 2 == 0) {
-            case true: console.log("짝수"); break;
-            case false: console.log("홀수"); break;
+        // switch (menu % 2 == 0) {
+        //     case true: console.log("짝수"); break;
+        //     case false: console.log("홀수"); break;
+        // }
+    </script>
+
+    <h3>계산기 만들기</h3>
+    <div id="calc-container">
+        <input type="number" class="su">
+        <select name="operater">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" class="su">
+        <button onclick="calcRun()">계산하기</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calcRun() {
+            // 계산결과를 div#result 태그에 대입
+            let num1 = Number(document.getElementsByClassName("su")[0].value);
+            let num2 = Number(document.getElementsByClassName("su")[1].value);
+            // console.log(document.getElementsByClassName("su")[0].value);
+            // console.log(document.getElementsByClassName("su")[1].value);
+            let operater = document.getElementsByName("operater")[0].value;
+            // console.log(document.getElementsByName("operater")[0].value);
+            let result
+            switch (operater) {
+                case "+": result = num1 + num2; break;
+                case "-": result = num1 - num2; break;
+                case "*": result = num1 * num2; break;
+                case "/": result = num1 / num2; break;
+            }
+            console.log(result);
+            document.getElementById("result").innerText = result;
         }
     </script>
+
+    <div id="user-container">
+        <input type="password" name="password"><br>
+        <input type="password"><span id="pwcheck"></span><br>
+        <button onclick="passwordCheck()">확인</button>
+    </div>
+    <script>
+        function passwordCheck() {
+            //두개의 password 입력창에 입력된 값이 일치하면 span#pwcheck에 일치합니다.
+            // 불일치하면 span#pwcheck에 불입치합니다 를 출력하기
+            let password = document.getElementsByName("password")[0].value;
+            let pwcheck = document.getElementsByName("password")[1].value;
+            let str;
+            password == pwcheck ? str = "span#pwcheck에 일치합니다" : str = "span#pwcheck에 불일치합니다"
+
+            document.getElementById("pwcheck").innerText = str;
+
+            // 버전업
+            // 출력되는 문구를 일치할때는 녹색, 불일치할때는 빨간색으로 설정하기
+        }
+    </script>
+
 </body>
 
 </html>
