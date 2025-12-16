@@ -111,10 +111,21 @@
                 msg = "겨울이야";
             }
             else if (month >= 3 && month <= 5) {
-                msg="봄이야";
+                msg = "봄이야";
             }
-            document.getElementById("msg").value = msg;
+            else if (month >= 6 && month <= 8) {
+                msg = "여름이야";
+            }
+            else {
+                msg = "가을이야";
+            }
+
+            document.getElementById("msg").innerText = msg;
         }
+    </script>
+    <h3>switch문</h3>
+    <script>
+        
     </script>
 </body>
 
