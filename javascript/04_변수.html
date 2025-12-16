@@ -201,7 +201,8 @@
     <script>
         function test() {
             const su2 = 20;
-            console.log("더한결과 : " + (Number(document.getElementById("su").value) + su2));
+            const su = document.getElementById("su").value;
+            console.log("더한결과 : " + (Number(su) + su2));
         }
     </script>
 
