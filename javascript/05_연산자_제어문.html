@@ -72,6 +72,16 @@
         </table>
     </div>
     <!-- 추가버튼을 클릭하면 작성된 내용을 테이블에 추가하는 기능 -->
+    <script>
+        function addTd() {
+            let table = "<tr>";
+            table += "<th>" + document.getElementsByName("div").value + "</th>";
+            table += "<th>" + document.getElementsByName("title").value + "</th>";
+            table += "<th>" + document.getElementsByName("writer").value + "</th>";
+            table += "</tr>";
+            document.querySelector(".container3>table").innerHTML = table;
+        }
+    </script>
 </body>
 
 </html>
