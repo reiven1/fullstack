@@ -179,7 +179,20 @@
         console.log(num - num3); // num3에 숫자가 아닌 다른 값이 있어서 형변환x -> NaN
 
         // 강제형변환
-        // Number(변환값), parseInt(변환값)
+        // Number(변환값), parseInt(변환값) => 문자열 -> 숫자
+        // 숫자.toString() => 숫자 -> 문자열
+        console.log(typeof num2);
+        console.log(num2.toString(), typeof num2.toString());
+
+        // 문자열을 숫자로 변경하려면 숫자형태의 문자열이여야 함
+        // Number() -> 숫자형태만 있어야함
+        // parseInt() -> 마지막 글자가 문자여도 변환 
+        //               ex) 100원, 20px ...
+        console.log(num - num3); // NaN
+        console.log(num - Number(num3)); // NaN, num3는 Number()로 변환 불가능
+        console.log(num - parseInt(num3)); 
+
+
     </script>
 
 </body>
