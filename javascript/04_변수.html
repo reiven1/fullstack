@@ -192,7 +192,17 @@
         console.log(num - Number(num3)); // NaN, num3는 Number()로 변환 불가능
         console.log(num - parseInt(num3)); // parseInt()가 "원" 무시하고 숫자로 형변환
 
-        let su="$20";
+        // let su = "$20";
+        let su = "$20".substring(1); // 형변환이 일어나지 않음
+        // console.log(parseInt(su)); // NaN
+    </script>
+    <input type="text" id="su">
+    <button onclick="test()">클릭</button>
+    <script>
+        function test() {
+            const su2 = 20;
+            console.log("더한결과 : " + (Number(document.getElementById("su").value) + su2));
+        }
     </script>
 
 </body>
