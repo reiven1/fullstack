@@ -125,7 +125,15 @@
     </script>
     <h3>switch문</h3>
     <script>
-        
+        // switch(값){case break; default break;}
+        let menu = Number(prompt("메뉴선택")); // prompt는 문자열로 받아옴
+        switch (menu) { // 동등비교, === 으로 비교
+            case 1: console.log("1번선택"); break;
+            case 2: console.log("2번선택"); break;
+            case 3: console.log("3번선택"); break;
+            case 4: console.log("4번선택"); break;
+            default: console.log("없는 메뉴입니다."); break;
+        }
     </script>
 </body>
 
