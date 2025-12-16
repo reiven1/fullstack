@@ -75,9 +75,9 @@
     <script>
         function addTd() {
             let table = "<tr>";
-            table += "<th>" + document.getElementsByName("div").value + "</th>";
-            table += "<th>" + document.getElementsByName("title").value + "</th>";
-            table += "<th>" + document.getElementsByName("writer").value + "</th>";
+            table += "<th>" + document.getElementsByName("div")[0].value + "</th>";
+            table += "<th>" + document.getElementsByName("title")[0].value + "</th>";
+            table += "<th>" + document.getElementsByName("writer")[0].value + "</th>";
             table += "</tr>";
             document.querySelector(".container3>table").innerHTML = table;
         }
