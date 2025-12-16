@@ -170,7 +170,16 @@
         let num = 100;
         let num1 = "100";
         let num2 = 200;
-        let num3="200원";
+        let num3 = "200원";
+        let size = "20px";
+
+        console.log(num + num1); // 문자 우선, 숫자+문자=문자문자
+        console.log(num - num1); // 문자열은 -가 없기 때문에 숫자로 자동형변환
+        console.log(num * num1);
+        console.log(num - num3); // num3에 숫자가 아닌 다른 값이 있어서 형변환x -> NaN
+
+        // 강제형변환
+        // Number(변환값), parseInt(변환값)
     </script>
 
 </body>
