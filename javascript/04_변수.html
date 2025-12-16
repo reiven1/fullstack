@@ -81,17 +81,18 @@
         }
         console.log("전역변수 : "+globalVar);
         locatTest();
-        console.log("함수내부선언변수 : "+localVar);
+        // console.log("함수내부선언변수 : "+localVar);
 
         // 조건문, 반복문에 선언된 변수는?
         var age=24;
         if(age<20){
+            //global scope를 가짐
             var inif="if문 안에서 선언";
         }
         console.log(inif);
     </script>
     <script>
-        console.log("이건 실행하니?");
+        // console.log("이건 실행하니?");
     </script>
     
 </body>
