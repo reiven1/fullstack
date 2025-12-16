@@ -142,7 +142,18 @@
             let localVar="블록내부";
         }
         // console.log(localVar); localVar 가 block scope
-        for(let i=0;i<10;i++){}
+        for(let j=0;j<10;j++){}
+        // console.log(j); j 가 block scope
+
+        // 호이스팅
+        // console.log(hoistingVar2); hoistingVar2 호이스팅
+        let hoistingVar2="test";
+
+        // 상수활용
+        const age2=19;
+        console.log(age2);
+        age2=20;
+        const fn_test=function(){};
     </script>
 
 </body>
