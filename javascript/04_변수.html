@@ -73,6 +73,15 @@
         전역(global scope) : function외부에 선언된 변수들 -> window 객체의 멤버변수<br>
         지역(block scope) :  function내부에 선언된 변수들 <br>
     </p>
+    <script>
+        var globalVar="전역변수";
+        function locatTest(){
+            var locatVar="지역변수";
+            console.log(localVar);
+        }
+        console.log("전역변수 : "+globalVar);
+        console.log("함수내부선언변수 : "+localVar);
+    </script>
 </body>
 
 </html>
