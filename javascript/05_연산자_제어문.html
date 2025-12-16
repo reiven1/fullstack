@@ -41,21 +41,22 @@
             document.querySelector("#container>table").innerHTML = table;
         }
     </script>
-    <br>
-    <!-- input#data에서 입력받은 값을 div#container2에 기록하는 기능 만들기 button.btn을 누르면 function addData()가 실행-->
-    <input type="text" id="data">
-    <div id="container2"></div>
 
-    <button onclick="addData()" class="btn">기록하기</button>
+
+    <!-- input#data에서 입력받은 값을 div#container2에 기록하는 기능 만들기 button.btn을 누르면 function addData()가 실행-->
+    <div>
+        <input type="text" id="data">
+        <div id="container2"></div>
+        <button onclick="addData()" class="btn">기록하기</button>
+    </div>
     <script>
         function addData() {
-            let data = ""
-            data += document.querySelector("#data").value;
-            document.querySelector("#container2").innerText += data;
-            document.querySelector("#container2").innerHTML += "<br>";
+            let data = document.querySelector("#data").value;
+            document.querySelector("#container2").innerHTML += data + "<br>";
         }
     </script>
-    <!--  -->
+
+    <!-- 추가버튼을 클릭하면 작성된 내용을 테이블에 추가하는 기능 -->
     <div class="container3">
         <input type="text" name="div">
         <input type="text" name="title">
@@ -71,7 +72,6 @@
             </tr>
         </table>
     </div>
-    <!-- 추가버튼을 클릭하면 작성된 내용을 테이블에 추가하는 기능 -->
     <script>
         function addTd() {
             let table = "<tr>";
