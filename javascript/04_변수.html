@@ -33,5 +33,31 @@
         <li>null : 값이 없음을 표시</li>
         <li>undefined : 자동대입값, 선언 후 초기화 하지 않은 변수에 대입</li>
     </ul>
+
+    <script>
+        var data2;
+        console.log(data2, typeof data2);
+        data2="오늘 시험 잘봤다! 내일도 잘 볼꺼야!";
+        console.log(data2, typeof data2);
+        data2=180.5;
+        console.log(data2, typeof data2);
+        data2=19;
+        console.log(data2,typeof data2);
+        data2=true;
+        console.log(data2,typeof data2);
+        data2={name:"하승우",age:24}
+        data2=new Object();
+        console.log(data2,typeof data2);
+        data2=[1,2,3,4,5]
+        data2=new Array(1,2,3,4)
+        console.log(data2,typeof data2, Array.isArray(data2));
+        data2=function(){};
+        data2=()=>{};
+        console.log(data2,typeof data2);
+        data2=null;
+        console.log(data2,typeof data2);
+        data="하하하하!";
+        console.log(data);
+    </script>
 </body>
 </html>
