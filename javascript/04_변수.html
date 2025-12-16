@@ -132,29 +132,39 @@
     </p>
     <script>
         let letVar;
-        letVar="우와~";
+        letVar = "우와~";
         console.log(letVar);
         // 중복 선언하기
         // let letVar="이거 되니?"; 중복선언 x
-        
+
         // 블록범위
-        if(age<30){
-            let localVar="블록내부";
+        if (age < 30) {
+            let localVar = "블록내부";
         }
         // console.log(localVar); localVar 가 block scope
-        for(let j=0;j<10;j++){}
+        for (let j = 0; j < 10; j++) { }
         // console.log(j); j 가 block scope
 
         // 호이스팅
         // console.log(hoistingVar2); hoistingVar2 호이스팅
-        let hoistingVar2="test";
+        let hoistingVar2 = "test";
 
         // 상수활용
-        const age2=19;
+        const age2 = 19;
         console.log(age2);
-        age2=20;
-        const fn_test=function(){};
+        // age2=20;
+        const fn_test = function () { };
+
+        const names = [];
+        names[0] = '하승우';
+        names.push("오수환");
+        console.log(names);
+        // names=["김영호","강원준"]; 배열 자체가 const 선언, 배열 인덱스에 해당하는 값만 변경 가능
     </script>
+    <h3>형변환</h3>
+    <p>
+        
+    </p>
 
 </body>
 

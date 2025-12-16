@@ -4,6 +4,7 @@
 
 # Git 경고 방지: core.autocrlf false 권장
 # git config --global core.autocrlf false
+# 나중에 필요하면 true로 변경
 
 while true; do
     # 현재 분과 초
