@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+</head>
+
+<body>
+    <h3>태그 이동시키기</h3>
+    <p>translate() 함수를 이용해서 변경시키기</p>
+    <style>
+        /* active = 클릭 시 이동 */
+        .translate:active {
+            transform: translate(200px, 200px);
+        }
+
+        .translateX:active {
+            transform: translateX(200px);
+        }
+
+        .translateY:active {
+            transform: translateY(200px);
+        }
+    </style>
+    <img src="./image/jjangu.jpg" alt="짱구" width="200" height="200" class="translate transition">
+    <img src="./image/jjangu.jpg" alt="짱구" width="200" height="200" class="translateX"> <br>
+    <img src="./image/jjangu.jpg" alt="짱구" width="200" height="200" class="translateY">
+    <br><br><br><br><br>
+    <h3>확대하기</h3>
+    <div class="container">
+        <p class="scale">오늘은 토요일 집에서 쉬고싶은데 수업듣고 있네..ㅠㅠ</p>
+        <p class="scaleX">오늘은 토요일 집에서 쉬고싶은데 수업듣고 있네..ㅠㅠ</p>
+        <p class="scaleY">오늘은 토요일 집에서 쉬고싶은데 수업듣고 있네..ㅠㅠ</p>
+        <img src="./image/jjangu.jpg" alt="짱구" width="200" height="200" class="scale">
+    </div>
+    <br><br><br>
+    <style>
+        .container {
+            margin: 30px;
+        }
+
+        .scale:hover {
+            transform: scale(1.5);
+        }
+
+        .scaleX:hover {
+            transform: scaleX(1.5);
+        }
+
+        .scaleY:hover {
+            transform: scaleY(1.5);
+        }
+
+        div>p {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <h3>회전</h3>
+    <div class="container">
+        <img src="./image/jjangu.jpg" alt="짱구" width="200" height="200" class="rotate">
+        <img src="./image/jjangu.jpg" alt="짱구" width="200" height="200" class="rotateX transition">
+        <img src="./image/jjangu.jpg" alt="짱구" width="200" height="200" class="rotateY">
+    </div>
+    <style>
+        /* perspective : 원근감 표시 */
+        .rotate:active {
+            transform: perspective(200px) rotate(45deg);
+        }
+
+        .rotateX:active {
+            transform: perspective(200px) rotateX(45deg);
+        }
+
+        .rotateY:active {
+            transform: perspective(200px) rotateY(45deg);
+        }
+    </style>
+    <h3>트렌지션</h3>
+    <p>
+        변형이 천천히 진행되게 하는 것 <br>
+        transition-property : 적용할 css 속성 설정 <br>
+        transition-duration : ns(n초) <br>
+    </p>
+    <div class="box transition"></div>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: magenta;
+        }
+
+        .box:hover {
+            background-color: lime;
+            width: 200px;
+            height: 200px;
+        }
+
+        .transition {
+            transition-property: backgournd-color, width, height, transform;
+            transition-duration: 2s;
+        }
+    </style>
+
+    <nav>
+        <ul>
+            <li><a href="">소개</a></li>
+            <li><a href="">기술스택</a></li>
+            <li><a href="">프로젝트</a></li>
+            <li><a href="">연구실</a></li>
+        </ul>
+    </nav>
+    <br><br><br>
+    <style>
+        nav>ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            justify-content: space-evenly;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: lightgreen;
+            font-size: 35px;
+            font-weight: bolder;
+            letter-spacing: 10px;
+        }
+
+        nav li>a:hover {
+            color: lime;
+        }
+
+        nav li:hover {
+            transform: perspective(200px) scale(1.5);
+        }
+
+        nav li,
+        nav a {
+            transition-property: transform, color;
+            transition-duration: 0.3s;
+        }
+    </style>
+    <h3>애니메이션</h3>
+    <style>
+        @keyframes ani {
+            to {
+                color: lime;
+            }
+
+            from {
+                color: magenta;
+            }
+        }
+
+        .anitarget {
+            animation-name: ani;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes ani2 {
+            10% {
+                color: lime;
+                /* transform: scale(1.5); */
+                transform: translate(200px, 200px);
+            }
+
+            20% {
+                color: magenta;
+                transform: rotate(180deg);
+                /* transform: scale(0.5); */
+            }
+
+            50% {
+                background-color: red;
+                color: yellow;
+            }
+
+            70% {
+                font-size: 40px;
+                transform: translate(-200px, -200px);
+            }
+
+            100% {
+                letter-spacing: 50px;
+            }
+        }
+
+        .anitarget2 {
+            animation-name: ani2;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    </style>
+    <h3 class="anitarget">이제 css 끝~ 아싸~~~ 끝났다 이제 재미있는거 한다!</h3>
+    <!-- <h1 class="anitarget2">finish</h1> -->
+</body>
+
+</html>

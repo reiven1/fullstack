@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">입력한 값이 출력</div>
+    <input type="text" class="data">
+    <button onclick="inputValue()">출력</button>
+    <script>
+        function inputValue() {
+            const data = document.getElementsByClassName("data")[0].value;
+            document.querySelector("#container").innerText = data;
+        }
+    </script>
+    <br>
+    <div class="target">우와 자바스크립트 재미있다.</div>
+    <button onclick="styleChange()">변경</button>
+    <button onclick="styleChange2()">되돌리기</button>
+    <script>
+        function random(max){
+            return Math.floor(Math.Random()*max);
+        }
+        function styleChange() {
+            document.getElementsByClassName("target")[0].style.backgroundColor = "rgb("+random(255)+","+random(255)+","+random(255)+")";
+        }
+        function styleChange2() {
+            document.getElementsByClassName("target")[0].style.backgroundColor = "";
+        }
+    </script>
+</body>
+
+</html>

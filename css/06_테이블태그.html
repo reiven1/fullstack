@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블태그</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td></td>
+            <td><span>span</span></td>
+        </tr>
+    </table>
+    <style>
+        table {
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            /* border-collapse: collapse; */
+            /* separate가 default */
+            border-collapse: separate;
+            /* border-collapse 가 separate일 때 적용 */
+            border-spacing: 30px;
+            /* 빈 값일 때 숨기기 */
+            empty-cells: hide;
+        }
+
+        table>tbody td {
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: bottom;
+        }
+    </style>
+</body>
+
+</html>

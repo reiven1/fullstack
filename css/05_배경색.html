@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색</title>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="container2"></div>
+    <div id="container3"></div>
+    <div id="container4"></div>
+    <style>
+        #container {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(200, 74, 233, 0.2);
+            border: 10px dotted red;
+            padding: 20px;
+            background-clip: content-box;
+        }
+
+        #container2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            background-image: url(./image/jjangu_icon.jpeg);
+            /* background-repeat 의 default 값 = repeat, no=repeat 은 설정해줘야함 */
+            background-repeat: no-repeat;
+            background-position: right bottom;
+        }
+
+        #container3 {
+            width: 100%;
+            height: 500px;
+            border: 1px solid red;
+            background-image: url(./image/jjangu.jpg);
+            /* 화면에 고정, 범위 이탈 시 제거 */
+            /* background-attachment: fixed; */
+        }
+
+        #container4 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            background-image: url(./image/jjangu.jpg);
+            /* 라인에 맞춰서, 비율 유지, 공란(잘림) 발생 가능 */
+            /* background-size: contain; */
+            background-size: 100% 100%;
+        }
+    </style>
+
+    <h3>그라데이션</h3>
+    <div class="container5 linear"></div>
+    <div class="container5 radial"></div>
+    <style>
+        .container5 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .linear {
+            /* background: linear-gradient(90deg, yellow, red); */
+            background: repeating-linear-gradient(90deg, yellow 10%, red 20%, blue 30%, white 40%);
+        }
+
+        .radial {
+            /* background: radial-gradient(circle, magenta, lime); */
+            background: repeating-radial-gradient(circle, magenta 10%, lime 20%, cyan 30%, white 40%);
+        }
+    </style>
+
+    <div id="container6">
+        <img src="./image/jjangu.jpg" alt="짱구" width="80" height="80">
+    </div>
+    <style>
+        #container6>img {
+            border-radius: 100%;
+            box-shadow: 5px 5px 5px red, 6px 6px 10px yellow;
+        }
+
+        #container6 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid lime;
+            box-shadow: 3px 3px 0px yellow;
+        }
+    </style>
+
+    
+</body>
+
+</html>
