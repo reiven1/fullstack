@@ -31,6 +31,20 @@
         </table>
     </div>
     <button onclick="createTable()">생성</button>
+    <script>
+        function createTable() {
+            let table = "<tr>";
+            table += "<th>번호</th>";
+            table += "<th>이름</th>";
+            table += "<th>성별</th>";
+            table += "</tr>";
+            document.querySelector("#container>table").innerHTML = table;
+        }
+    </script>
+    <!-- input#data에서 입력받은 값을 div#container2에 기록하는 기능 만들기 button.btn을 누르면 function addData()가 실행-->
+    <input type="text" id="data">
+    <div id="container2"></div>
+    <button onclick="addData()" class="btn">기록하기</button>
 </body>
 
 </html>
