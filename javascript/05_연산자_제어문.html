@@ -16,10 +16,21 @@
     <script>
         const su = 100;
         const strSu = "100";
-
-        console.log(su == strSu);
-        console.log(su === strSu);
+        const su2 = 100;
+        console.log(su == strSu); // 자동 형변환 때문에 true
+        console.log(su === strSu); // ===으로 타입까지 비교하기 때문에 false
+        console.log(su === su2); // 타입까지 같기 때문에 true
     </script>
+    <p>짧은 조건문</p>
+    <script>
+        const result = strSu === 100 || "100점이야"; // false 이기 때문에 || 뒤 실행 반대로 true 일 땐 && 뒤 실행
+        console.log(result);
+    </script>
+    <div id="container">
+        <table>
+        </table>
+    </div>
+    <button onclick="createTable()">생성</button>
 </body>
 
 </html>
