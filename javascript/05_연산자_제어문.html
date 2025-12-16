@@ -87,7 +87,7 @@
     <p>
         if, if~else if~else, switch
     </p>
-    <select name="month" id="">
+    <select name="month" onchange="choiceMonth()">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -102,6 +102,20 @@
         <option value="12">12</option>
     </select>
     <span id="msg"></span>
+    <script>
+        function choiceMonth() {
+            const month = document.getElementsByName("month")[0].value;
+            // console.log(month);
+            let msg;
+            if (month == 12 || month >= 1 && month <= 2) {
+                msg = "겨울이야";
+            }
+            else if (month >= 3 && month <= 5) {
+                msg="봄이야";
+            }
+            document.getElementById("msg").value = msg;
+        }
+    </script>
 </body>
 
 </html>
