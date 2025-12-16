@@ -45,14 +45,14 @@
     <!-- input#data에서 입력받은 값을 div#container2에 기록하는 기능 만들기 button.btn을 누르면 function addData()가 실행-->
     <input type="text" id="data">
     <div id="container2"></div>
-    <script>
-        let data = "";
-    </script>
+
     <button onclick="addData()" class="btn">기록하기</button>
     <script>
         function addData() {
+            let data = ""
             data += document.querySelector("#data").value;
-            document.querySelector("#container2").innerText = data;
+            document.querySelector("#container2").innerText += data;
+            document.querySelector("#container2").innerHTML += "<br>";
         }
     </script>
     <!--  -->
