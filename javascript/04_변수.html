@@ -101,9 +101,10 @@
     <h3>변수의 중복선언을 허용</h3>
     <script>
         console.log(data);
-        var data = function () { alert("알림!") };
-        console.log(data);
-        data();
+        // 알림창 계속떠서 주석처리
+        // var data = function () { alert("알림!") };
+        // console.log(data);
+        // data();
         var data = "하승우 시험 잘 봤다!";
         // data(); data값이 바껴서 function 작동 안함
         console.log(data);
@@ -113,6 +114,10 @@
     <p>
         변수가 선언된 라인 전에 호출했을 때 값을 가져올 수 있는 기능-> 변수를 미리 확보 해 놓음
     </p>
+    <script>
+        console.log(hoisting);
+        var hoisting="호이스팅";
+    </script>
 
 </body>
 
