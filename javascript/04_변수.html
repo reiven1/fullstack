@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+</head>
+
+<body>
+    <h3>변수선언</h3>
+    <p>
+        js는 동적타입을 사용하기 때문에 변수를 선언할 때 자료형을 선언하지 않는다 <br>
+        예약어 var를 사용 <br>
+        선언방식 : var 변수명; <br>
+    </p>
+    <script>
+        // 변수 선언하기
+        var data;
+    </script>
+    <p>
+        변수에 값을 대입할 때 타입이 결정 <br>
+        한개 변수에 다양한 타입의 값을 저장할 수 있다. <br>
+    </p>
+    <ul>
+        타입별 리터럴 표시
+        <li>string(문자열) : "",'' 예)"시험화이팅",'포기하지마세요'</li>
+        <li>
+            number(숫자) : 10. 180.5 등 정수/실수 구분없이 저장
+        </li>
+        <li>boolean(진위) : true, false</li>
+        <li>객체(object) : {key:value, key1:value1 ... }</li>
+        <li>배열(Array) : [값, 값2, 값2 ... ]</li>
+        <li>function(함수/메소드) : function(){}, ()=>{}</li>
+        <li>null : 값이 없음을 표시</li>
+        <li>undefined : 자동대입값, 선언 후 초기화 하지 않은 변수에 대입</li>
+    </ul>
+
+    <script>
+        var data2;
+        console.log(data2, typeof data2);
+        data2 = "오늘 시험 잘봤다! 내일도 잘 볼꺼야!";
+        console.log(data2, typeof data2);
+        data2 = 180.5;
+        console.log(data2, typeof data2);
+        data2 = 19;
+        console.log(data2, typeof data2);
+        data2 = true;
+        console.log(data2, typeof data2);
+        data2 = { name: "하승우", age: 24 }
+        data2 = new Object();
+        console.log(data2, typeof data2);
+        data2 = [1, 2, 3, 4, 5]
+        data2 = new Array(1, 2, 3, 4)
+        console.log(data2, typeof data2, Array.isArray(data2));
+        data2 = function () { };
+        data2 = () => { };
+        console.log(data2, typeof data2);
+        data2 = null;
+        console.log(data2, typeof data2);
+        data = "하하하하!";
+        console.log(data);
+
+        // console.log(outterData); 스크립트 불러오지 않았음
+    </script>
+
+    <script src="./js/test.js"></script>
+    <script>
+        console.log(outterData);
+    </script>
+    <h3>var로 선언한 변수의 scope</h3>
+    <p>
+        전역(global scope) : function외부에 선언된 변수들 -> window 객체의 멤버변수<br>
+        지역(block scope) : function내부에 선언된 변수들 <br>
+    </p>
+    <script>
+        var globalVar = "전역변수";
+        function locatTest() {
+            var localVar = "지역변수";
+            console.log(localVar);
+        }
+        console.log("전역변수 : " + globalVar);
+        locatTest();
+        // console.log("함수내부선언변수 : "+localVar);
+
+        // 조건문, 반복문에 선언된 변수는?
+        var age = 24;
+        if (age < 20) {
+            //global scope를 가짐
+            var inif = "if문 안에서 선언";
+        }
+        console.log(inif);
+
+        for (var i = 0; i < 10; i++) {
+            var repeatVar = "반복문값";
+        }
+        console.log(i, repeatVar);
+
+        console.log(window);
+    </script>
+    <h3>변수의 중복선언을 허용</h3>
+    <script>
+        console.log(data);
+        // 알림창 계속떠서 주석처리
+        // var data = function () { alert("알림!") };
+        // console.log(data);
+        // data();
+        var data = "하승우 시험 잘 봤다!";
+        // data(); data값이 바껴서 function 작동 안함
+        console.log(data);
+    </script>
+
+    <h3>변수 호이스팅</h3>
+    <p>
+        변수가 선언된 라인 전에 호출했을 때 값을 가져올 수 있는 기능-> 변수를 미리 확보 해 놓음
+    </p>
+    <script>
+        hosting = "ttttt";
+        console.log("호이스팅", hoisting);
+        var hoisting = "호이스팅";
+    </script>
+    <h3>ES6 개선된 변수 선언</h3>
+    <p>
+        let, const를 이용해서 선언할 수 있음 <br>
+        1. 중복선언을 허용하지 않음 <br>
+        2. block scope로 선언됨 <br>
+        3. 호이스팅을 허용하지 않음 -> 읽는 것을 막음 <br>
+    </p>
+    <p>
+        let 변수명 : 일반변수, 변수에 저장된 값의 변경이 가능 <br>
+        const 변수명 : 변경이 불가능한 변수, final 선언 변수와 동일 <br>
+    </p>
+    <script>
+        let letVar;
+        letVar = "우와~";
+        console.log(letVar);
+        // 중복 선언하기
+        // let letVar="이거 되니?"; 중복선언 x
+
+        // 블록범위
+        if (age < 30) {
+            let localVar = "블록내부";
+        }
+        // console.log(localVar); localVar 가 block scope
+        for (let j = 0; j < 10; j++) { }
+        // console.log(j); j 가 block scope
+
+        // 호이스팅
+        // console.log(hoistingVar2); hoistingVar2 호이스팅
+        let hoistingVar2 = "test";
+
+        // 상수활용
+        const age2 = 19;
+        console.log(age2);
+        // age2=20;
+        const fn_test = function () { };
+
+        const names = [];
+        names[0] = '하승우';
+        names.push("오수환");
+        console.log(names);
+        // names=["김영호","강원준"]; 배열 자체가 const 선언, 배열 인덱스에 해당하는 값만 변경 가능
+    </script>
+    <h3>형변환</h3>
+    <p>
+        자동형변환 : 유연하게 처리됨 <br>
+        강제형변환 : 숫자값 처리 시 <br>
+    </p>
+    <script>
+        let num = 100;
+        let num1 = "100";
+        let num2 = 200;
+        let num3 = "200원";
+        let size = "20px";
+
+        console.log(num + num1); // 문자 우선, 숫자+문자=문자문자
+        console.log(num - num1); // 문자열은 -가 없기 때문에 숫자로 자동형변환
+        console.log(num * num1);
+        console.log(num - num3); // num3에 숫자가 아닌 다른 값이 있어서 형변환x -> NaN
+
+        // 강제형변환
+        // Number(변환값), parseInt(변환값) => 문자열 -> 숫자
+        // 숫자.toString() => 숫자 -> 문자열
+        console.log(typeof num2);
+        console.log(num2.toString(), typeof num2.toString());
+
+        // 문자열을 숫자로 변경하려면 숫자형태의 문자열이여야 함
+        // Number() -> 숫자형태만 있어야함
+        // parseInt() -> 마지막 글자가 문자여도 변환 
+        //               ex) 100원, 20px ...
+        console.log(num - num3); // NaN
+        console.log(num - Number(num3)); // NaN, num3는 Number()로 변환 불가능
+        console.log(num - parseInt(num3)); // parseInt()가 "원" 무시하고 숫자로 형변환
+
+        // let su = "$20";
+        let su = "$20".substring(1); // 형변환이 일어나지 않음
+        // console.log(parseInt(su)); // NaN
+    </script>
+    <input type="text" id="su">
+    <button onclick="test()">클릭</button>
+    <script>
+        function test() {
+            const su2 = 20;
+            const su = document.getElementById("su").value;
+            console.log("더한결과 : " + (Number(su) + su2));
+        }
+    </script>
+
+</body>
+
+</html>

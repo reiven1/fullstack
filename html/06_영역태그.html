@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역태그</title>
+    <style>
+        /* div {
+            border: 1px solid red;
+        } */
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div id="menu">
+        <div id="nav">
+            <ul>
+                <li>나의 <span>홈</span>페이지</li>
+                <li><span>i</span></li>
+                <li>i</li>
+                <li>i</li>
+                <li>i</li>
+            </ul>
+        </div>
+        <div id="login-container">
+            <input type="text"><br>
+            <input type="password">
+        </div>
+    </div>
+    <style>
+        .container {
+            width: 100%;
+            border: 1px solid red;
+        }
+
+        #header {
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #title,
+        #login {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #logo>img {
+            border-radius: 100%;
+        }
+
+        #content {
+            height: 500px
+        }
+
+        #footer {
+            height: 100px
+        }
+    </style>
+    <div id="header" class="container">
+        <div id="logo">
+            <img src="https://www.kyungnam.ac.kr/sites/ko/images/sub/hanma_2.png" alt="로고" width="200" height="200">
+        </div>
+        <div id="title">
+            <h1>이것만 하고 끝!</h1>
+            <div>
+                <ul>
+                    <li>home</li>
+                    <li>home2</li>
+                    <li>home3</li>
+                </ul>
+            </div>
+        </div>
+        <div id="login">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>
+                        <input type="password">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="content" class="container">
+
+    </div>
+
+    <div id="footer" class="container">
+
+    </div>
+
+    <h2>시멘틱태그</h2>
+    <p>
+        구조화한 태그들...
+    </p>
+    <p>
+        header : 헤더영역 설정<br>
+        footer : 풋터영역 설정<br>
+        article : 내용(컨텐츠)<br>
+        section : 내용(article을 구분) <br>
+        nav : 메뉴, 다른페이지로 연결하는 태그영역<br>
+        aside : 사이드메뉴, 광고영역 ... <br>
+    </p>
+
+
+</body>
+
+</html>

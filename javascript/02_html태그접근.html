@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html태그접근</title>
+</head>
+
+<body>
+    <h2>태그에 접근하기</h2>
+    <h3>id속성으로 태그 가져오기</h3>
+    <p id="knu">여러분 시험 기간이라 힘들어 보이네요!</p>
+    <script>
+        console.log(document.getElementById("knu"))
+    </script>
+    <h3>class속성으로 태그 가져오기</h3>
+    <p class="a">p class = a</p>
+    <span class="a">span class = a</span>
+    <div class="a">div class = a</div>
+    <h4 class="c">h4 class = c</h4>
+    <p class="a c">p class = a c</p>
+    <script>
+        console.log(document.getElementsByClassName("a"))
+        console.log(document.getElementsByClassName("a")[0])
+        console.log(document.getElementsByClassName("a")[1])
+        console.log(document.getElementsByClassName("c"))
+    </script>
+    <h3>태그 이름으로 태그 가져오기</h3>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li>javascript</li>
+        <li>jquery</li>
+    </ul>
+    <script>
+        console.log(document.getElementsByTagName("li"))
+    </script>
+    <h3>name속성으로 태그 가져오기</h3>
+    <input type="checkbox" name="hobby" value="코딩"><span>코딩</span>
+    <input type="checkbox" name="hobby" value="운동"><span>운동</span>
+    <input type="checkbox" name="hobby" value="독서"><span>독서</span>
+    <input type="checkbox" name="hobby" value="게임"><span>게임</span>
+    <script>
+        console.log(document.getElementsByName("hobby"))
+    </script>
+    <h3>선택자로 태그 가져오기</h3>
+    <h4>한개태그 가져오기</h4>
+    <script>
+        console.log(document.querySelector("#knu"))
+        console.log(document.querySelector(".a"))
+    </script>
+    <h4>다수태그 가져오기</h4>
+    <script>
+        console.log(document.querySelectorAll("#knu"))
+        console.log(document.querySelectorAll(".c"))
+        console.log(document.querySelectorAll("[type='checkbox']"))
+    </script>
+    <h3>가져온 태그는 객체로 취급 - DOM</h3>
+    <p>객체 속성을 가져오거나 수정할 수 있다</p>
+    <script>
+        setTimeout(() => {
+            const e = document.getElementById("knu")
+            console.dir(e)
+            console.log(e.innerHTML)
+            e.innerHTML = "우와 신기하게 바뀌네"
+            e.style.color = "lime"
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터입출력</title>
+</head>
+
+<body>
+    <h3>html페이지의 특정 태그나 console창, 페이지 전체에 필요한 데이터를 출력</h3>
+    <p>
+        동적으로 페이지에 데이터 출력 <br>
+        document.write() / HTMLElement.innerHTML / innerText 속성 이용
+    </p>
+    <script>
+        document.write("js로 페이지에 데이터 추가하기");
+        document.write("<h3>태그로 출력</h3>");
+    </script>
+    <div id="container"></div>
+    <button onclick="inputData()">출력</button>
+    <script>
+        // innerHTML / innerText 속성을 이용
+        // innerHTML : 태그방식의 문자열을 태그로 해석해서 출력
+        // innerText : 태그방식의 문자열을 문자열로 해석해서 출력
+        document.getElementById("container")
+            // .innerHTML="<h3>나는 태그</h3>";
+            .innerText = "<h3>나는 태그</h3>";
+        function inputData() {
+            var data = "<script>alert('안녕');<\/script>";
+            document.getElementById("container").innerHTML = data;
+        }
+    </script>
+    <h3>console창에 데이터 출력하기</h3>
+    <p>
+        변수에 저장된 값을 확인하거나 로직상 에러메세지를 출력할 때
+    </p>
+    <script>
+        console.log("내용");
+        var test = "하승우";
+        console.log(test);
+        console.warn("경고경고");
+        console.error("에러!");
+        // 객체의 세부내용을 출력하는 함수
+        // dir()
+        const e = document.getElementById("container");
+        console.log(e);
+        console.dir(e);
+        // console.table(e);
+        const obj = { name: "하승우", age: 24, height: 180 };
+        console.log(obj);
+        console.table(obj);
+    </script>
+    <h3>알림창을 출력하기</h3>
+    <script>
+        // window. <- 최상위 객체, 생략가능
+        // alert("알림창 출력");
+    </script>
+    <h3>데이터 입력받기</h3>
+    <script>
+        // 잘 안씀
+        // const result = confirm("너는 학생이니?");
+        // console.log(result);
+        // const result2 = prompt("이름 : ");
+        // console.log(result2);
+    </script>
+    <input type="text" name="msg">
+    <textarea name="info" id="info"></textarea>
+    <!-- 버튼 누르면 input 태그에 있는 내용이 textarea 태그에 뜸 -->
+    <!-- <button onclick="outputValue()">저장</button> -->
+    <!-- 버튼 누르면 result 값에 input 태그의 value와 textarea 태그의 value값이 저장 -->
+    <button onclick="inputValueCheck()">저장</button>
+    <!-- 체크박스에서 체크 된 값만 가져오기 -->
+    <input type="checkbox" name="check" value="1">1
+    <input type="checkbox" name="check" value="2">2
+    <input type="checkbox" name="check" value="3">3
+    <script>
+        function inputValueCheck() {
+            // const result = document.getElementsByName("msg")[0].value;
+            // const result2 = document.getElementsByName("info")[0].value;
+            // const result2 = document.getElementById("info").value;
+            // const result2 = document.querySelector("#info").value;
+            const result3 = document.querySelectorAll("[name=check]:checked");
+            result3.forEach(element => console.log(element.value));
+            // console.log(result);
+            // console.log(result2);
+            // console.log(result3);
+        }
+        function outputValue() {
+            document.querySelector("#info").value = document.getElementsByName("msg")[0].value;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트태그</title>
+</head>
+
+<body>
+    <ul>
+        <li>첫번째태그</li>
+        <li>두번째태그</li>
+    </ul>
+    <ol>
+        <li>첫번째태그</li>
+        <li>두번째태그</li>
+    </ol>
+    <div id="menu">
+        <ul>
+            <li>
+                <h3>홈</h3>
+            </li>
+            <li>
+                <h3>학과</h3>
+            </li>
+            <li>
+                <h3>공지사항</h3>
+            </li>
+        </ul>
+    </div>
+
+    <style>
+        #menu>ul {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: lightgreen;
+        }
+
+        #menu li {
+            display: inline;
+        }
+
+        #menu li>h3:hover {
+            background-color: lime;
+        }
+    </style>
+
+    <dl>
+        <dt>Apple</dt>
+        <dd>명.사과</dd>
+    </dl>
+
+</body>
+
+</html>

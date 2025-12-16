@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form태그</title>
+</head>
+
+<body>
+    <h3>a태그를 이용해서 서버에 데이터 전송</h3>
+    <p>
+        querystring 방식<br>
+        url 주소에 특정패턴으로 데이터를 전송<br>
+        ?key=value&key2=value2
+    </p>
+    <a href="https://search.naver.com/search.naver?query=저녁시간">네이버검색</a><br>
+    <input type="text" id="keyword"><button id="btn">검색</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", () => {
+            const keyword = document.getElementById("keyword").value;
+            location.assign("https://search.naver.com/search.naver?query=" + keyword);
+        })
+    </script>
+
+    <h2>form 태그</h2>
+    <p>
+        form태그는 서버에 요청을 보낼때 사용하는 태그<br>
+        form태그의 자식태그로 input태그를 선언함.
+        input태그에 작성한 값이 서버로 전송<br>
+    </p>
+    <p>
+        요청방식 <br>
+        GET : default설정으로 데이터를 URL주소에 넣어 전송<br>
+        POST : 데이터를 body(payload)에 저장하여 전송 * 파일전송할때 반드시 post로 설정<br>
+    </p>
+
+    <h4>method=get</h4>
+    <form action="07_멀티미디어.html" method="GET">
+        <input type="text" name="userID"><br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="로그인">
+    </form>
+    <h4>method=post</h4>
+    <form action="07_멀티미디어.html" method="post">
+        <input type="text" name="userID"><br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="로그인">
+    </form>
+    <form action="">
+        <label><input type="checkbox" name="hobby" value="게임">게임</label>
+        <label><input id="sleep" type="checkbox" name="hobby" value="잠자기">잠자기</label>
+        <label><input type="checkbox" name="hobby" value="운동">운동</label>
+
+        <h3>성별</h3>
+        <input type="radio" name="gender">남<br>
+        <input type="radio" name="gender">여<br>
+
+
+        <input type="submit" value="보내기">
+    </form>
+    <label for="sleep">잠자기</label>
+
+    <h3>파일전송하기</h3>
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="upfile" multiple accept="image/*">
+        <input type="submit" value="파일 업로드">
+    </form>
+    <form action="">
+        <select name="cate" id="">
+            <option value="s">서울</option>
+            <option value="c">창원</option>
+            <option value="d">대전</option>
+            <option value="si">시흥</option>
+        </select>
+        <input type="text" placeholder="검색어 입력" name="search">
+        <input type="submit" value="검색"><br>
+        <textarea cols="30" rows="5" name="info"></textarea>
+    </form>
+    <input type="text" id="search" name="search" list="list">
+    <datalist id="list">
+        <option value="강원준">강원준</option>
+        <option value="김영호">김영호</option>
+        <option value="김재민">김재민</option>
+        <option value="강민주">강민주</option>
+    </datalist>
+</body>
+
+</html>
