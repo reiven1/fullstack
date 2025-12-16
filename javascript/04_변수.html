@@ -61,7 +61,7 @@
         data = "하하하하!";
         console.log(data);
 
-        // console.log(outterData);
+        // console.log(outterData); 스크립트 불러오지 않았음
     </script>
 
     <script src="./js/test.js"></script>
@@ -71,32 +71,34 @@
     <h3>var로 선언한 변수의 scope</h3>
     <p>
         전역(global scope) : function외부에 선언된 변수들 -> window 객체의 멤버변수<br>
-        지역(block scope) :  function내부에 선언된 변수들 <br>
+        지역(block scope) : function내부에 선언된 변수들 <br>
     </p>
     <script>
-        var globalVar="전역변수";
-        function locatTest(){
-            var localVar="지역변수";
+        var globalVar = "전역변수";
+        function locatTest() {
+            var localVar = "지역변수";
             console.log(localVar);
         }
-        console.log("전역변수 : "+globalVar);
+        console.log("전역변수 : " + globalVar);
         locatTest();
         // console.log("함수내부선언변수 : "+localVar);
 
         // 조건문, 반복문에 선언된 변수는?
-        var age=24;
-        if(age<20){
+        var age = 24;
+        if (age < 20) {
             //global scope를 가짐
-            var inif="if문 안에서 선언";
+            var inif = "if문 안에서 선언";
         }
         console.log(inif);
 
-        for()
+        for (var i = 0; i < 10; i++) {
+            var repeatVar = "반복문값";
+        }
     </script>
     <script>
         // console.log("이건 실행하니?");
     </script>
-    
+
 </body>
 
 </html>
