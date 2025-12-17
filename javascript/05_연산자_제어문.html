@@ -232,6 +232,24 @@
             console.log(j++);
         }
     </script>
+    <h3>다수의 태그를 가져와 속성을 수정</h3>
+    <div id="h-container">
+        <h2>h2-1</h2>
+        <h2>h2-2</h2>
+        <h2>h2-3</h2>
+        <h2>h2-4</h2>
+        <h2>h2-5</h2>
+        <button onclick="changeColor()">변경</button>
+    </div>
+    <script>
+        function changeColor() {
+            const $h2List = document.querySelectorAll("#h-container>h2");
+            // console.log($h2List);
+            for (let i = 0; i < 5; i++) {
+
+            }
+        }
+    </script>
 
 </body>
 
