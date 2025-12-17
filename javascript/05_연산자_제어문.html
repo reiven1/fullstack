@@ -184,15 +184,23 @@
         function passwordCheck() {
             // 두개의 password 입력창에 입력된 값이 일치하면 span#pwcheck에 일치합니다.
             // 불일치하면 span#pwcheck에 불입치합니다 를 출력하기
+            // 버전업
+            // 출력되는 문구를 일치할때는 녹색, 불일치할때는 빨간색으로 설정하기
             const values = document.querySelectorAll("input[type='password']");
+            const $span = document.getElementById("pwcheck");
+            let msg, color;
             if (values[0].value == values[1].value) {
                 // console.log("같다");
-                document.getElementById("pwcheck").innerText = "span#pwcheck에 일치합니다.";
+                msg = "span#pwcheck에 일치합니다.";
+                color = "green";
             }
             else {
                 // console.log("다르다");
-                document.getElementById("pwcheck").innerText = "span#pwcheck에 불일치합니다.";
+                msg = "span#pwcheck에 불일치합니다.";
+                color = "red";
             }
+            $span.innerText = msg;
+            $span.style.color = color;
 
             /*
             let password = document.getElementsByName("password")[0].value;
@@ -200,11 +208,28 @@
             let str;
             password == pwcheck ? str = "span#pwcheck에 일치합니다" : str = "span#pwcheck에 불일치합니다"
             document.getElementById("pwcheck").innerText = str;
-            */
-
-            // 버전업
-            // 출력되는 문구를 일치할때는 녹색, 불일치할때는 빨간색으로 설정하기
             password == pwcheck ? document.getElementById("pwcheck").style.color = "green" : document.getElementById("pwcheck").style.color = "red"
+            */
+        }
+    </script>
+    <h3>반복문</h3>
+    <p>
+        for문 <br>
+        for(초기식;조건식;증감식){}
+    </p>
+    <p>
+        while문 <br>
+        while(조건식){}
+    </p>
+    <script>
+        console.log("for문")
+        for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+        let j = 0;
+        console.log("while문")
+        while (j < 10) {
+            console.log(j++);
         }
     </script>
 
