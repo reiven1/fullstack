@@ -213,9 +213,15 @@
         function testThis() {
             console.log(this);
         }
+        const testThis2=()=>{
+            console.log(this);
+        }
         obj.thisTest();
         obj.arrowThis();
-        testThis();
+        testThis(); // window가 실행해서 window 객체 출력
+        // this 바인딩
+        testThis.call(obj); // 익명함수는 연결해서 사용 가능
+        testThis2.call(obj); // 화살표 함수에 대한 this값은 변경 불가능 => obj를 call() 해도 window객체
     </script>
 
 </body>
