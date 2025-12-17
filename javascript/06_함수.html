@@ -164,8 +164,17 @@
         console.log(arrowReturn(19));
 
         const arrowReturnFunc = (title) => () => title + "호호호호";
-        console.log(arrowReturnFunc());
+        console.log(arrowReturnFunc("우와")());
+
+        // function(title)=> {
+        //     return function ()=> {
+        //         return title + '하하호호';
+        //     }
+        // }
+
+        // (str) => str.length;
     </script>
+    <p>화살표함수는 arguments가 없다</p>
 
 </body>
 
