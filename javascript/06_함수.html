@@ -28,7 +28,18 @@
     </script>
     <h3>매개변수에 기본값 대입하기</h3>
     <script>
-        
+        function paramFunc2(name, age, hobby=[]) {
+            console.log(name + " " + age);
+            hobby.forEach((e, i) => {
+                console.log(i + " " + e);
+            })
+            console.log(name, age, hobby);
+        }
+        // 매개변수의 인수를 다 전달하지 않아도 호출이 가능
+        paramFunc2("하승우", 24);
+        // 매개변수의 인수를 더 많이 전달해도 호출이 가능
+        paramFunc2("하승우", 24, ["운동", "게임"], 1, 2, 3, 4, 5);
+
     </script>
 </body>
 
