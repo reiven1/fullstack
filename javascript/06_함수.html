@@ -66,15 +66,15 @@
     </div>
     <script>
         function saveData() {
-
+            let result = "<tr>";
+            document.querySelectorAll("#input-container>input").forEach(e => {
+                result += addTd(e.value);
+            });
+            result += "</tr>";
+            document.querySelector("#container>table").innerHTML += result;
         }
-        function addTr(name, age, gender) {
-            let tr = "<tr>";
-            tr += "<td>" + name + "</td>";
-            tr += "<td>" + age + "</td>";
-            tr += "<td>" + gender + "</td>";
-            tr += "</tr>";
-            return tr
+        function addTd(value) {
+            return "<td>" + value + "</td>";
         }
     </script>
 
