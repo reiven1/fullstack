@@ -128,9 +128,9 @@
         document.getElementById("target").addEventListener("click", function () {
             alert("클릭했네");
         })
-        setTimeout(function () {
-            alert("쉬는시간!");
-        }, 1000)
+        // setTimeout(function () {
+        //     alert("쉬는시간!");
+        // }, 1000)
     </script>
 
     <h3>화살표함수</h3>
@@ -138,7 +138,23 @@
         표현식 : ()=>{} <br>
         매개변수가 한개 : 변수명=>{ 로직 } <br>
         매개변수가 한개, 리턴값 : 변수명=>리턴값 <br>
+        로직+반환형 : ()=>{ 로직; return 값; }
+        매개변수,리턴값 : (변수명, 변수명 ...)=>{ 로직; return 값; }
     </p>
+    <script>
+        const arrowFunc = () => {
+            console.log("화살표 함수");
+        }
+        arrowFunc();
+        const arrowParam = (name, age) => {
+            console.log(name, age);
+        }
+        arrowParam("하승우", 24);
+        const arrowOneParam = title => {
+            console.log(title);
+        }
+        arrowOneParam("title");
+    </script>
 
 </body>
 
