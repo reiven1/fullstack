@@ -113,8 +113,14 @@
     </p>
     <script>
         function paramFunc3(title, fnTest) {
-
+            console.log(title);
+            if (typeof fnTest == 'function')
+                fnTest();
+            else
+                throw new Error("두번째 매개변수는 함수만 가능합니다");
         }
+        paramFunc3("매개변수로 함수전달", function () { console.log("우와 신기하다") });
+        paramFunc3("test", "test2");
     </script>
 
 </body>
