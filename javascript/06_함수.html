@@ -8,11 +8,20 @@
 <body>
     <h2>선언적 함수 이용하기</h2>
     <script>
+        basicFunc(); // 호이스팅 가능
         function basicFunc(){
             console.log("우와 내가 선언한 첫 함수");
         }
         // 함수 호출하기
-        basicFunc();
+        // basicFunc();
+
+        // 매개변수가 있는 함수 선언
+        // function paramFunc2(let name){} <- 하면안됨
+        function paramFunc(name, age, gender){
+            console.log(name, age, gender);
+        }
+        paramFunc("하승우",24,"남자");
+        paramFunc(1,2,3);
     </script>
 </body>
 </html>
