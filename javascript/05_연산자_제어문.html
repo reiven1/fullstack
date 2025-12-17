@@ -265,11 +265,22 @@
         <input type="checkbox" name="lang" value="jquery">jquery
         <input type="checkbox" name="lang" value="react.js">react.js
         <button onclick="inputCheck()">체크확인</button>
+        <button onclick="inputAllCheck()">전체선택</button>
     </div>
     <script>
         function inputCheck() {
             // check된 input값을 console로 출력하기
-            const $checkboxList = querySelectorAll("input[type=checkbox]");
+            const $checkedList = document.querySelectorAll("[name=lang]:checked");
+            $checkedList.forEach(element=>{
+                console.log(element.value);
+            });
+        }
+
+        function inputAllCheck(){
+            const $inputList=document.querySelectorAll("[name=lang]");
+            $inputList.forEach(element=>{
+
+            });
         }
     </script>
 
