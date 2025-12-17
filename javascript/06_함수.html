@@ -79,11 +79,27 @@
     </script>
     <h3>익명함수 이용하기</h3>
     <script>
-        annoFunc(); // 호이스팅
+        // annoFunc(); // 호이스팅은 되는데 아직 함수가 아니라서 오류
         // functino(){}
         // 변수(매개변수)에 저장 or 자동실행
-        var annoFunc = function () { console.log("익명함수") };
+        var annoFunc = function () {
+            console.log("익명함수");
+        };
         annoFunc();
+        var annoFunc = function () {
+            console.log("재정의");
+        }
+        annoFunc();
+
+        // const annoFunc = function () {
+        //     console.log("안돼");
+        // }
+
+        const annoParam = function (title, content) {
+            console.log(title, content);
+            console.log(arguments);
+        }
+        annoParam("크리스마스", "나혼자...ㅠ 케빈과 함께");
     </script>
 
 </body>
