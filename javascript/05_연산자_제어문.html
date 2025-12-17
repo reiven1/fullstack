@@ -185,6 +185,7 @@
             // 두개의 password 입력창에 입력된 값이 일치하면 span#pwcheck에 일치합니다.
             // 불일치하면 span#pwcheck에 불입치합니다 를 출력하기
             let password = document.getElementsByName("password")[0].value;
+            // const values = document.querySelectorAll("input[type='password']");
             let pwcheck = document.querySelectorAll("[type=password]")[1].value;
             let str;
             password == pwcheck ? str = "span#pwcheck에 일치합니다" : str = "span#pwcheck에 불일치합니다"
@@ -193,7 +194,6 @@
             // 버전업
             // 출력되는 문구를 일치할때는 녹색, 불일치할때는 빨간색으로 설정하기
             password == pwcheck ? document.getElementById("pwcheck").style.color = "green" : document.getElementById("pwcheck").style.color = "red"
-
         }
     </script>
 
