@@ -271,15 +271,16 @@
         function inputCheck() {
             // check된 input값을 console로 출력하기
             const $checkedList = document.querySelectorAll("[name=lang]:checked");
-            $checkedList.forEach(element=>{
+            $checkedList.forEach(element => {
                 console.log(element.value);
             });
         }
 
-        function inputAllCheck(){
-            const $inputList=document.querySelectorAll("[name=lang]");
-            $inputList.forEach(element=>{
-                element.checked=ture;
+        function inputAllCheck() {
+            // checkbox 모두 check하기
+            const $checkboxList = document.querySelectorAll("[name=lang]");
+            $checkboxList.forEach(element => {
+                element.checked = true;
             });
         }
     </script>
