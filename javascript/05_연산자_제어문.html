@@ -223,14 +223,14 @@
     </p>
     <script>
         console.log("for문")
-        for (let i = 0; i < 10; i++) {
+        /*for (let i = 0; i < 10; i++) {
             console.log(i);
-        }
-        let j = 0;
+        }*/
         console.log("while문")
+        /*let j = 0;
         while (j < 10) {
             console.log(j++);
-        }
+        }*/
     </script>
     <h3>다수의 태그를 가져와 속성을 수정</h3>
     <div id="h-container">
@@ -245,9 +245,16 @@
         function changeColor() {
             const $h2List = document.querySelectorAll("#h-container>h2");
             // console.log($h2List);
-            for (let i = 0; i < 5; i++) {
-
-            }
+            /*for (let i = 0; i < 5; i++) {
+                // console.log($h2List[i]);
+                if (i % 2 == 0) {
+                    $h2List[i].style.color = "lime";
+                }
+                else {
+                    $h2List[i].style.color = "magenta";
+                }
+            }*/
+            $h2List.forEach(element => { elements.style.backgroundColor = "yellogreen" });
         }
     </script>
 
