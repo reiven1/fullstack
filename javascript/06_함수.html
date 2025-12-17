@@ -47,10 +47,23 @@
     </script>
     <h3>중복선언이 가능함</h3>
     <script>
-        function basicFunc(title){
+        basicFunc("test");
+        // function basicFunc(title) {
+        //     console.log(title);
+        // }
+        const basicFunc = function (title) {
             console.log(title);
-        }
+        } // 위에서 선언해놨기 때문에 오류 발생
     </script>
+    <div id="container">
+        <table></table>
+        <div id="input-container">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+        </div>
+    </div>
+    
 </body>
 
 </html>
