@@ -193,9 +193,29 @@
     </p>
     <button id="btn">this값 테스트</button>
     <script>
-        document.getElementById("btn").addEventListener("click", function(){
+        document.getElementById("btn").addEventListener("click",
+            // function(){
+            //     console.log(this);
+            // });  => 이벤트가 걸려있는 객체를 가르킴
+            () => {
+                console.log(this);
+            }); // => window 객체를 가르킴
+
+        const obj = {
+            name: "하승우",
+            thisTest: function () {
+                console.log(this);
+            },
+            arrowThis: () => {
+                console.log(this);
+            }
+        };
+        function testThis() {
             console.log(this);
-        });
+        }
+        obj.thisTest();
+        obj.arrowThis();
+        testThis();
     </script>
 
 </body>
