@@ -268,6 +268,7 @@
     <div>
         <button onclick="inputCheck()">체크확인</button>
         <button onclick="inputAllCheck()">전체선택</button>
+        <button onclick="checkedReverse()">반전</button>
     </div>
     <script>
         function inputCheck() {
@@ -283,6 +284,18 @@
             const $checkboxList = document.querySelectorAll("[name=lang]");
             $checkboxList.forEach(element => {
                 element.checked = true;
+            });
+        }
+
+        function checkedReverse() {
+            const $checkboxList = document.querySelectorAll("[name=lang]");
+            $checkboxList.forEach(element => {
+                if (element.checked) {
+                    element.checked = false;
+                }
+                else {
+                    element.checked = true;
+                }
             });
         }
     </script>
