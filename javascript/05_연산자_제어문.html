@@ -254,7 +254,22 @@
                     $h2List[i].style.color = "magenta";
                 }
             }*/
-            $h2List.forEach(element => { elements.style.backgroundColor = "yellogreen" });
+            $h2List.forEach(elements => { elements.style.backgroundColor = "yellowgreen"; });
+        }
+    </script>
+    <h3>check된 input태그 확인하기</h3>
+    <div id="check-container">
+        <input type="checkbox" name="lang" value="html">html
+        <input type="checkbox" name="lang" value="css">css
+        <input type="checkbox" name="lang" value="javascript">javascript
+        <input type="checkbox" name="lang" value="jquery">jquery
+        <input type="checkbox" name="lang" value="react.js">react.js
+        <button onclick="inputCheck()">체크확인</button>
+    </div>
+    <script>
+        function inputCheck() {
+            // check된 input값을 console로 출력하기
+            const $checkboxList = querySelectorAll("input[type=checkbox]");
         }
     </script>
 
