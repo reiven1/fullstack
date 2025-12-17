@@ -56,13 +56,13 @@
         } // 위에서 선언해놨기 때문에 오류 발생
     </script>
     <div id="container">
-        <table></table>
         <div id="input-container">
             <input type="text">
             <input type="text">
             <input type="text">
             <button onclick="saveData()">저장</button>
         </div>
+        <table></table>
     </div>
     <script>
         function saveData() {
@@ -71,11 +71,19 @@
                 result += addTd(e.value);
             });
             result += "</tr>";
-            document.querySelector("#container>table").innerHTML += result;
+            document.querySelector("#container>table").innerHTML += result; // 누적, 덮어쓰기 하려면 innerTHML = result 로 변경
         }
         function addTd(value) {
             return "<td>" + value + "</td>";
         }
+    </script>
+    <h3>익명함수 이용하기</h3>
+    <script>
+        annoFunc(); // 호이스팅
+        // functino(){}
+        // 변수(매개변수)에 저장 or 자동실행
+        var annoFunc = function () { console.log("익명함수") };
+        annoFunc();
     </script>
 
 </body>
