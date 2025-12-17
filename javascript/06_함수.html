@@ -61,9 +61,23 @@
             <input type="text">
             <input type="text">
             <input type="text">
+            <button onclick="saveData()">저장</button>
         </div>
     </div>
-    
+    <script>
+        function saveData() {
+
+        }
+        function addTr(name, age, gender) {
+            let tr = "<tr>";
+            tr += "<td>" + name + "</td>";
+            tr += "<td>" + age + "</td>";
+            tr += "<td>" + gender + "</td>";
+            tr += "</tr>";
+            return tr
+        }
+    </script>
+
 </body>
 
 </html>
