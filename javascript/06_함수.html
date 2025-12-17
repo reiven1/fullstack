@@ -179,7 +179,7 @@
         const arguTest = (data) => {
             console.log(arguments);
         }
-        const arguTest2 = (a,...arg) => {
+        const arguTest2 = (a, ...arg) => {
             console.log(a);
             console.log(arg);
         } // 화살표 함수에서 arguments 객체처럼 쓰려면 ...arg
@@ -188,8 +188,15 @@
     </script>
     <h3>함수내부 this 예약어 확인하기</h3>
     <p>
-        
+        function(){} : 함수를 소유한 객체, 호출한 객체를 this에 저장 -> this값을 바인딩처리할 수 있음<br>
+        ()=>{} : this에 window객체를 저장, 바인딩 못함
     </p>
+    <button id="btn">this값 테스트</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            console.log(this);
+        });
+    </script>
 
 </body>
 
