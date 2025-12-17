@@ -146,14 +146,25 @@
             console.log("화살표 함수");
         }
         arrowFunc();
+
         const arrowParam = (name, age) => {
             console.log(name, age);
         }
         arrowParam("하승우", 24);
+
         const arrowOneParam = title => {
             console.log(title);
         }
         arrowOneParam("title");
+
+        // const arrowReturn = () => "반환값";
+        const arrowReturn = (su) => su > 19 ? "성인" : "미성년";
+        // (su) => { return su > 19 ? "성인" : "미성년" }
+        console.log(arrowReturn(20));
+        console.log(arrowReturn(19));
+
+        const arrowReturnFunc = (title) => () => title + "호호호호";
+        console.log(arrowReturnFunc());
     </script>
 
 </body>
