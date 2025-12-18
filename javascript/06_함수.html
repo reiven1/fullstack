@@ -252,11 +252,22 @@
         const closureTest = () => {
             let num = 10;
             return () => {
-                console.log(num);
+                console.log(num--);
             }
         }
         const test3 = closureTest();
-        test3();
+        test3(); // 10
+        test3(); // 9
+        const test4 = closureTest(); // test3이랑 다른 객체
+        test4(); // 10
+
+        const printMsg = (name) => {
+            return (msg) => {
+                console.log(name + " : " + msg);
+            }
+        }
+        const bsMsg = printMsg("BS");
+        const mjMsg = printMsg("MJ");
     </script>
 
 </body>
