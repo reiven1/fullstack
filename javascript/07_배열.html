@@ -111,18 +111,20 @@
     </script>
     <!-- 입력태그에 입력값을 추가버튼을 누르면 배열에 입력값을 추가하고, 삭제버튼을 누르면 배열에 있는 마지막 값을 삭제, 배열의 내용은 div#arr태그에 출력 -->
     <div>
-        <input type="text" name="inputValue">
+        <input type="text" id="inputValue">
         <button onclick="addValue()">추가</button>
         <button onclick="deleteValue()">삭제</button>
     </div>
     <div id="arr"></div>
     <script>
-        const addValue = (() => () => {
-            let value = document.getElementsByName("inputValue")[0].value;
-            let input = document.getElementById("arr").innerText;
+        const addValue = () => {
+            let value = document.getElementById("inputValue").value;
+            let input = document.getElementById("arr").value;
             const arr = [];
-            input += arr.pop(value);
-        })();
+            arr.push(value);
+            console.log(arr);
+            input += arr;
+        }
     </script>
 
 </body>
