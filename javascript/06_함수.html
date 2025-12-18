@@ -326,11 +326,17 @@
 
     <script>
         const addFile = (() => {
-            let count = 0;
+            let max = 5;
+            let count = 1;
             return () => {
-                let inputStr = '<div id="file-input"><input type="file" name="upfile"></div>'
-                document.querySelector("#file-container>fieldset").innerHTML += inputStr
-                count++;
+                if (count<5) {
+                    alert("5개까지만 생성 가능");
+                }
+                else {
+                    let inputStr = '<div id="file-input"><input type="file" name="upfile"></div>';
+                    document.querySelector("#file-container>fieldset").innerHTML += inputStr;
+                    count++;
+                }
             }
         })();
     </script>
