@@ -225,7 +225,24 @@
     </script>
 
     <h3>함수를 반환값으로 반환하기</h3>
-    
+    <p>
+        function(){ <br>
+        <!-- return 값; -->
+        return function(){}; <br>
+        }
+    </p>
+    <script>
+        const returnFunc = () => {
+            const innerFunc = (msg) => {
+                console.log(msg);
+            }
+            return innerFunc;
+        }
+
+        const returnValue = returnFunc();
+        console.log(returnValue); // returnFunc() 안에 innerFunc()가 반환
+        returnValue();
+    </script>
 
 </body>
 
