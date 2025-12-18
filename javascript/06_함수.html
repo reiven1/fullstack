@@ -213,7 +213,7 @@
         function testThis() {
             console.log(this);
         }
-        const testThis2=()=>{
+        const testThis2 = () => {
             console.log(this);
         }
         obj.thisTest();
@@ -223,6 +223,9 @@
         testThis.call(obj); // 익명함수는 연결해서 사용 가능
         testThis2.call(obj); // 화살표 함수에 대한 this값은 변경 불가능 => obj를 call() 해도 window객체
     </script>
+
+    <h3>함수를 반환값으로 반환하기</h3>
+    
 
 </body>
 
