@@ -246,8 +246,18 @@
     <h3>closure 이용하기</h3>
     <p>
         함수 내부에 선언된 변수, 매개변수의 생명주기에 따라 호출하고 return 될 때 까지 이용이 가능 <br>
-        
+        반환되는 함수에서 함수에서 선언된 변수나 매개변수를 이용하면 그 변수, 매개변수를 유지하는 것 -> closure
     </p>
+    <script>
+        const closureTest = () => {
+            let num = 10;
+            return () => {
+                console.log(num);
+            }
+        }
+        const test3 = closureTest();
+        test3();
+    </script>
 
 </body>
 
