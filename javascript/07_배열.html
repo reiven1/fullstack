@@ -45,7 +45,21 @@
         // 반복문으로 순회
         for (let i = 0; i < array.length; i++) {
             console.log(array[i]);
+            if (typeof array[i] == 'function') { // i번째 index 값의 배열이 함수면 함수 호출
+                // array[i]();
+            }
         }
+
+        // for of 구문을 이용해서 순회하기
+        for (const v of array) {
+            console.log(v);
+        }
+
+        // 배열 인덱스 범위를 초과해서 접근하기
+        console.log(array.length);
+        console.log(array[8]); // undefined
+        array[10] = "햄부기";
+        console.log(array); // 중간에 빈 값은 empty
     </script>
 </body>
 
