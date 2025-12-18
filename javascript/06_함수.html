@@ -268,6 +268,25 @@
         }
         const bsMsg = printMsg("BS");
         const mjMsg = printMsg("MJ");
+        bsMsg("안녕");
+        mjMsg("헬로");
+
+        // 곱셈을 처리하는 기능
+        const multi = (su) => {
+            return (su1) => {
+                return su * su1;
+            }
+        }
+        const four = multi(4);
+        console.log(four(3));
+    </script>
+    <h3>클릭한 횟수 기록</h3>
+    <h4 id="countTarget">0</h4>
+    <button onclick="count()">클릭</button>
+    <script>
+        const count=()=>{
+            
+        }
     </script>
 
 </body>
