@@ -239,10 +239,15 @@
             return innerFunc;
         }
 
-        const returnValue = returnFunc();
-        console.log(returnValue); // returnFunc() 안에 innerFunc()가 반환
-        returnValue();
+        const returnValue = returnFunc(); // returnFunc() 안에 innerFunc() 객체가 저장
+        // console.log(returnValue); 
+        returnValue("우와 신기방기"); // return이 function이니까 가능, 즉 innerFunc() 호출
     </script>
+    <h3>closure 이용하기</h3>
+    <p>
+        함수 내부에 선언된 변수, 매개변수의 생명주기에 따라 호출하고 return 될 때 까지 이용이 가능 <br>
+        
+    </p>
 
 </body>
 
