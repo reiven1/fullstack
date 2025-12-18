@@ -71,7 +71,21 @@
         food.push("밥버거");
         console.log(food);
     </script>
-    <h4>pop() : 배열 데이터를 삭제하는 함수</h4>
+    <h4>pop() : 배열 데이터를 삭제하는 함수 -> 마지막 인덱스를 잘라내고 반환</h4>
+    <script>
+        console.log(food);
+        let result = food.pop(); // 삭제한 값을 result에 저장
+        food.pop();
+        console.log(food);
+        console.log(result);
+    </script>
+    <h4>unshift() : 배열의 첫번째 인덱스에 값을 추가</h4>
+    <script>
+        console.log(food);
+        food.unshift("라면");
+        food.unshift("치킨");
+        console.log(food);
+    </script>
 </body>
 
 </html>
