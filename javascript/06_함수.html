@@ -323,10 +323,16 @@
             </div>
         </fieldset>
     </div>
+
     <script>
-        const addFile = () => {
-            document.getElementById("file-container").innerHTML+=""
-        }
+        const addFile = (() => {
+            let count = 0;
+            return () => {
+                let inputStr = '<div id="file-input"><input type="file" name="upfile"></div>'
+                document.querySelector("#file-container>fieldset").innerHTML += inputStr
+                count++;
+            }
+        })();
     </script>
 
 </body>
