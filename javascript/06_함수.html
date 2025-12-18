@@ -284,10 +284,19 @@
     <h4 id="countTarget">0</h4>
     <button onclick="count()">클릭</button>
     <script>
-        let val = document.getElementById("countTarget").innerText
+        // const count = () => {
+        //     let val = document.getElementById("countTarget").innerText
+        //     Number(val) += 1;
+        // }
+
+        // const tempCount = () => {
         const count = () => {
-            Number(val) += 1;
+            let count = 0;
+            return () => {
+                document.getElementById("countTarget").innerText = ++count;
+            }
         }
+        // const count = tempCount();
     </script>
 
 </body>
