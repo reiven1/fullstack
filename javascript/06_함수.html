@@ -284,16 +284,9 @@
     <h4 id="countTarget">0</h4>
     <button onclick="count()">클릭</button>
     <script>
-        // let countNum = 0;
-        // const count = () => {
-        //     document.getElementById("countTarget").innerText = ++countNum;
-        // }
+        let val = document.getElementById("countTarget").innerText
         const count = () => {
-            let count = 0;
-            let val = document.getElementById("countTarget").innerText
-            return (count) => {
-                return val = ++count;
-            }
+            Number(val) += 1;
         }
     </script>
 
