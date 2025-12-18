@@ -117,9 +117,12 @@
     </div>
     <div id="arr"></div>
     <script>
-        const addValue = () => {
+        const addValue = (() => () => {
             let value = document.getElementsByName("inputValue")[0].value;
-        }
+            let input = document.getElementById("arr").innerText;
+            const arr = [];
+            input += arr.pop(value);
+        })();
     </script>
 
 </body>
