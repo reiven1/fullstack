@@ -325,19 +325,29 @@
     </div>
 
     <script>
-        const addFile = (() => {
-            let inputClick = 0;
-            return () => {
-                if (inputClick==4) {
-                    alert("첨부파일은 5개까지 가능");
-                }
-                else {
-                    inputClick++;
-                    let inputStr = '<input type="file" name="upfile">';
-                    document.getElementById("file-input").innerHTML += inputStr;
-                }
+        const addFile = ((inputClick = 0) => () => {
+            if (inputClick++ < 5) {
+                let inputStr = '<input type="file" name="upfile">';
+                document.getElementById("file-input").innerHTML += inputStr;
             }
-        })();
+            else {
+                alert("첨부파일은 5개까지 가능");
+            }
+
+        })(1);
+        // 둘 다 같은방법
+        // const addFile = (() => {
+        //     let inputClick = 1;
+        //     return () => {
+        //         if (inputClick++<5) {
+        //             let inputStr = '<input type="file" name="upfile">';
+        //             document.getElementById("file-input").innerHTML += inputStr;
+        //         }
+        //         else {
+        //             alert("첨부파일은 5개까지 가능");
+        //         }
+        //     }
+        // })();
     </script>
 
 </body>
