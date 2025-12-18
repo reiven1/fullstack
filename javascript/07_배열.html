@@ -117,22 +117,25 @@
     </div>
     <div id="arr"></div>
     <script>
-        const dataArray = [];
-        let value = document.getElementById("inputValue").value;
-        const addValue = () => {
-            dataArray.push(value);
-            printArray();
-        }
-        const deleteValue = () => {
-            dataArray.pop();
-            printArray();
-        }
-        const printArray = () => {
-            const $div = document.getElementById("arr").innerHTML;
-            for (const d of dataArray) {
-                $div += "<h4>" + d + "</h4>";
-            }
-        }
+        (() => {
+            const dataArray = [];
+            const addValue = () => {
+                let value = document.getElementById("inputValue").value;
+                dataArray.push(value);
+                printArray();
+            };
+            const deleteValue = () => {
+                dataArray.pop();
+                printArray();
+            };
+            const printArray = () => {
+                const $div = document.getElementById("arr");
+                $div.innerHTML = "";
+                for (const d of dataArray) {
+                    $div.innerHTML += "<h4>" + d + "</h4>";
+                }
+            };
+        })();
     </script>
 
 </body>
