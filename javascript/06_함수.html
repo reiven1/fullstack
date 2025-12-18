@@ -326,16 +326,15 @@
 
     <script>
         const addFile = (() => {
-            let max = 5;
-            let count = 1;
+            let inputClick = 0;
             return () => {
-                if (count<5) {
-                    alert("5개까지만 생성 가능");
+                if (inputClick==4) {
+                    alert("첨부파일은 5개까지 가능");
                 }
                 else {
-                    let inputStr = '<div id="file-input"><input type="file" name="upfile"></div>';
-                    document.querySelector("#file-container>fieldset").innerHTML += inputStr;
-                    count++;
+                    inputClick++;
+                    let inputStr = '<input type="file" name="upfile">';
+                    document.getElementById("file-input").innerHTML += inputStr;
                 }
             }
         })();
