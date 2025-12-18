@@ -284,20 +284,45 @@
     <h4 id="countTarget">0</h4>
     <button onclick="count()">클릭</button>
     <script>
+        //  countValue 가 전역변수라서 console에서 접근가능
+        // let countValue = 0;
         // const count = () => {
         //     let val = document.getElementById("countTarget").innerText
-        //     Number(val) += 1;
+        //     Number(val) = ++countValue;
         // }
 
+        // closure count 값이 console에서 접근 불가능
         // const tempCount = () => {
-        const count = () => {
+        //     let count = 0;
+        //     return () => {
+        //         document.getElementById("countTarget").innerText = ++count;
+        //     }
+        // }
+        // const count = tempCount();
+
+        // 자동실행 함수
+        const count = (() => {
             let count = 0;
             return () => {
                 document.getElementById("countTarget").innerText = ++count;
             }
-        }
-        // const count = tempCount();
+        })();
     </script>
+    <h3>첨부파일 등록 기능</h3>
+    <div id="file-container">
+        <fieldset>
+            <legend>
+                첨부파일
+                <span style="color:red">
+                    첨부파일은 5개까지 가능
+                </span>
+            </legend>
+            <button>추가</button>
+            <div id="file-input">
+                <input type="file" name="upfile">
+            </div>
+        </fieldset>
+    </div>
 
 </body>
 
