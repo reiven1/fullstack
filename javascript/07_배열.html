@@ -255,8 +255,11 @@
     <script>
         console.log(animal);
         // animal.forEach(e => document.getElementById("animal-container2").innerHTML += e);
-        animal.map(e => "<p>" + e + "</p>").forEach(e => document.getElementById("animal-container2").innerHTML += e);
+        // animal.map(e => "<p>" + e + "</p>").forEach(e => document.getElementById("animal-container2").innerHTML += e);
+        // animal.map(e => e.length).forEach(e => document.getElementById("animal-container2").innerHTML += e);
+        animal.map(e => "<p>" + e + ", 글자수 : " + e.length + "</p>").forEach(e => document.getElementById("animal-container2").innerHTML += e);
     </script>
+    <h4>reduce((prev, next)=>{ return 값; }) : 값을 누적, 이전 계산값과 비교 ...</h4>
 </body>
 
 </html>
