@@ -232,9 +232,18 @@
         </ul>
     </div>
     <script>
-        const selectAll = () => {
+        const selectAll = (() => () => {
+            $ul = document.querySelector("#animal-container>ul");
+            $ul.innerHTML = '';
+            return animal.forEach(e => {
+                $ul.innerHTML += "<li>" + e + "</li>";
+            })
+        })
+        const selectLength = () => {
+            $ul.innerHTML = '';
             animal.forEach(e => {
-                document.querySelector("#animal-container>ul").innerHTML += "<li>" + e + "</li>";
+                if (e.length >= 4)
+                    $ul.innerHTML += "<li>" + e + "</li>";
             })
         }
     </script>
