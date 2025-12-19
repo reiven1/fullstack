@@ -281,6 +281,24 @@
         }, [])
         console.log(result)
     </script>
+    <h4>sort((p,n)=>{ return 1||-1||0}) : 배열값을 정렬하는 함수</h4>
+    <script>
+        const height = [180.5, 177.5, 150.3, 167.2, 150.7, 178.4, 165.2];
+        console.log(height);
+        // 오름차순 정렬
+        height.sort((p, n) => p - n);
+        height.forEach(e => console.log(e))
+        // 내림차순 정렬
+        height.sort((p, n) => n - p);
+        height.forEach(e => console.log(e))
+        console.log("하승우" > "김두한");
+        result = animal.sort((p, n) => {
+            if (p > n) return 1;
+            else if (p < n) return -1;
+            else return 0;
+        })
+        console.log(result);
+    </script>
 </body>
 
 </html>
