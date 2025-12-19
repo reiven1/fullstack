@@ -271,9 +271,13 @@
             return p < n ? p : n;
         })
         console.log(result);
-        animal.reduce((p,n)=>{
-            
-        },"<ul>")
+        result = animal.reduce((p, n) => {
+            return p + "<li>" + n + "</li>"
+        }, "<ul>") + "</ul>"
+        console.log(result);
+        snack.reduce((p, n) => {
+            p.push(n);
+        }, [])
     </script>
 </body>
 
