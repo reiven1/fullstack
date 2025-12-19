@@ -18,7 +18,7 @@
             "hobby": ["코딩", "게임", "운동"],
             toString: function () {
                 console.log(this);
-                return this.name + " " + this.age + " " + this.hobby;
+                return this.name + ", " + this.age + ", " + this.hobby;
             }
         }
         console.log(obj);
@@ -46,12 +46,28 @@
             this.age = age;
             this.phone = phone;
             this.toString = function () {
-                return this.name + " " + this.age + " " + this.phone;
+                return this.name + ", " + this.age + ", " + this.phone;
             }
         }
         const p2 = new Person("하승우", 24, "010-4977-6038");
         console.log(p2);
         console.log(p2.toString());
+    </script>
+    <h3>객체 이용하기</h3>
+    <script>
+        console.log(obj);
+        // 속성에 접군하기
+        // . or [] 이용
+        console.log(obj.name);
+        console.log(obj["name"]); // key값 이용하기
+
+        // 반복문을 이용해서 속성에 접근하기
+        // for in 문을 이용
+        for (key in obj) {
+            console.log(key);
+            // console.log(obj.key); 
+            console.log(obj[key]);
+        }
     </script>
 </body>
 
