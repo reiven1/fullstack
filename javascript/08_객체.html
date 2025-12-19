@@ -86,7 +86,7 @@
         console.log(obj);
         obj['age'] = 24;
         console.log(obj);
-        
+
         delete obj.age;
         console.log(obj);
         delete obj['data'];
@@ -94,10 +94,22 @@
     </script>
     <h3>객체 변경 금지하기</h3>
     <p>
-        Object.freeze() : 추가, 수정, 삭제 불가능
-        Object.seal() : 
-        Object.preventExension() : 
+        Object.freeze() : 추가, 수정, 삭제 불가능 <br>
+        Object.seal() : 추가, 삭제 불가능, 수정 가능 <br>
+        Object.preventExension() : 삭제, 수정 가능
     </p>
+    <script>
+        const freezeObj = { name: "freeze", content: "내용" };
+        Object.freeze(freezeObj);
+        freezeObj['data'] = 200;
+        console.log(freezeObj);
+        delete freezeObj.name;
+        console.log(freezeObj);
+        freezeObj['content'] = "오늘 수업 여기까지!";
+        console.log(freezeObj);
+
+        const sealObj = {}
+    </script>
 </body>
 
 </html>
