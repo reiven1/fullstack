@@ -233,7 +233,9 @@
     </div>
     <script>
         const selectAll = () => {
-            animal.forEach(e => document.querySelector("#animal-container>ul")).innerHTML += "<li>" + e + "</li>";
+            animal.forEach(e => {
+                document.querySelector("#animal-container>ul").innerHTML += "<li>" + e + "</li>";
+            })
         }
     </script>
 </body>
