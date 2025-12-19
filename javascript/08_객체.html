@@ -65,9 +65,16 @@
         // for in 문을 이용
         for (key in obj) {
             console.log(key);
-            // console.log(obj.key); 
+            // console.log(obj.key); // .key 를 하게되면 key 인 속성을 찾게됨
             console.log(obj[key]);
         }
+
+        // 자바스크립트 내장객체인 Object가 제공하는 함수를 이용해서 객체 탐색하기
+        // Object.keys() / Object.values()
+        // key/value 를 배열로 반환
+        Object.keys(obj).forEach(e => console.log(e));
+        Object.values(obj).forEach(e => console.log(e));
+        Object.values(obj).filter(e => typeof e == 'function').forEach(e => console.log(e));
     </script>
 </body>
 
