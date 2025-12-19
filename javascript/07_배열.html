@@ -207,6 +207,14 @@
         console.log(result);
     </script>
 
+    <h4>filter() : 매개변수로 전달된 함수의 return 값이 true인 요소들의 배열을 반환하는 함수 -> 필요한 값만으로 새로운 배열을 만들 때 사용</h4>
+    <script>
+        const fruit = ["사과", "자몽", "유자", "귤", "바나나", "딸기", "망고스틴", "오렌지", "배", "샤인머스켓"];
+        console.log(fruit);
+        result = fruit.filter(e => e.length == 2); // 새로운 배열로 반환
+        console.log(result);
+    </script>
+
 </body>
 
 </html>
