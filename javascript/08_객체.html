@@ -76,6 +76,28 @@
         Object.values(obj).forEach(e => console.log(e));
         Object.values(obj).filter(e => typeof e == 'function').forEach(e => console.log(e));
     </script>
+    <h3>객체에 새로운 속성을 추가, 수정, 삭제</h3>
+    <script>
+        obj = {};
+        console.log(obj);
+        obj.data = 200;
+        console.log(obj);
+        obj.data = 100;
+        console.log(obj);
+        obj['age'] = 24;
+        console.log(obj);
+        
+        delete obj.age;
+        console.log(obj);
+        delete obj['data'];
+        console.log(obj);
+    </script>
+    <h3>객체 변경 금지하기</h3>
+    <p>
+        Object.freeze() : 추가, 수정, 삭제 불가능
+        Object.seal() : 
+        Object.preventExension() : 
+    </p>
 </body>
 
 </html>
