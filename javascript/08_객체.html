@@ -96,7 +96,7 @@
     <p>
         Object.freeze() : 추가, 수정, 삭제 불가능 <br>
         Object.seal() : 추가, 삭제 불가능, 수정 가능 <br>
-        Object.preventExension() : 삭제, 수정 가능
+        Object.preventExtensions() : 삭제, 수정 가능
     </p>
     <script>
         const freezeObj = { name: "freeze", content: "내용" };
@@ -108,7 +108,23 @@
         freezeObj['content'] = "오늘 수업 여기까지!";
         console.log(freezeObj);
 
-        const sealObj = {}
+        const sealObj = { name: "seal", content: "이거까지" };
+        Object.seal(sealObj);
+        sealObj['test'] = "test";
+        console.log(sealObj);
+        sealObj['content'] = "오늘 수업 여기까지!";
+        console.log(sealObj);
+        delete sealObj.content;
+        console.log(sealObj);
+
+        const preventObj = { name: "prevent", content: "123" };
+        Object.preventExtensions(preventObj);
+        preventObj['data'] = 200;
+        console.log(preventObj);
+        preventObj['content'] = 200;
+        console.log(preventObj);
+        delete preventObj['content'];
+        console.log(preventObj);
     </script>
 </body>
 
