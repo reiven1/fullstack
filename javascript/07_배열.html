@@ -225,9 +225,17 @@
     <script>
         const animal = ["고양이", "개", "하마", "코끼리", "바다사자", "곰", "흰수염고래", "여우", "고릴라", "늑대"];
     </script>
-    <button>전체 조회하기</button>
-    <button>4글자 이상인 동물조회</button>
-
+    <button onclick="selectAll()">전체 조회하기</button>
+    <button onclick="selectLength()">4글자 이상인 동물조회</button>
+    <div id="animal-container">
+        <ul>
+        </ul>
+    </div>
+    <script>
+        const selectAll = () => {
+            animal.forEach(e => document.querySelector("#animal-container>ul")).innerHTML += "<li>" + e + "</li>";
+        }
+    </script>
 </body>
 
 </html>
