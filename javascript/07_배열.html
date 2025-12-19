@@ -237,14 +237,17 @@
             $ul.innerHTML = '';
             animal.forEach(e => {
                 $ul.innerHTML += "<li>" + e + "</li>";
-            })
+            });
         }
         const selectLength = () => {
             $ul.innerHTML = '';
-            animal.forEach(e => {
-                if (e.length >= 4)
-                    $ul.innerHTML += "<li>" + e + "</li>";
-            })
+            // animal.forEach(e => {
+            //     if (e.length >= 4)
+            //         $ul.innerHTML += "<li>" + e + "</li>";
+            // })
+            animal.filter(e => e.length >= 4).forEach(e => {
+                $ul.innerHTML += "<li>" + e + "</li>";
+            });
         }
     </script>
 </body>
