@@ -275,9 +275,11 @@
             return p + "<li>" + n + "</li>"
         }, "<ul>") + "</ul>"
         console.log(result);
-        snack.reduce((p, n) => {
+        result = snack.reduce((p, n) => {
             p.push(n);
+            return p;
         }, [])
+        console.log(result)
     </script>
 </body>
 
