@@ -188,7 +188,9 @@
     <script>
         function myFind(array, flagFunc) {
             for (let i = 0; i < array.length; i++) {
-
+                if (flagFunc(array[i], i, array)) {
+                    return array[i];
+                }
             }
         }
         console.log(snack);
@@ -196,6 +198,11 @@
         result = snack.find((e, i, ori) => {
             // console.log(e, i, ori);
             return e.length > 5;
+        });
+
+        result = myFind(snack, (e, i, ori) => {
+            // console.log(e, i, ori);
+            return e.length >= 5;
         });
         console.log(result);
     </script>
