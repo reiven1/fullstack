@@ -39,6 +39,20 @@
         console.log(p);
         console.log(p1);
     </script>
+    <h3>생성자 함수를 이용</h3>
+    <script>
+        function Person(name, age, phone) {
+            this.name = name;
+            this.age = age;
+            this.phone = phone;
+            this.toString = function () {
+                return this.name + " " + this.age + " " + this.phone;
+            }
+        }
+        const p2 = new Person("하승우", 24, "010-4977-6038");
+        console.log(p2);
+        console.log(p2.toString());
+    </script>
 </body>
 
 </html>
