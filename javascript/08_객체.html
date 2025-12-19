@@ -12,9 +12,29 @@
     <script>
         // 리터럴로 생성
         let obj = {};
-        obj={
-            name:"하승우"
+        obj = {
+            name: "하승우",
+            age: 24,
+            "hobby": ["코딩", "게임", "운동"],
+            toString: function () {
+                console.log(this);
+                return this.name + " " + this.age + " " + this.hobby;
+            }
         }
+        console.log(obj);
+        console.log(obj.toString());
+    </script>
+    <h3>객체를 반환하는 함수</h3>
+    <script>
+        function createPerson(name, age, address) {
+            const p = {
+                "name": name,
+                "age": age,
+                "address": address
+            }
+            return p;
+        }
+        const p = createPerson("하승우", 24, "경남 남해");
     </script>
 </body>
 
