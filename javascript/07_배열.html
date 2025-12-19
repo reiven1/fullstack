@@ -250,6 +250,13 @@
             });
         }
     </script>
+    <h4>map((v,i,ori)=>{ return 값; }) : 배열의 데이터를 가지고 새로운 형태의 배열을 만들어주는 함수</h4>
+    <div id="animal-container2"></div>
+    <script>
+        console.log(animal);
+        // animal.forEach(e => document.getElementById("animal-container2").innerHTML += e);
+        animal.map(e => "<p>" + e + "</p>").forEach(e => document.getElementById("animal-container2").innerHTML += e);
+    </script>
 </body>
 
 </html>
