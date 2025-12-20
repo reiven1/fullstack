@@ -10,11 +10,28 @@
 <body>
     <h2>기본 제공하는 함수들</h2>
     <p>
-        Object, String, Array, Number, Date
+        Object, String, Array, Number, Date ...
     </p>
     <script>
         let obj = { name: "하승우", age: 19, gender: "남자", hobby: ["게임", "운동", "코딩"] };
-        console.log(obj.hasOwnProperty(age));
+        console.log(obj.hasOwnProperty("height"));
+        console.log(obj.toString());
+        console.log(obj.valueOf());
+    </script>
+    <h3>String 객체</h3>
+    <script>
+        // 자바에서 제공하는 API
+        let str = "ALdjfALJlkj";
+        result = str.toLowerCase();
+        console.log(result);
+        result = str.toUpperCase();
+        console.log(result);
+
+        str = "banana";
+        result = str.replace("a", "i"); // 처음 하나만 바꿈
+        console.log(result);
+        result = str.replaceAll("a", "i"); 
+        console.log(result);
     </script>
 </body>
 
