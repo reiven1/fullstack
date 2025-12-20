@@ -74,9 +74,14 @@
     <script>
         const time = document.querySelector("#time");
         const timeId = setInterval(() => {
+            console.log(time.innerText)
+            if (time.innerText < 0){
+                clearInterval(timeId);
+                
+            }
             time.innerText -= 1;
         }, 1000);
-     
+
     </script>
 
     <script>
