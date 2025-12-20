@@ -58,7 +58,14 @@
         console.log(Math.floor(Math.random() * 10)); // 0~10 난수
     </script>
     <h3>Date 객체</h3>
+    <input type="datetime-local" id="date">
+    <button onclick="checkDate()">날짜확인</button>
     <script>
+        function checkDate() {
+            const d = document.getElementById("date").value;
+            console.log(d);
+            console.log(new Date(d));
+        }
         let today = new Date();
         console.log(today);
         console.log(today.getFullYear());
