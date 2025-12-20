@@ -216,8 +216,8 @@
         }
 
         const searchData = () => {
-            const value = document.querySelector("#category>option:checked").value;
-            const keyword = document.querySelector("")
+            const $option = document.querySelector("#category>option:checked").value;
+            const $input = document.getElementsByName("keyword")[0].value;
             let table = "<table>";
             table += createHeader(['번호', '이름', '나이', '아이템', '주소']);
             students.forEach(s => {
