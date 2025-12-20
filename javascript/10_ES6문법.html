@@ -136,23 +136,24 @@
                 this.y = y;
             }
             // 속성 선언
-            name = "하승우";
+            #name = "하승우";
             score = [100, 99, 98];
             // 메소드 선언
             toString() {
-                return `${this.x} ${this.y} ${this.name} ${this.score}`;
+                return `${this.x} ${this.y} ${this.#name} ${this.score}`;
             }
             move(x, y) {
                 this.x = x;
                 this.y = y;
             }
-            getX() {
-                return this.x;
-            }
         }
         const s = new Shape(10, 10);
+        console.log(s);
+        console.log(s.toString());
         s.move(20, 20);
-        s.getX();
+        console.log(s);
+        // s.name = "전재우늦잠";
+        console.log(s.name);
     </script>
 </body>
 
