@@ -30,11 +30,19 @@
     <div id="container">
         <h3>오늘은 토요일</h3>
     </div>
+    <button onclick="stopTimeout()">중단</button>
     <script>
         // 일정시간 후 특정 동작을 하는 함수
-        setTimeout(() => {
-            document.querySelectorAll("#container>*").forEach(e => e.style.color = 'red');
+        const timeoutId = setTimeout(() => {
+            document.querySelectorAll("#container>*").forEach(e => {
+                e.style.color = 'red';
+                const today = new Date();
+                e.innerHTML = `${today.toTimeString().substring(0, today.toTimeString().indexOf(" "))}`
+            });
         }, 2000);
+        function stopTimeout() {
+            clearTimeout(timeoutId);
+        }
     </script>
 </body>
 
