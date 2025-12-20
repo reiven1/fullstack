@@ -58,7 +58,27 @@
 
     <div id="test">
         <h3>1. js에서 태그정보를 가져올 때 사용하는 태그는? <span id="time">10</span></h3>
+        <div>
+            <label for=""><input type="radio" name="1" value="window">window</label>
+        </div>
+        <div>
+            <label for=""><input type="radio" name="2" value="location">location</label>
+        </div>
+        <div>
+            <label for=""><input type="radio" name="3" value="document">document</label>
+        </div>
+        <div>
+            <label for=""><input type="radio" name="4" value="navigator">navigator</label>
+        </div>
     </div>
+    <script>
+        const timeOver = setInterval(() => {
+            const time = document.querySelector("#time").innerText;
+            time -= 1;
+            if (time == 0)
+                alert("시간초과");
+        }, 1000)
+    </script>
 </body>
 
 </html>
