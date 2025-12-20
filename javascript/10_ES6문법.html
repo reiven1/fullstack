@@ -9,7 +9,6 @@
 
 <body>
     <h3>문자열 템플릿</h3>
-    <div id="asdf"></div>
     <script>
         // "문자열"+변수명+"문자열...";
         // `문자열${변수명}문자열...`;
@@ -22,7 +21,22 @@
         const su1 = 20;
         result = `<p>수 ${su} ${su1}의 합은 : ${su} + ${su1}</p>`;
         console.log(result);
-        document.getElementById("asdf").innerHTML = result;
+
+        const obj = { name: "하승우", age: 24 };
+        const array = [1, 2, 3, 4, 5];
+        result = `객체 이름 ${obj.name} 나이 ${obj['age']} 배열정보 : ${array[0] + array[2]} ${array.find(e => e > 3)}`;
+        console.log(result);
+    </script>
+    <h3>null, undefined 형을 처리하는 연산자</h3>
+    <p>
+        ?? : null, undefined 형에 대해 대체값을 지정하는 연산자 <br>
+        ?. : 객체의 속성에 접근했을 때 그 객체가 undefined 인 경우 Error 대신에 undefined 를 반환
+    </p>
+    <script>
+        let val = "곧 있으면 점심시간";
+        let val2 = null;
+        console.log(val ?? "null이나 undefined면 이거 출력");
+        console.log(val2 ?? "null이나 undefined면 이거 출력");
     </script>
 </body>
 
