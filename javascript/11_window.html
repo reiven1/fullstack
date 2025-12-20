@@ -34,6 +34,7 @@
 
     </div>
     <button onclick="stopTimeout()">중단</button>
+    <button onclick="stopInterval();">interval중단</button>
     <script>
         // 일정시간 후 특정 동작을 하는 함수
         const timeoutId = setTimeout(() => {
@@ -50,7 +51,14 @@
             const today = new Date();
             document.querySelector("#container2").innerHTML = `${today.toTimeString().substring(0, today.toTimeString().indexOf(" "))}`
         }, 1000)
+        function stopInterval() {
+            clearInterval(timeInterval);
+        }
     </script>
+
+    <div id="test">
+        <h3>1. js에서 태그정보를 가져올 때 사용하는 태그는? <span id="time">10</span></h3>
+    </div>
 </body>
 
 </html>
