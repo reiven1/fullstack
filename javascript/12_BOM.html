@@ -19,8 +19,13 @@
         Object.entries(location).forEach((e, i) => {
             console.log(`${e[0]} : ${e[1]}`)
         });
-
+        const parameter = {};
         const data = location.search.substring(1);
+        data.split("&").forEach(e => {
+            e.split("=").reduce((obj, d) => {
+                return obj[d[0]] = d[1];
+            }, parameter)
+        });
         const arrData = data.split('=');
         console.log(decodeURI(arrData[1]));
     </script>
