@@ -21,7 +21,8 @@
         });
 
         const data = location.search.substring(1);
-        console.log(data.split('='));
+        const arrData = data.split('=');
+        console.log(decodeURI(arrData[1]));
     </script>
 </body>
 
