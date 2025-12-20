@@ -110,8 +110,19 @@
         console.log(other);
 
         const names = ["김재민", "박종권", "김태우"];
-        const [n, n2, n3, n4="김영호", n5="황지한"] = names;
+        const [n, n2, n3, n4 = "김영호", n5 = "황지한"] = names;
         console.log(n, n2, n3, n4, n5);
+
+        console.log(empCopy2);
+        // key 값이 일치 할 때 매칭
+        const { name2, salary, bonus } = empCopy2;
+        console.log(name2, salary, bonus);
+
+        function testObj({ name, salary, bonus, job }) {
+            console.log(name, salary, bonus, job);
+        }
+        testObj(empCopy);
+        testObj(empCopy2);
     </script>
 </body>
 
