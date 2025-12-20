@@ -80,18 +80,18 @@
                 clearInterval(timeId);
                 alert("시간 초과");
             }
-            // if (select.value == "document") {
-            //     clearInterval(timeId);
-            //     alert("정답")
-            // }
-            // else
-            //     alert("떙");
         }, 1000);
-        document.querySelector("input[type=radio]:checked").addEventListener("click", (e) => {
-            if (e.target.value == "document") {
-                clearInterval(timeID);
-            }
-        })
+        document.getElementsByName("1").forEach(e => {
+            e.addEventListener("click", () => {
+                if (e.value == "document") {
+                    alert("정답")
+                    clearInterval(timeId);
+                }
+                else
+                    alert("땡")
+            })
+        });
+
     </script>
 
     <script>
