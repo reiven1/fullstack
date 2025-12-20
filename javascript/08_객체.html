@@ -184,10 +184,10 @@
         }*/
 
         function createHeader(header = []) {
-
+            return header.reduce((p, n) => p + "<th>" + n + "</th>", "<tr>") + "</tr>";
         }
-        function createBody() {
-
+        function createBody(data = {}) {
+            return Object.values(data).reduce((p, n) => "<td>" + n + "</td>", "<tr>") + "</tr>"
         }
     </script>
 </body>
