@@ -146,6 +146,10 @@
                 this.x = x;
                 this.y = y;
             }
+            static staticVar = 100;
+            static stataicFunc() {
+                console.log("test");
+            }
         }
         const s = new Shape(10, 10);
         console.log(s);
@@ -153,7 +157,11 @@
         s.move(20, 20);
         console.log(s);
         // s.name = "전재우늦잠";
-        console.log(s.name);
+        // console.log(s.#name);
+        // console.log(Shape.score);
+        console.log(Shape.staticVar);
+        Shape.staticVar = 200;
+        console.log(Shape.staticVar);
     </script>
 </body>
 
