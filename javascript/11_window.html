@@ -62,24 +62,24 @@
             <label for=""><input type="radio" name="1" value="window">window</label>
         </div>
         <div>
-            <label for=""><input type="radio" name="2" value="location">location</label>
+            <label for=""><input type="radio" name="1" value="location">location</label>
         </div>
         <div>
-            <label for=""><input type="radio" name="3" value="document">document</label>
+            <label for=""><input type="radio" name="1" value="document">document</label>
         </div>
         <div>
-            <label for=""><input type="radio" name="4" value="navigator">navigator</label>
+            <label for=""><input type="radio" name="1" value="navigator">navigator</label>
         </div>
     </div>
     <script>
         const time = document.querySelector("#time");
         const timeId = setInterval(() => {
             console.log(time.innerText)
-            if (time.innerText < 0){
-                clearInterval(timeId);
-                
-            }
             time.innerText -= 1;
+            if (time.innerText == 0){
+                clearInterval(timeId);
+                alert("시간 초과");
+            }
         }, 1000);
 
     </script>
