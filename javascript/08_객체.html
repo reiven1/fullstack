@@ -160,24 +160,34 @@
             let temp = '';
             temp += "<table><tbody><tr><td>studentNo</td><td>name</td><td>age</td><td>item</td><td>address</td></tr>";
             students.forEach(e => {
-                // $div.innerHTML += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item'] + "</td><td>" + e['address'] + "</td></tr>"
                 temp += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item']['name'] + " : " + e['item']['price'] + "원" + "</td><td>" + e['address'] + "</td></tr>";
             })
             $div.innerHTML += temp + "</tbody></table>";
         }*/
-        const mktable = () => {
+
+        /*const mktable = () => {
             let table = "<table>";
             let header = "<tr><th>학생번호</th><th>이름</th><th>나이</th><th>아이템</th><th>주소</th></tr>";
             let body = "";
-            student.forEach(student => {
+            students.forEach(student => {
                 body += "<tr>";
                 body += "<td>" + student['studentNo'] + "</td>";
                 body += "<td>" + student['name'] + "</td>";
-                body += "<td>" + student['age'] + "</td>";
-                body += "<td>" + student['item'] + "</td>";
+                body += "<td>" + student['age'] + "살" + "</td>";
+                body += "<td>" + student['item']['name'] + " : " + student['item']['price'] + "원" + "</td>";
                 body += "<td>" + student['address'] + "</td>";
                 body += "</tr>";
             })
+            table += header + body
+            table += "</table>";
+            document.getElementById("table-container").innerHTML = table;
+        }*/
+
+        function createHeader(header = []) {
+
+        }
+        function createBody() {
+
         }
     </script>
 </body>
