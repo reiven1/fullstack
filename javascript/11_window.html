@@ -76,14 +76,16 @@
         const overID = setInterval(() => {
             time.innerText -= 1;
         }, 1000)
-
-        const timeOut = (() => () => {
-            if (time.innerText < 0) {
-                alert("시간 초과")
-                clearInterval(overID);
-            }
-        })
     </script>
+
+    <script>
+        window.onload = () => {
+            const container3 = document.getElementById("container3");
+            console.log(container3);
+        }
+    </script>
+    <h3>onload 속성</h3>
+    <div id="container3"></div>
 </body>
 
 </html>
