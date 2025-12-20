@@ -12,8 +12,13 @@
     <p>
         url창에 대한 정보를 관리하는 객체 <br>
     </p>
+    <button onclick="location.href='https://naver.com';">요청 보내기</button>
+    <button onclick="location.assign('https://youtube.com')">assign()</button>
+    <button onclick="location.replace('https://youtube.com')">replace()</button>
     <script>
-        Object.entries(location);
+        Object.entries(location).forEach((e, i) => {
+            console.log(`${e[0]} : ${e[1]}`)
+        });
     </script>
 </body>
 
