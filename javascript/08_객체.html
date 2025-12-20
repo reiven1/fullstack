@@ -121,12 +121,20 @@
         Object.preventExtensions(preventObj);
         preventObj['test'] = 200;
         console.log(preventObj);
-        preventObj['content'] = 200;
+        preventObj['name'] = "변경";
         console.log(preventObj);
         delete preventObj['content'];
         console.log(preventObj);
-        
+
+        // 객체 상태를 확인하는 함수
+        // Object.isFrozen() : 추가, 수정, 삭제 불가능한 상태 return boolean
+        // Object.isSealed() : 수정 가능한 상태
+        // Object.isExtensible() : 추가, 수정 가능한 상태
+        result = Object.isExtensible(preventObj);
+        console.log(result);
     </script>
+    <h3>객체 배열로 활용</h3>
+    
 </body>
 
 </html>
