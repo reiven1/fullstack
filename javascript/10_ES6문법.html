@@ -62,6 +62,26 @@
         }
         test(arrNum[0], arrNum[1], arrNum[2], arrNum[3]);
         test(...arrNum);
+
+        const emp = {
+            name: "오수환",
+            age: 24,
+            job: "개발자",
+            salary: 30
+        }
+
+        const empCopy = { ...emp };
+        empCopy.name = "하승우";
+        console.log(emp);
+        console.log(empCopy);
+
+        const empCopy2 = {
+            ...emp,
+            name: "강원준늦잠",
+            salary: 10,
+            bonus:-0.5
+        }
+        console.log(empCopy2);
     </script>
 </body>
 
