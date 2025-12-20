@@ -30,6 +30,9 @@
     <div id="container">
         <h3>오늘은 토요일</h3>
     </div>
+    <div id="container2">
+
+    </div>
     <button onclick="stopTimeout()">중단</button>
     <script>
         // 일정시간 후 특정 동작을 하는 함수
@@ -43,6 +46,10 @@
         function stopTimeout() {
             clearTimeout(timeoutId);
         }
+        const timeInterval = setInterval(() => {
+            const today = new Date();
+            document.querySelector("#container2").innerHTML = `${today.toTimeString().substring(0, today.toTimeString().indexOf(" "))}`
+        }, 1000)
     </script>
 </body>
 
