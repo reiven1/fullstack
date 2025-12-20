@@ -221,17 +221,23 @@
     </script>
     <h3>js에서 속성값 은닉하기</h3>
     <script>
-        function Employee(name, salary, department) {
-            let name = name;
-            let salary = salary;
-            let department = department;
+        function Employee(inputName, inputSalary, inputDepartment) {
+            let name = inputName;
+            let salary = inputSalary;
+            let department = inputDepartment;
             this.getName = function () {
                 return name;
             }
             this.setName = function (name) {
-                name = name;
+                if (typeof name == 'string')
+                    name = name;
+                else
+                    throw new Error("문자열만 저장 가능");
             }
         }
+        const e = new Employee("김재민", 30, "개발팀");
+        console.log(e);
+        console.log(e.getName());
     </script>
 </body>
 
