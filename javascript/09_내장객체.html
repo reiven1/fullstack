@@ -72,7 +72,21 @@
         console.log(birthDay);
         birthDay.setFullYear(1999);
         console.log(birthDay);
+        console.log(birthDay.toDateString());
+        console.log(birthDay.toTimeString());
+        console.log(birthDay.toJSON());
     </script>
+    <h3>eval() 함수</h3>
+    <textarea name="code" id="code"></textarea>
+    <button onclick="testEval()">실행</button>
+    <script>
+        function testEval() {
+            const code = document.getElementById("code").value;
+            // console.log(code);
+            eval(code);
+        }
+    </script>
+
 </body>
 
 </html>
