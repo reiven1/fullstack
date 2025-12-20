@@ -36,7 +36,7 @@
         function checkPosition() {
             const geo = navigator.geolocation;
             console.log(geo);
-            geo.getCurrentPosition((position)=>{
+            geo.getCurrentPosition((position) => {
                 console.log(`위도 : ${position.coords.latitude}, 경도 : ${position.coords.longitude}`)
             });
         }
@@ -45,6 +45,20 @@
     <div id="clipboard">
         오늘 저녁은 뭐먹지
     </div>
+    <button onclick="paste()">붙여넣기</button>
+    <div id="copy"></div>
+    <script>
+        function paste() {
+            navigator.clipboard.readText().then(data => {
+                document.getElementById("copy").innerText += data;
+            })
+        }
+        document.getElementById("clipboard").addEventListener("click", (e) => {
+            const content = e.target.innerText;
+            navigator.clipboard.writeText(content);
+            alert('클립보드에 복사됨');
+        })
+    </script>
 </body>
 
 </html>
