@@ -158,11 +158,14 @@
     <script>
         const mktable = () => {
             $div = document.getElementById("table-container");
-            $div.innerHTML += "<table><tbody><tr><td>studentNo</td><td>name</td><td>age</td><td>item</td><td>address</td></tr>";
+            let temp = '';
+            temp += "<table><tbody><tr><td>studentNo</td><td>name</td><td>age</td><td>item</td><td>address</td></tr>";
+            // $div.innerHTML += 
             students.forEach(e => {
-                $div.innerHTML += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item'] + "</td><td>" + e['address'] + "</td></tr>"
+                // $div.innerHTML += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item'] + "</td><td>" + e['address'] + "</td></tr>"
+                temp += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item']['name']+":"+e['item']['price']+"원" + "</td><td>" + e['address'] + "</td></tr>";
             })
-            $div.innerHTML+="</tbody></table>"
+            $div.innerHTML += temp + "</tbody></table>";
         }
     </script>
 </body>
