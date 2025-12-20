@@ -37,6 +37,10 @@
         let val2 = null;
         console.log(val ?? "null이나 undefined면 이거 출력");
         console.log(val2 ?? "null이나 undefined면 이거 출력");
+        val = { name: "하승우", age: 24, hobby: ["게임", "코딩"] };
+        let obj2;
+        console.log(val.name);
+        console.log(obj2?.name ?? "아무개");
     </script>
 </body>
 
