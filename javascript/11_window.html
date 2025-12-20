@@ -74,18 +74,19 @@
     <script>
         const timeId = setInterval(() => {
             const time = document.querySelector("#time");
-            const select = document.querySelector(".1");
+            const select = document.querySelector("input[type=radio]:checked");
             console.log(time.innerText)
             time.innerText -= 1;
             if (time.innerText == 0) {
                 clearInterval(timeId);
                 alert("시간 초과");
             }
-            if (select.checked) {
+            if (select.value == "document") {
                 clearInterval(timeId);
-                console.log(select.checked.value)
-                select.checked.value == "document" ? alert("정답") : alert("떙");
+                alert("정답")
             }
+            else
+                alert("떙");
         }, 1000);
     </script>
 
