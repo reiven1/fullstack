@@ -87,6 +87,23 @@
         // concat()
         const arr1 = ["대한민국", "북한", "미국", "바티칸시국"];
         const arr2 = ["이순신", "세종대왕", "안중근", "김구"];
+        // arr1.concat(arr2);
+        result = [...arr1, ...arr2];
+        console.log(result);
+        // key 값이 같은 경우 덮어쓰기 됨
+        result = { ...emp, ...empCopy2 };
+        console.log(result);
+    </script>
+    <h3>구조분해할당</h3>
+    <p>
+        배열, 객체에 저장된 데이터를 각 변수에 저장할 때 사용
+    </p>
+    <script>
+        const height = [165.2, 176.3, 180.5, 152.3, 178.4];
+        // let a,b,c,e,d;
+        // a=height[0];
+        // b=height[1];
+        let [a, b, c, d, e] = height;
     </script>
 </body>
 
