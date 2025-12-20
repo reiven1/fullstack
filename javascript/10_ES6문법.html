@@ -147,7 +147,7 @@
                 this.y = y;
             }
             static staticVar = 100;
-            static stataicFunc() {
+            static staticFunc() {
                 console.log("test");
             }
         }
@@ -159,9 +159,21 @@
         // s.name = "전재우늦잠";
         // console.log(s.#name);
         // console.log(Shape.score);
+
+        // static
         console.log(Shape.staticVar);
         Shape.staticVar = 200;
         console.log(Shape.staticVar);
+        Shape.staticFunc();
+
+        class Circle extends Shape {
+            constructor(x, y, radius) {
+                super(x, y);
+                this.radius = radius;
+            }
+        }
+        const circle = new Circle(20, 20, 3);
+        console.log(circle);
     </script>
 </body>
 
