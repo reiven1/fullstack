@@ -134,7 +134,20 @@
         console.log(result);
     </script>
     <h3>객체 배열로 활용</h3>
-    
+    <script>
+        function Student(studentNo, name, age, item = {}, address) {
+            this.studentNo = studentNo;
+            this.name = name;
+            this.age = age;
+            this.item = item;
+            this.address = address;
+        }
+        const students = [];
+        students.push(new Student(1, "홍길동", 42, { name: "가방", price: "100000" }, "강원도 산골"));
+        students.push(new Student(2, "하승우", 24, { name: "담배", price: "4500" }, "경남 남해"));
+        students.push(new Student(3, "오수환", 24, { name: "음료", price: "2400" }, "울산광역시"));
+        console.log(students);
+    </script>
 </body>
 
 </html>
