@@ -13,12 +13,15 @@
         url창에 대한 정보를 관리하는 객체 <br>
     </p>
     <button onclick="location.href='https://naver.com';">요청 보내기</button>
-    <button onclick="location.assign('https://youtube.com')">assign()</button>
-    <button onclick="location.replace('https://youtube.com')">replace()</button>
+    <button onclick="location.assign('https://youtube.com')">assign()</button> <!-- assign : 뒤로가기 가능 -->
+    <button onclick="location.replace('https://youtube.com')">replace()</button> <!-- replace : 뒤로가기 불가능-->
     <script>
         Object.entries(location).forEach((e, i) => {
             console.log(`${e[0]} : ${e[1]}`)
         });
+
+        const data = location.search.substring(1);
+        console.log(data.split('='));
     </script>
 </body>
 
