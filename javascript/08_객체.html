@@ -155,7 +155,7 @@
     </div>
     <button onclick="mktable()">데이터 가져오기</button>
     <script>
-        const mktable = () => {
+        /*const mktable = () => {
             $div = document.getElementById("table-container");
             let temp = '';
             temp += "<table><tbody><tr><td>studentNo</td><td>name</td><td>age</td><td>item</td><td>address</td></tr>";
@@ -164,6 +164,20 @@
                 temp += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item']['name'] + " : " + e['item']['price'] + "원" + "</td><td>" + e['address'] + "</td></tr>";
             })
             $div.innerHTML += temp + "</tbody></table>";
+        }*/
+        const mktable = () => {
+            let table = "<table>";
+            let header = "<tr><th>학생번호</th><th>이름</th><th>나이</th><th>아이템</th><th>주소</th></tr>";
+            let body = "";
+            student.forEach(student => {
+                body += "<tr>";
+                body += "<td>" + student['studentNo'] + "</td>";
+                body += "<td>" + student['name'] + "</td>";
+                body += "<td>" + student['age'] + "</td>";
+                body += "<td>" + student['item'] + "</td>";
+                body += "<td>" + student['address'] + "</td>";
+                body += "</tr>";
+            })
         }
     </script>
 </body>
