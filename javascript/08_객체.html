@@ -228,15 +228,17 @@
             this.getName = function () {
                 return name;
             }
-            this.setName = function (name) {
+            this.setName = function (inputName) {
                 if (typeof name == 'string')
-                    name = name;
+                    name = inputName;
                 else
                     throw new Error("문자열만 저장 가능");
             }
         }
         const e = new Employee("김재민", 30, "개발팀");
         console.log(e);
+        console.log(e.getName());
+        e.setName("하승우");
         console.log(e.getName());
     </script>
 </body>
