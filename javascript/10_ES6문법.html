@@ -129,12 +129,30 @@
     </script>
     <h3>class 활용</h3>
     <script>
-        class Shape{
+        class Shape {
             // 생성자
-            constructor(x, y){
-
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            // 속성 선언
+            name = "하승우";
+            score = [100, 99, 98];
+            // 메소드 선언
+            toString() {
+                return `${this.x} ${this.y} ${this.name} ${this.score}`;
+            }
+            move(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            getX() {
+                return this.x;
             }
         }
+        const s = new Shape(10, 10);
+        s.move(20, 20);
+        s.getX();
     </script>
 </body>
 
