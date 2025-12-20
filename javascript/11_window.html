@@ -72,19 +72,17 @@
         </div>
     </div>
     <script>
+        const time = document.querySelector("#time");
         const overID = setInterval(() => {
-            const time = document.querySelector("#time");
             time.innerText -= 1;
         }, 1000)
 
-        const timeOut = (() => {
-            const time = document.querySelector("#time");
+        const timeOut = (() => () => {
             if (time.innerText < 0) {
                 alert("시간 초과")
                 clearInterval(overID);
             }
         })
-
     </script>
 </body>
 
