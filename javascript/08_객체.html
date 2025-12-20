@@ -152,12 +152,22 @@
         console.log(students);
     </script>
     <div id="table-container">
-
+        <table>
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <button onclick="mktable()">데이터 가져오기</button>
     <script>
         const mktable = () => {
-
+            $div = document.getElementById("table-container");
+            $div.innerHTML += "<table><tbody><tr><td>studentNo</td><td>name</td><td>age</td><td>item</td><td>address</td></tr>";
+            students.forEach(e => {
+                $div.innerHTML += "<tr><td>"+e['studentNo']+"</td><td>"+e['name']+"</td><td>"+e['age']+"</td><td>"+e['item']+"</td><td>"+e['address']+"</td></tr>"
+            })
         }
     </script>
 </body>
