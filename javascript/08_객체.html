@@ -151,10 +151,12 @@
         students.push(new Student(6, "김태우", 25, { name: "모자", price: "1000000" }, "경남 창원"));
         console.log(students);
     </script>
+
     <div id="table-container">
     </div>
     <select name="category" id="category">
-        <option value="name" selected>이름</option>
+        <option disabled selected>선택하세요</option>
+        <option value="name">이름</option>
         <option value="age">나이</option>
         <option value="address">주소</option>
     </select>
@@ -211,6 +213,24 @@
                 }
                 return p + "<td>" + n + "</td>"
             }, "<tr>") + "</tr>";
+        }
+
+        const searchData = () => {
+            //
+        }
+    </script>
+    <h3>js에서 속성값 은닉하기</h3>
+    <script>
+        function Employee(name, salary, department) {
+            let name = name;
+            let salary = salary;
+            let department = department;
+            this.getName = function () {
+                return name;
+            }
+            this.setName = function (name) {
+                name = name;
+            }
         }
     </script>
 </body>
