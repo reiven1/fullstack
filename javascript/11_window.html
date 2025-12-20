@@ -15,9 +15,26 @@
             // 1. url 주소 설정
             // 2. 새창 오픈 방식 : _self, _blank(default)
             // 3. 창 옵션 : 크기, 위치 ...
-            childWin = open("https://naver.com", "_blank", "width=400,height=600");
+            childWin = open("https://naver.com", "_blank");
             console.log(childWin);
         }
+    </script>
+    <h4>윈도우 닫기</h4>
+    <button onclick="closeWin()">닫기</button>
+    <script>
+        function closeWin() {
+            childWin.close();
+        }
+    </script>
+    <h3>setTimeout(), setInterval()</h3>
+    <div id="container">
+        <h3>오늘은 토요일</h3>
+    </div>
+    <script>
+        // 일정시간 후 특정 동작을 하는 함수
+        setTimeout(() => {
+            document.querySelectorAll("#container>*").forEach(e => e.style.color = 'red');
+        }, 2000);
     </script>
 </body>
 
