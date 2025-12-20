@@ -183,11 +183,27 @@
             document.getElementById("table-container").innerHTML = table;
         }*/
 
+        const mktable = () => {
+            let table = "<table>";
+            table += createHeader(['번호', '이름', '나이', '아이템', '주소']);
+            students.forEach(s => {
+                table += createBody(s);
+            })
+            table += "</table>";
+            document.getElementById("table-container").innerHTML = table;
+        }
+
         function createHeader(header = []) {
             return header.reduce((p, n) => p + "<th>" + n + "</th>", "<tr>") + "</tr>";
         }
+
         function createBody(data = {}) {
-            return Object.values(data).reduce((p, n) => "<td>" + n + "</td>", "<tr>") + "</tr>"
+            return Object.values(data).reduce((p, n) => {
+                if (typeof n == 'object' && !Array.isArray(n)) {
+                    return p + "<td>" + Object.values(n).join(":") + "</td>";
+                }
+                return p + "<td>" + n + "</td>"
+            }, "<tr>") + "</tr>";
         }
     </script>
 </body>
