@@ -153,6 +153,13 @@
     </script>
     <div id="table-container">
     </div>
+    <select name="category" id="category">
+        <option value="name" selected>이름</option>
+        <option value="age">나이</option>
+        <option value="address">주소</option>
+    </select>
+    <input type="text" name="keyword">
+    <button onclick="searchData()">검색</button>
     <button onclick="mktable()">데이터 가져오기</button>
     <script>
         /*const mktable = () => {
@@ -174,7 +181,7 @@
                 body += "<td>" + student['studentNo'] + "</td>";
                 body += "<td>" + student['name'] + "</td>";
                 body += "<td>" + student['age'] + "살" + "</td>";
-                body += "<td>" + student['item']['name'] + " : " + student['item']['price'] + "원" + "</td>";
+                body += "<td>" + student['item']['name'] + " : " + student['item']['price'] + "</td>";
                 body += "<td>" + student['address'] + "</td>";
                 body += "</tr>";
             })
@@ -200,7 +207,7 @@
         function createBody(data = {}) {
             return Object.values(data).reduce((p, n) => {
                 if (typeof n == 'object' && !Array.isArray(n)) {
-                    return p + "<td>" + Object.values(n).join(":") + "</td>";
+                    return p + "<td>" + Object.values(n).join(" : ") + "</td>";
                 }
                 return p + "<td>" + n + "</td>"
             }, "<tr>") + "</tr>";
