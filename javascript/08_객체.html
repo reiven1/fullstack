@@ -150,7 +150,6 @@
         students.push(new Student(5, "박종권", 25, { name: "음료", price: "2000" }, "경남 창원"));
         students.push(new Student(6, "김태우", 25, { name: "모자", price: "1000000" }, "경남 창원"));
         console.log(students);
-        console.log(students[0]['name'])
     </script>
     <div id="table-container">
     </div>
@@ -160,10 +159,9 @@
             $div = document.getElementById("table-container");
             let temp = '';
             temp += "<table><tbody><tr><td>studentNo</td><td>name</td><td>age</td><td>item</td><td>address</td></tr>";
-            // $div.innerHTML += 
             students.forEach(e => {
                 // $div.innerHTML += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item'] + "</td><td>" + e['address'] + "</td></tr>"
-                temp += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item']['name']+":"+e['item']['price']+"원" + "</td><td>" + e['address'] + "</td></tr>";
+                temp += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item']['name'] + " : " + e['item']['price'] + "원" + "</td><td>" + e['address'] + "</td></tr>";
             })
             $div.innerHTML += temp + "</tbody></table>";
         }
