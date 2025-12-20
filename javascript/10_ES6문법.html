@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ES6 문법</title>
 </head>
+
 <body>
     <h3>문자열 템플릿</h3>
-    
+    <div id="asdf"></div>
+    <script>
+        // "문자열"+변수명+"문자열...";
+        // `문자열${변수명}문자열...`;
+        let name = "하승우";
+        result = name + "님 환영합니다.";
+        console.log(result);
+        result = `${name}님 환영합니다.`;
+        console.log(result);
+        const su = 10;
+        const su1 = 20;
+        result = `<p>수 ${su} ${su1}의 합은 : ${su} + ${su1}</p>`;
+        console.log(result);
+        document.getElementById("asdf").innerHTML = result;
+    </script>
 </body>
+
 </html>
