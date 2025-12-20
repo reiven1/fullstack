@@ -53,6 +53,15 @@
         // 배열 복사
         result = [...arrNum]; // 깊은 복사
         console.log(result);
+        result[0] = 100;
+        console.log(arrNum);
+        console.log(result);
+
+        function test(su, su1, su2, su3) {
+            console.log(su, su1, su2, su3);
+        }
+        test(arrNum[0], arrNum[1], arrNum[2], arrNum[3]);
+        test(...arrNum);
     </script>
 </body>
 
