@@ -72,16 +72,21 @@
         </div>
     </div>
     <script>
-        const time = document.querySelector("#time");
         const timeId = setInterval(() => {
+            const time = document.querySelector("#time");
+            const select = document.querySelector(".1");
             console.log(time.innerText)
             time.innerText -= 1;
-            if (time.innerText == 0){
+            if (time.innerText == 0) {
                 clearInterval(timeId);
                 alert("시간 초과");
             }
+            if (select.checked) {
+                clearInterval(timeId);
+                console.log(select.checked.value)
+                select.checked.value == "document" ? alert("정답") : alert("떙");
+            }
         }, 1000);
-
     </script>
 
     <script>
