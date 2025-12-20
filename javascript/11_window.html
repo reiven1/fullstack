@@ -75,19 +75,23 @@
         const timeId = setInterval(() => {
             const time = document.querySelector("#time");
             const select = document.querySelector("input[type=radio]:checked");
-            console.log(time.innerText)
             time.innerText -= 1;
             if (time.innerText == 0) {
                 clearInterval(timeId);
                 alert("시간 초과");
             }
-            if (select.value == "document") {
-                clearInterval(timeId);
-                alert("정답")
-            }
-            else
-                alert("떙");
+            // if (select.value == "document") {
+            //     clearInterval(timeId);
+            //     alert("정답")
+            // }
+            // else
+            //     alert("떙");
         }, 1000);
+        document.querySelector("input[type=radio]:checked").addEventListener("click", (e) => {
+            if (e.target.value == "document") {
+                clearInterval(timeID);
+            }
+        })
     </script>
 
     <script>
