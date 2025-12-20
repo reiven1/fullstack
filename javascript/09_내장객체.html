@@ -59,7 +59,19 @@
     </script>
     <h3>Date 객체</h3>
     <script>
-        
+        let today = new Date();
+        console.log(today);
+        console.log(today.getFullYear());
+        console.log(today.getMonth() + 1); // 0부터 시작
+        console.log(today.getDate());
+        console.log(today.getHours());
+        console.log(today.getMinutes());
+        console.log(today.getSeconds());
+
+        birthDay = new Date(2002, 4 - 1, 10);
+        console.log(birthDay);
+        birthDay.setFullYear(1999);
+        console.log(birthDay);
     </script>
 </body>
 
