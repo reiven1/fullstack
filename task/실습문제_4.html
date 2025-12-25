@@ -29,7 +29,7 @@
     <div id="result2"></div>
     <button onclick="result2()">확인하기</button>
     <style>
-        #result {
+        div {
             border: 1px solid red;
             height: 300px;
         }
@@ -42,14 +42,12 @@
         function result2() {
             const str = document.getElementById("string2").innerText;
             const result2 = document.getElementById("result2");
+            result2.innerHTML = '';
             let count = 1;
-            let resultText = ""
             str.split(",").forEach(e => {
-                resultText += count + e;
-                result2 += resultText + "<br>"
+                result2.innerHTML += count + ". " + e + "<br>"
                 count++;
             });
-            // console.log(result);
         }
     </script>
 </body>
