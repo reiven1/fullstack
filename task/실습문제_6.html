@@ -23,9 +23,21 @@
         <label id="la3">환타,사이다,콜라</label><br>
         <label id="la4">고양이,강아지</label><br>
     </fieldset>
-    <input type="text" placeholder="찾을 문자열을 입력하세요">
+    <input type="text" id="value" placeholder="찾을 문자열을 입력하세요">
+    <button onclick="search()">전송 및 처리</button>
     <script>
-
+        function search(){
+            const la1 = document.getElementById("la1").innerText;
+            const la2 = document.getElementById("la2").innerText;
+            const la3 = document.getElementById("la3").innerText;
+            const la4 = document.getElementById("la4").innerText;
+            console.log(la1)
+            console.log(la2)
+            console.log(la3)
+            console.log(la4)
+            const arr = [...la1, ...la2, ...la3, ...la4];
+            console.log(arr)
+        }
     </script>
 </body>
 
