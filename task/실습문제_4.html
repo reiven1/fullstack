@@ -26,7 +26,7 @@
         </legend>
         <span id="string2">콜라,사이다,햄버거,피자,한약</span>
     </fieldset>
-    <div id="result"></div>
+    <div id="result2"></div>
     <button onclick="result2()">확인하기</button>
     <style>
         #result {
@@ -41,9 +41,15 @@
         }
         function result2() {
             const str = document.getElementById("string2").innerText;
-            console.log(str)
-            result = str.split(",");
-            console.log(result);
+            const result2 = document.getElementById("result2");
+            let count = 1;
+            let resultText = ""
+            str.split(",").forEach(e => {
+                resultText += count + e;
+                result2 += resultText + "<br>"
+                count++;
+            });
+            // console.log(result);
         }
     </script>
 </body>
