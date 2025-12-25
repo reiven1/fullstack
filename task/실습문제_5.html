@@ -20,9 +20,9 @@
     <hr>
     <script>
         function calculator(value) {
-            const firstNum = document.getElementById("furstNum").value;
-            const secondNum = document.getElementById("secondNum").value;
-            let result = document.getElementById("result").innerText;
+            const firstNum = Number(document.getElementById("firstNum").value);
+            const secondNum = Number(document.getElementById("secondNum").value);
+            let result = 0;
             switch (value) {
                 case '+':
                     result += firstNum + secondNum;
@@ -31,9 +31,22 @@
                 case '-':
                     result += firstNum - secondNum;
                     break;
+
+                case 'x':
+                    result += firstNum * secondNum;
+                    break;
+
+                case '/':
+                    result += firstNum / secondNum;
+                    break;
+
+                case '%':
+                    result += firstNum % secondNum;
+                    break;
                 default:
                     break;
             }
+            document.getElementById("result").innerText = "계산결과 : " + result;
         }
     </script>
 </body>
