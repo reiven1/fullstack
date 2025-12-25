@@ -26,17 +26,23 @@
     <input type="text" id="value" placeholder="찾을 문자열을 입력하세요">
     <button onclick="search()">전송 및 처리</button>
     <script>
-        function search(){
+        function search() {
             const la1 = document.getElementById("la1").innerText;
             const la2 = document.getElementById("la2").innerText;
             const la3 = document.getElementById("la3").innerText;
             const la4 = document.getElementById("la4").innerText;
-            console.log(la1)
-            console.log(la2)
-            console.log(la3)
-            console.log(la4)
-            const arr = [...la1, ...la2, ...la3, ...la4];
-            console.log(arr)
+            const arr = [...la1.split(","), ...la2.split(","), ...la3.split(","), ...la4.split(",")];
+
+            const value = document.getElementById("value").value;
+
+            const index = arr.indexOf(value);
+            console.log(index);
+            
+            if (index != -1) {
+                alert(`${value}는 배열의 ${index}번 위치에 있습니다.`)
+            }
+            else
+                alert("존재하지 않습니다.")
         }
     </script>
 </body>
