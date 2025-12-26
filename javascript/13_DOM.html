@@ -212,7 +212,14 @@
 
         const createTable = () => {
             const $table = document.createElement("table");
-            
+            const $header = Object.keys(tableData[0]).reduce((tr, key)=>{
+                 const $td = document.createElement("td");
+                $td.innerText = key;
+                tr.appendChild($td);
+                return tr;
+            }, document.createElement("tr"))
+
+
             tableData.map(v => {
                 const $tr = document.createElement("tr");
                 Object.values(v).forEach(e => {
