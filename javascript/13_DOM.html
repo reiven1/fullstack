@@ -339,13 +339,31 @@
             $container.insertAdjacentElement("beforebegin", $h1);
         }
     </script>
-
+    <hr>
     <!-- 이미지 세 개를 가지고 순환하는 기능 만들기 -->
     <div id=""></div>
-    <button onclick="rotateImg()"></button>
+    <button onclick="rotateImg()">순환</button>
     <script>
-        const rotateImg=()=>{
-            
+        const rotateImg = () => {
+
+        }
+    </script>
+    <hr>
+    <h3>태그 삭제하기</h3>
+    <div id="remove-container">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+    <button onclick="removeTest()">삭제</button>
+    <script>
+        const removeTest = () => {
+            const $parent = document.querySelector("#remove-container");
+            const $p = document.querySelector("#remove-container>p")
+            // $parent.removeChild($p);
+            $p.remove();
         }
     </script>
 </body>
