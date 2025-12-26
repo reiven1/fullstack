@@ -130,20 +130,20 @@
     </div>
     <script>
         const addElement4 = () => {
-            const $tag = document.querySelector("#tag>option:checked").value;
-            const $text = document.getElementsByName("text")[0].value;
-            const $createTag = document.createElement($tag);
-            $createTag.innerText = $text;
-            document.getElementById("target4").appendChild($createTag);
+            const tag = document.querySelector("#tag>option:checked").value;
+            const text = document.getElementsByName("text")[0].value;
+            const createTag = document.createElement(tag);
+            createTag.innerText = $text;
+            document.getElementById("target4").appendChild(createTag);
         }
 
         const addImg = () => {
-            const $img = document.getElementsByName("img")[0].value;
-            const $imgTag = document.createElement("img");
-            $imgTag.setAttribute("src", $img);
-            $imgTag.style.width = "200px";
-            $imgTag.style.height = "200px";
-            document.getElementById("img-container").appendChild($imgTag);
+            const img = document.getElementsByName("img")[0].value;
+            const imgTag = document.createElement("img");
+            imgTag.setAttribute("src", img);
+            imgTag.style.width = "200px";
+            imgTag.style.height = "200px";
+            document.getElementById("img-container").appendChild(imgTag);
         }
     </script>
 </body>
