@@ -118,11 +118,15 @@
     </script>
     <h3>기본이벤트 차단</h3>
     <a id="linkTest" href="https://naver.com">네이버</a>
-    <form action="https://search.naver.com/search.naver">
+    <form action="https://search.naver.com/search.naver" onsubmit="return stopmove(event)">
         <input type="text" name="query">
         <input type="submit" value="조회">
     </form>
     <script>
+        const stopmove = (e) => {
+            console.log(e);
+            return false;
+        }
         document.querySelector("#linkTest").addEventListener("click", e => {
             console.log("가지마");
             e.preventDefault();
