@@ -132,6 +132,37 @@
             e.preventDefault();
         })
     </script>
+    <div id="container3" class="test">
+        parent
+        <div class="test">
+            child
+            <div class="test">
+                inner child
+            </div>
+        </div>
+    </div>
+
+    <style>
+        div#container3 {
+            width: 400px;
+            height: 300px;
+            border: 1px solid magenta;
+        }
+
+        .test {
+            padding: 20px;
+            border: 1px dotted lime;
+        }
+    </style>
+    <script>
+        document.querySelectorAll(".test").forEach(e => {
+            e.addEventListener("click", e => {
+                const content = e.target.textContent;
+                alert(content);
+            })
+        })
+    </script>
+
 </body>
 
 </html>
