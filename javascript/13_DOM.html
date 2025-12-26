@@ -88,13 +88,31 @@
     <script>
         const addElement3 = () => {
             const $span = document.createElement("span");
-            $span.innerText = "첫번째 스타일 적용";
-            $span.style.color = "magenta";
-            $span.style.backgroundColor = "lime";
+            // style 속성에 직접 접근하기
+            $span.innerText = "스타일 적용";
+            // $span.style.color = "magenta";
+            // $span.style.backgroundColor = "lime";
 
+            // 클래스 속성 이용하기
+            $span.className = "myfont";
             document.getElementById("target3").appendChild($span);
         }
     </script>
+
+    <!--
+        특정 태그와 문구를 작성하고 버튼을 누르면 태그를 만들어주는 기능
+        h1~h6, span, p 태그만 가능
+        생성된 태그는 div#target4에 반영
+
+        이미지 경로를 입력받아 이미지태그를 생성해주는 기능
+        이미지 크기 200/200
+        div#img-container에 반영
+     -->
+    <button onclick="addElement4()">태그 생성</button>
+    <button onclick="addImg()"></button>
+    <div id="target4"></div>
+    <div id="img-container"></div>
+    
 </body>
 
 </html>
