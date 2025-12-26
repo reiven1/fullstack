@@ -220,42 +220,27 @@
             }, document.createElement("th"))
             $table.appendChild($header);
 
-            const $body = tableData.map(v => {
-                const $tr = document.createElement("tr");
-                Object.values(v).forEach(e => {
-                    const $td = document.createElement("td");
-                    $td.innerText = e;
-                    $tr.appendChild($td)
-                })
-                return $tr;
-            }).forEach(e => {
-                $table.appendChild(e);
-            })
+            const $body = tableData.reduce(($temp, member) => {
+
+            }, document.createElement("tbody"))
+
             document.getElementById("target5").appendChild($table);
 
-            
-            // const $body = Object.values(tableData).reduce((tr, value) => {
-            //     const $td = document.createElement("td");
-            //     $td.innerText = value;
-            //     tr.appendChild($td);
-            //     return tr;
-            // }, document.createElement("td"))
-            // $table.appendChild($body);
-            // document.getElementById("target5").appendChild($table);
 
 
-            //     tableData.map(v => {
-            //         const $tr = document.createElement("tr");
-            //         Object.values(v).forEach(e => {
-            //             const $td = document.createElement("td");
-            //             $td.innerText = e;
-            //             $tr.appendChild($td)
-            //         })
-            //         return $tr;
-            //     }).forEach(e => {
-            //         $table.appendChild(e);
+
+            // tableData.map(v => {
+            //     const $tr = document.createElement("tr");
+            //     Object.values(v).forEach(e => {
+            //         const $td = document.createElement("td");
+            //         $td.innerText = e;
+            //         $tr.appendChild($td)
             //     })
-            //     document.getElementById("target5").appendChild($table);
+            //     return $tr;
+            // }).forEach(e => {
+            //     $table.appendChild(e);
+            // })
+            // document.getElementById("target5").appendChild($table);
         }
 
     </script>
