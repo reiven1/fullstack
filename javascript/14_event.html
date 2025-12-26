@@ -102,7 +102,7 @@
     <span id="result"></span>
     <script>
         // document.getElementById("pwck").addEventListener("keyup", e => {
-        document.getElementById("pwck").addEventListener("blur", e => {
+        document.getElementById("pwck").addEventListener("blur", e => { // blur 사용할 때 alert() 사용 자재
             // if (e.target.value.length >= 4) { // input#pwck 길이가 4 이상일 때 동작
             let msg = '비밀번호가 일치하지 않습니다';
             const pwValue = document.getElementById("pw").value;
@@ -112,7 +112,12 @@
             document.getElementById("result").innerText = msg;
             // }
         })
+        window.onscroll = e => {
+            // console.log(e);
+        }
     </script>
+    <h3>기본이벤트 차단</h3>
+    <a id="linkTest" href="https://naver.com">네이버</a>
 </body>
 
 </html>
