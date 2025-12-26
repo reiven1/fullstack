@@ -404,6 +404,8 @@
         console.log(testElement.parentElement);
         console.log(testElement.previousElementSibling);
         console.log(testElement.nextElementSibling);
+        console.log(testElement.className);
+        console.log(testElement.classList);
     </script>
 
     <div id="table-container">
@@ -432,11 +434,14 @@
         const addRow = (e) => {
             const $cur = e.target;
             const $tr = $cur.parentElement.parentElement;
-            const $newTr = document.createelement("tr");
-            [1, 2].reduce(($tr, value) => {
-
+            const $newTr = document.createElement("tr");
+            const $row = [1, 2].reduce(($tr, value) => {
+                const $td = document.createElement("td");
+                $td.innerText = value;
+                $tr.appendChild($td);
+                return $tr;
             }, $newTr)
-            $tr.insertAdjacentElement("afterend",);
+            $tr.insertAdjacentElement("afterend", $row);
         }
     </script>
 </body>
