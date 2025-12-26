@@ -287,18 +287,27 @@
         const beforebeginTest = () => {
             const $h4 = createH4();
             const $container = document.getElementById("target6");
-            
+            $container.insertAdjacentElement("beforebegin", $h4);
         }
         const afterendTest = () => {
-
+            const $h4 = createH4();
+            const $container = document.getElementById("target6");
+            $container.insertAdjacentElement("afterend", $h4);
         }
         const beforeendTest = () => {
-
+            const $h4 = createH4();
+            const $container = document.getElementById("target6");
+            $container.insertAdjacentElement("beforeend", $h4);
         }
         const afterbeginTest = () => {
-
+            const $h4 = createH4();
+            const $container = document.getElementById("target6");
+            $container.insertAdjacentElement("afterbegin", $h4);
         }
     </script>
+
+    <h3>태그 이동시키기</h3>
+    
 </body>
 
 </html>
