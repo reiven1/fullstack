@@ -87,7 +87,13 @@
         document.getElementById("btn").addEventListener("click", e => {
             console.log(e);
         })
-        document.getElementById("keyTarget").addEventListener("keyup",e=>{
+        document.getElementById("keyTarget").addEventListener("keyup", e => {
+            console.log(e);
+            if (e.key == 'Enter') {
+                alert("엔터니?");
+            }
+        })
+        document.getElementById("choice").addEventListener("change", e => {
             console.log(e);
         })
     </script>
