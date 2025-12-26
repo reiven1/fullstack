@@ -118,6 +118,12 @@
     </script>
     <h3>기본이벤트 차단</h3>
     <a id="linkTest" href="https://naver.com">네이버</a>
+    <script>
+        document.querySelector("#linkTest").addEventListener("click", e => {
+            console.log("가지마");
+            e.preventDefault();
+        })
+    </script>
 </body>
 
 </html>
