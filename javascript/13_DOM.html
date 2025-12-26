@@ -165,6 +165,7 @@
     </p>
     <button onclick="createList()">리스트 만들기</button>
     <button onclick="createTable()">테이블 만들기</button>
+    <button>이름으로 조회</button>
     <div id="target5"></div>
     <script>
         const targetList = ['html', 'css', 'javascript', 'jquery', 'react.js'];
@@ -176,7 +177,6 @@
                 return ul;
             }, document.createElement("ul"));
             document.getElementById("target5").appendChild($ul);
-
 
             // const $ul = document.createElement("ul");
             // targetList.map(e => {
@@ -217,7 +217,7 @@
                 $th.innerText = key;
                 tr.appendChild($th);
                 return tr;
-            }, document.createElement("th"))
+            }, document.createElement("tr"))
             $table.appendChild($header);
 
             const $body = tableData.reduce(($temp, member) => {
@@ -234,9 +234,6 @@
 
             document.getElementById("target5").appendChild($table);
 
-
-
-
             // tableData.map(v => {
             //     const $tr = document.createElement("tr");
             //     Object.values(v).forEach(e => {
@@ -252,6 +249,18 @@
         }
 
     </script>
+
+    <h3>생성한 태그 원하는 위치에 배치하기</h3>
+    <p>
+        insertAdjacentElement("위치","배치할 태그") 함수를 이용 <br>
+        위치 <br>
+        형제 : 같은 레벨에 배치 <br>
+        beforebegin : <br>
+        afterend : <br>
+        자식으로 배치 <br>
+        beforeend : <br>
+        afterbegin : <br>
+    </p>
 </body>
 
 </html>
