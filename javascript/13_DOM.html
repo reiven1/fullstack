@@ -38,6 +38,17 @@
     <button onclick="addElement2()">태그추가(속성)</button>
     <div id="target2"></div>
     <script>
+        const createCheckBox = (data = []) => {
+            if (data.length == 0) {
+                alert("데이터가 있어야생성이 가능합니다.");
+                throw new Error("매게변수 배열에 값이 없습니다.");
+            }
+            // map으로 해보기, 지금은 forEach
+            data.forEach(d=>{
+                
+            })
+        }
+
         const addElement2 = () => {
             const $input = document.createElement("input");
             console.log($input);
