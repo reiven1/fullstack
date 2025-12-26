@@ -169,17 +169,26 @@
     <script>
         const targetList = ['html', 'css', 'javascript', 'jquery', 'react.js'];
         const createList = () => {
-            const $li = document.createElement("li");
-            targetList.map(e => {
-                const $ul = document.createElement("ul");
-                $ul.value = e;
-                $ul.innerText = e;
+            const $ul = targetList.reduce((ul, value) => {
+                const $li = document.createElement("li");
+                $li.innerText = value;
+                $ul.appendChild($ul);
                 return $ul;
-            }).forEach(e => {
-                $li.appendChild(e);
-            })
-            console.log($li)
-            document.getElementById("target5").appendChild($li);
+            }, document.createElement("ul"));
+            document.getElementById("target5").appendChild($ul);
+
+
+            // const $ul = document.createElement("ul");
+            // targetList.map(e => {
+            //     const $li = document.createElement("li");
+            //     $li.value = e;
+            //     $li.innerText = e;
+            //     return $li;
+            // }).forEach(e => {
+            //     $ul.appendChild(e);
+            // })
+            // console.log($ul)
+            // document.getElementById("target5").appendChild($ul);
         }
 
         class Member {
