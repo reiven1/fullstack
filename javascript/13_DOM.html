@@ -172,8 +172,8 @@
             const $ul = targetList.reduce((ul, value) => {
                 const $li = document.createElement("li");
                 $li.innerText = value;
-                $ul.appendChild($ul);
-                return $ul;
+                ul.appendChild($li);
+                return ul;
             }, document.createElement("ul"));
             document.getElementById("target5").appendChild($ul);
 
