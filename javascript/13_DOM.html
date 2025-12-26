@@ -342,11 +342,15 @@
     <hr>
     <!-- 이미지 세 개를 가지고 순환하는 기능 만들기 -->
     <div id=""></div>
+    <input type="text" name="img1" placeholder="첫번째 이미지 링크">
+    <input type="text" name="img1" placeholder="두번째 이미지 링크">
+    <input type="text" name="img1" placeholder="세번째 이미지 링크">
     <button onclick="rotateImg()">순환</button>
     <script>
         const rotateImg = () => {
-
-        }
+            for (let i = 0; i < 3; i++) {
+                
+            }
     </script>
     <hr>
     <h3>태그 삭제하기</h3>
@@ -360,20 +364,20 @@
     <button onclick="removeTest()">삭제</button>
     <button onclick="removeAll()">전체 삭제</button>
     <script>
-        const removeTest = () => {
-            const $parent = document.querySelector("#remove-container");
-            const $p = document.querySelector("#remove-container>p")
-            // $parent.removeChild($p);
-            $p.remove();
-        }
-        const removeAll = () => {
-            const $container = document.querySelector("#remove-container");
-            const $p = document.querySelectorAll("#remove-container>p");
-            // console.log($container)
-            $p.forEach(e => {
-                e.remove();
-            })
-        }
+            const removeTest = () => {
+                const $parent = document.querySelector("#remove-container");
+                const $p = document.querySelector("#remove-container>p")
+                // $parent.removeChild($p);
+                $p.remove();
+            }
+            const removeAll = () => {
+                const $container = document.querySelector("#remove-container");
+                const $p = document.querySelectorAll("#remove-container>p");
+                // console.log($container)
+                $p.forEach(e => {
+                    e.remove();
+                })
+            }
     </script>
 
     <fieldset>
@@ -399,13 +403,13 @@
         nextElementSibling : 같은 레벨의 바로 아래 있는 태그를 저장한 속성 <br>
     </p>
     <script>
-        const testElement = document.getElementById("moveTest");
-        console.log(testElement.children);
-        console.log(testElement.parentElement);
-        console.log(testElement.previousElementSibling);
-        console.log(testElement.nextElementSibling);
-        console.log(testElement.className);
-        console.log(testElement.classList);
+            const testElement = document.getElementById("moveTest");
+            console.log(testElement.children);
+            console.log(testElement.parentElement);
+            console.log(testElement.previousElementSibling);
+            console.log(testElement.nextElementSibling);
+            console.log(testElement.className);
+            console.log(testElement.classList);
     </script>
 
     <div id="table-container">
@@ -431,18 +435,18 @@
         </table>
     </div>
     <script>
-        const addRow = (e) => {
-            const $cur = e.target;
-            const $tr = $cur.parentElement.parentElement;
-            const $newTr = document.createElement("tr");
-            const $row = [1, 2].reduce(($tr, value) => {
-                const $td = document.createElement("td");
-                $td.innerText = value;
-                $tr.appendChild($td);
-                return $tr;
-            }, $newTr)
-            $tr.insertAdjacentElement("afterend", $row);
-        }
+            const addRow = (e) => {
+                const $cur = e.target;
+                const $tr = $cur.parentElement.parentElement;
+                const $newTr = document.createElement("tr");
+                const $row = [1, 2].reduce(($tr, value) => {
+                    const $td = document.createElement("td");
+                    $td.innerText = value;
+                    $tr.appendChild($td);
+                    return $tr;
+                }, $newTr)
+                $tr.insertAdjacentElement("afterend", $row);
+            }
     </script>
 </body>
 
