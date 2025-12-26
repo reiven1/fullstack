@@ -210,11 +210,11 @@
                     const $td = document.createElement("td");
                     $td.innerText = e;
                     $tr.appendChild($td)
-                    console.log($tr)
                 })
                 return $tr;
+            }).forEach(e => {
+                $table.appendChild(e);
             })
-
             document.getElementById("target5").appendChild($table);
         }
 
