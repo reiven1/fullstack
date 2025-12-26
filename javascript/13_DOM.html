@@ -405,6 +405,40 @@
         console.log(testElement.previousElementSibling);
         console.log(testElement.nextElementSibling);
     </script>
+
+    <div id="table-container">
+        <table>
+            <tr>
+                <td>1</td>
+                <td>
+                    <button onclick="addRow(event)">클릭</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <button onclick="addRow(event)">클릭</button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <button onclick="addRow(event)">클릭</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        const addRow = (e) => {
+            const $cur = e.target;
+            const $tr = $cur.parentElement.parentElement;
+            const $newTr = document.createelement("tr");
+            [1, 2].reduce(($tr, value) => {
+
+            }, $newTr)
+            $tr.insertAdjacentElement("afterend",);
+        }
+    </script>
 </body>
 
 </html>
