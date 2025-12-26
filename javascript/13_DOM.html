@@ -181,20 +181,6 @@
             console.log($li)
             document.getElementById("target5").appendChild($li);
         }
-        const createTable = () => {
-            const $table = document.createElement("table");
-            const $tr = document.createElement("tr");
-            targetList.map(e => {
-                const $td = document.createElement("td");
-                $td.value = e;
-                $td.innerText = e;
-                return $td;
-            }).forEach(e => {
-                $tr.appendChild(e);
-            })
-            $table.appendChild($tr);
-            document.getElementById("target5").appendChild($table);
-        }
 
         class Member {
             constructor(id, pw, name, age, email, gender, hobby = []) {
@@ -214,6 +200,23 @@
             new Member("user03", "3333", "유저3", 33, "user03@user03.com", '남', ["코딩", "축구", "산책"]),
 
         ]
+
+        const createTable = () => {
+            const $table = document.createElement("table");
+            tableData.map(v => {
+                const $tr = document.createElement("tr");
+                v.map(e => {
+                    const $td = document.createElement("td");
+                    $td.innerText = e;
+                    return $td;
+                }).forEach(e => {
+                    $tr.appendChild(e);
+                })
+
+            })
+
+        }
+
     </script>
 </body>
 
