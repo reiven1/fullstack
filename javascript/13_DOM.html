@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
 </head>
+
 <body>
     <h2>태그 생성하기</h2>
     <p>
         document.createElement("태그명") 함수를 이용 <br>
         HTMLElement 객체를 생성 <br>
-        텍스트노드가 있는 
+        텍스트노드가 있는 태그를 생성할 때 -> TextNode 객체를 추가 <br>
+        1. document.createTextNode("추가할 문자열"); <br>
+        2. 생성된 요소노드.innerText="추가할 문자열"; <br>
     </p>
+    <button onclick="addElement()">태그추가</button>
+    <div id="target"></div>
+    <script>
+        const addElement = () => {
+            const $h3 = document.createElement("h3");
+            console.log($h3);
+        }
+    </script>
 </body>
+
 </html>
