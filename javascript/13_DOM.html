@@ -181,6 +181,39 @@
             console.log($li)
             document.getElementById("target5").appendChild($li);
         }
+        const createTable = () => {
+            const $table = document.createElement("table");
+            const $tr = document.createElement("tr");
+            targetList.map(e => {
+                const $td = document.createElement("td");
+                $td.value = e;
+                $td.innerText = e;
+                return $td;
+            }).forEach(e => {
+                $tr.appendChild(e);
+            })
+            $table.appendChild($tr);
+            document.getElementById("target5").appendChild($table);
+        }
+
+        class Member {
+            constructor(id, pw, name, age, email, gender, hobby = []) {
+                this.id = id;
+                this.pw = pw;
+                this.name = name;
+                this.email = email;
+                this.gender = gender;
+                this.hobby = hobby;
+            }
+        }
+
+        const tableData = [
+            new Member("admin", "1234", "관리자", 57, "admin@admin.com", '여', ["관리", "청소"]),
+            new Member("user01", "1111", "유저1", 11, "user01@user01.com", '남', ["코딩", "운동", "독서"]),
+            new Member("user02", "2222", "유저2", 22, "user02@user02.com", '여', ["코딩", "서핑"]),
+            new Member("user03", "3333", "유저3", 33, "user03@user03.com", '남', ["코딩", "축구", "산책"]),
+
+        ]
     </script>
 </body>
 
