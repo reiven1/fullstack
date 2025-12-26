@@ -22,6 +22,12 @@
         const addElement = () => {
             const $h3 = document.createElement("h3");
             console.log($h3);
+            // 택스트노드 추가하기
+            const text = document.createTextNode("내가 처음 만든 태그");
+            console.log(text);
+            $h3.appendChild(text);
+            console.log($h3);
+            document.getElementById("target").innerHTML = $h3;
         }
     </script>
 </body>
