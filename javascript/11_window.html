@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window</title>
+</head>
+
+<body>
+    <h3>새창 만들기</h3>
+    <button onclick="createWin()">새창열기</button>
+    <script>
+        function createWin() {
+            // 1. url 주소 설정
+            // 2. 새창 오픈 방식 : _self, _blank(default)
+            // 3. 창 옵션 : 크기, 위치 ...
+            childWin = open("https://naver.com", "_blank");
+            console.log(childWin);
+        }
+    </script>
+    <h4>윈도우 닫기</h4>
+    <button onclick="closeWin()">닫기</button>
+    <script>
+        function closeWin() {
+            childWin.close();
+        }
+    </script>
+    <h3>setTimeout(), setInterval()</h3>
+    <div id="container">
+        <h3>오늘은 토요일</h3>
+    </div>
+    <div id="container2">
+
+    </div>
+    <button onclick="stopTimeout()">중단</button>
+    <button onclick="stopInterval();">interval중단</button>
+    <script>
+        // 일정시간 후 특정 동작을 하는 함수
+        const timeoutId = setTimeout(() => {
+            document.querySelectorAll("#container>*").forEach(e => {
+                e.style.color = 'red';
+                const today = new Date();
+                e.innerHTML = `${today.toTimeString().substring(0, today.toTimeString().indexOf(" "))}`
+            });
+        }, 2000);
+        function stopTimeout() {
+            clearTimeout(timeoutId);
+        }
+        const timeInterval = setInterval(() => {
+            const today = new Date();
+            document.querySelector("#container2").innerHTML = `${today.toTimeString().substring(0, today.toTimeString().indexOf(" "))}`
+        }, 1000)
+        function stopInterval() {
+            clearInterval(timeInterval);
+        }
+    </script>
+
+    <div id="test">
+        <h3>1. js에서 태그정보를 가져올 때 사용하는 태그는? <span id="time">10</span></h3>
+        <div>
+            <label for=""><input type="radio" name="1" value="window">window</label>
+        </div>
+        <div>
+            <label for=""><input type="radio" name="1" value="location">location</label>
+        </div>
+        <div>
+            <label for=""><input type="radio" name="1" value="document">document</label>
+        </div>
+        <div>
+            <label for=""><input type="radio" name="1" value="navigator">navigator</label>
+        </div>
+    </div>
+    <script>
+        const timeId = setInterval(() => {
+            const time = document.querySelector("#time");
+            const select = document.querySelector("input[type=radio]:checked");
+            time.innerText -= 1;
+            if (time.innerText == 0) {
+                clearInterval(timeId);
+                alert("시간 초과");
+            }
+        }, 1000);
+        document.getElementsByName("1").forEach(e => {
+            e.addEventListener("click", () => {
+                if (e.value == "document") {
+                    alert("정답")
+                    clearInterval(timeId);
+                }
+                else
+                    alert("땡")
+            })
+        });
+
+    </script>
+
+    <script>
+        window.onload = () => {
+            const container3 = document.getElementById("container3");
+            console.log(container3);
+        }
+    </script>
+    <h3>onload 속성</h3>
+    <div id="container3"></div>
+</body>
+
+</html>

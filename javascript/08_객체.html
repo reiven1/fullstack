@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+
+<body>
+    <h2>객체 생성하기</h2>
+    <script>
+        // 리터럴로 생성
+        let obj = {};
+        obj = {
+            name: "하승우",
+            age: 24,
+            "hobby": ["코딩", "게임", "운동"],
+            toString: function () {
+                console.log(this);
+                return this.name + ", " + this.age + ", " + this.hobby;
+            }
+        }
+        console.log(obj);
+        console.log(obj.toString());
+    </script>
+    <h3>객체를 반환하는 함수</h3>
+    <script>
+        function createPerson(name, age, address) {
+            const p = {
+                "name": name,
+                "age": age,
+                "address": address
+            }
+            return p;
+        }
+        const p = createPerson("하승우", 24, "경남 남해");
+        const p1 = createPerson("오수환", 24, "경남 울산");
+        console.log(p);
+        console.log(p1);
+    </script>
+    <h3>생성자 함수를 이용</h3>
+    <script>
+        function Person(name, age, phone) {
+            this.name = name;
+            this.age = age;
+            this.phone = phone;
+            this.toString = function () {
+                return this.name + ", " + this.age + ", " + this.phone;
+            }
+        }
+        const p2 = new Person("하승우", 24, "010-4977-6038");
+        console.log(p2);
+        console.log(p2.toString());
+    </script>
+    <h3>객체 이용하기</h3>
+    <script>
+        console.log(obj);
+        // 속성에 접군하기
+        // . or [] 이용
+        console.log(obj.name);
+        console.log(obj["name"]); // key값 이용하기
+
+        // 반복문을 이용해서 속성에 접근하기
+        // for in 문을 이용
+        for (key in obj) {
+            console.log(key);
+            // console.log(obj.key); // .key 를 하게되면 key 인 속성을 찾게됨
+            console.log(obj[key]);
+        }
+
+        // 자바스크립트 내장객체인 Object가 제공하는 함수를 이용해서 객체 탐색하기
+        // Object.keys() / Object.values()
+        // key/value 를 배열로 반환
+        Object.keys(obj).forEach(e => console.log(e));
+        Object.values(obj).forEach(e => console.log(e));
+        Object.values(obj).filter(e => typeof e == 'function').forEach(e => console.log(e));
+    </script>
+    <h3>객체에 새로운 속성을 추가, 수정, 삭제</h3>
+    <script>
+        obj = {};
+        console.log(obj);
+        obj.data = 200;
+        console.log(obj);
+        obj.data = 100;
+        console.log(obj);
+        obj['age'] = 24;
+        console.log(obj);
+
+        delete obj.age;
+        console.log(obj);
+        delete obj['data'];
+        console.log(obj);
+    </script>
+    <h3>객체 변경 금지하기</h3>
+    <p>
+        Object.freeze() : 추가, 수정, 삭제 불가능 <br>
+        Object.seal() : 추가, 삭제 불가능, 수정 가능 <br>
+        Object.preventExtensions() : 삭제, 수정 가능
+    </p>
+    <script>
+        const freezeObj = { name: "freeze", content: "내용" };
+        Object.freeze(freezeObj);
+        freezeObj['data'] = 200;
+        console.log(freezeObj);
+        delete freezeObj.name;
+        console.log(freezeObj);
+        freezeObj['content'] = "오늘 수업 여기까지!";
+        console.log(freezeObj);
+
+        const sealObj = { name: "seal", content: "이거까지" };
+        Object.seal(sealObj);
+        sealObj['test'] = "test";
+        console.log(sealObj);
+        sealObj['content'] = "오늘 수업 여기까지!";
+        console.log(sealObj);
+        delete sealObj.content;
+        console.log(sealObj);
+
+        const preventObj = { name: "prevent", content: "123" };
+        Object.preventExtensions(preventObj);
+        preventObj['test'] = 200;
+        console.log(preventObj);
+        preventObj['name'] = "변경";
+        console.log(preventObj);
+        delete preventObj['content'];
+        console.log(preventObj);
+
+        // 객체 상태를 확인하는 함수
+        // Object.isFrozen() : 추가, 수정, 삭제 불가능한 상태 return boolean
+        // Object.isSealed() : 수정 가능한 상태
+        // Object.isExtensible() : 추가, 수정 가능한 상태
+        result = Object.isExtensible(preventObj);
+        console.log(result);
+    </script>
+    <h3>객체 배열로 활용</h3>
+    <script>
+        function Student(studentNo, name, age, item = {}, address) {
+            this.studentNo = studentNo;
+            this.name = name;
+            this.age = age;
+            this.item = item;
+            this.address = address;
+        }
+        const students = [];
+        students.push(new Student(1, "홍길동", 42, { name: "가방", price: "100000" }, "강원도 산골"));
+        students.push(new Student(2, "하승우", 24, { name: "담배", price: "4500" }, "경남 남해"));
+        students.push(new Student(3, "오수환", 24, { name: "음료", price: "2400" }, "울산광역시"));
+        students.push(new Student(4, "강민주", 24, { name: "가방", price: "1500000" }, "경남 창원"));
+        students.push(new Student(5, "박종권", 25, { name: "음료", price: "2000" }, "경남 창원"));
+        students.push(new Student(6, "김태우", 25, { name: "모자", price: "1000000" }, "경남 창원"));
+        console.log(students);
+    </script>
+
+    <div id="table-container">
+    </div>
+    <select name="category" id="category">
+        <option disabled selected>선택하세요</option>
+        <option value="name">이름</option>
+        <option value="age">나이</option>
+        <option value="address">주소</option>
+    </select>
+    <input type="text" name="keyword">
+    <button onclick="searchData()">검색</button>
+    <button onclick="mktable()">데이터 가져오기</button>
+    <script>
+        /*const mktable = () => {
+            $div = document.getElementById("table-container");
+            let temp = '';
+            temp += "<table><tbody><tr><td>studentNo</td><td>name</td><td>age</td><td>item</td><td>address</td></tr>";
+            students.forEach(e => {
+                temp += "<tr><td>" + e['studentNo'] + "</td><td>" + e['name'] + "</td><td>" + e['age'] + "</td><td>" + e['item']['name'] + " : " + e['item']['price'] + "원" + "</td><td>" + e['address'] + "</td></tr>";
+            })
+            $div.innerHTML += temp + "</tbody></table>";
+        }*/
+
+        /*const mktable = () => {
+            let table = "<table>";
+            let header = "<tr><th>학생번호</th><th>이름</th><th>나이</th><th>아이템</th><th>주소</th></tr>";
+            let body = "";
+            students.forEach(student => {
+                body += "<tr>";
+                body += "<td>" + student['studentNo'] + "</td>";
+                body += "<td>" + student['name'] + "</td>";
+                body += "<td>" + student['age'] + "살" + "</td>";
+                body += "<td>" + student['item']['name'] + " : " + student['item']['price'] + "</td>";
+                body += "<td>" + student['address'] + "</td>";
+                body += "</tr>";
+            })
+            table += header + body
+            table += "</table>";
+            document.getElementById("table-container").innerHTML = table;
+        }*/
+
+        const mktable = () => {
+            let table = "<table>";
+            table += createHeader(['번호', '이름', '나이', '아이템', '주소']);
+            students.forEach(s => {
+                table += createBody(s);
+            })
+            table += "</table>";
+            document.getElementById("table-container").innerHTML = table;
+        }
+
+        function createHeader(header = []) {
+            return header.reduce((p, n) => p + "<th>" + n + "</th>", "<tr>") + "</tr>";
+        }
+
+        function createBody(data = {}) {
+            return Object.values(data).reduce((p, n) => {
+                if (typeof n == 'object' && !Array.isArray(n)) {
+                    return p + "<td>" + Object.values(n).join(" : ") + "</td>";
+                }
+                return p + "<td>" + n + "</td>"
+            }, "<tr>") + "</tr>";
+        }
+
+        const searchData = () => {
+            const $option = document.querySelector("#category>option:checked").value;
+            const $input = document.getElementsByName("keyword")[0].value;
+            let table = "<table>";
+            table += createHeader(['번호', '이름', '나이', '아이템', '주소']);
+            students.forEach(s => {
+                // 수정
+                if (s[$option].includes($input)) {
+                    table += createBody(s);
+                }
+            })
+            table += "</table>";
+            document.getElementById("table-container").innerHTML = table;
+        }
+    </script>
+    <h3>js에서 속성값 은닉하기</h3>
+    <script>
+        function Employee(inputName, inputSalary, inputDepartment) {
+            let name = inputName;
+            let salary = inputSalary;
+            let department = inputDepartment;
+            this.getName = function () {
+                return name;
+            }
+            this.setName = function (inputName) {
+                if (typeof name == 'string')
+                    name = inputName;
+                else
+                    throw new Error("문자열만 저장 가능");
+            }
+        }
+        const e = new Employee("김재민", 30, "개발팀");
+        console.log(e);
+        console.log(e.getName());
+        e.setName("하승우");
+        console.log(e.getName());
+    </script>
+</body>
+
+</html>

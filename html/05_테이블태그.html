@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블태그</title>
+</head>
+
+<body>
+    <h3>기본테이블</h3>
+    <table border=height="200" width="200">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+    <h3>테이블에 데이터 출력</h3>
+    <table height="200" width="400">
+        <thead>
+            <tr>
+                <th>학생번호</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>성별</th>
+                <th>학과</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>하승우</td>
+                <td>24</td>
+                <td>남자</td>
+                <td>컴공과</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>오수환</td>
+                <td>19</td>
+                <td>여자</td>
+                <td>컴공과</td>
+            </tr>
+        </tbody>
+    </table>
+    <style>
+        thead {
+            background-color: rgb(255, 255, 0);
+        }
+
+        tbody {
+            background-color: rgb(0, 255, 255);
+        }
+    </style>
+
+    <table>
+        <tr>
+            <td>
+                <input type="text">
+            </td>
+            <td rowspan="2">
+                <!-- 이게 두개 차지 -->
+                <button>로그인</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password">
+            </td>
+            <!-- <td><button>로그인</button></td> -->
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td colspan="3">n</td>
+            <!-- <td>n</td>
+            <td>n</td> -->
+        </tr>
+        <tr>
+            <td>n</td>
+            <td>n</td>
+            <td>n</td>
+        </tr>
+        <tr>
+            <td>n</td>
+            <td>n</td>
+            <td>n</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

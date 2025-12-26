@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-img flex-center">
+            <img src="./image/jjangu.jpg" alt="이미지" width="60" height="60">
+        </div>
+        <div class="header-title flex-center">
+            <h2>문구</h2>
+        </div>
+        <div class="header-login flex-center">
+            <form action="">
+                <div class="login-input">
+                    <input type="text" name="id" placeholder="ID 입력하세요">
+                    <input type="text" name="password" placeholder="PW 입력하세요">
+                </div>
+                <div class="login-button">
+                    <input type="submit" value="로그인">
+                    <input type="reset" value="취소">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="content">
+        <aside>
+            <ul class="menu">
+                <li>h</li>
+                <li>b</li>
+                <li>pr</li>
+            </ul>
+        </aside>
+        <div class="productlist">
+            <div class="product">
+                <img src="" alt="상품1" width="80" height="80">
+                <p>상품명</p>
+                <p>상품설명</p>
+                <p>상품가격</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+    <style>
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            height: 100px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-img {
+            width: 15%;
+        }
+
+        .header-title {
+            width: 60%;
+        }
+
+        .header-login {
+            width: 25%;
+        }
+
+        .login-input {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-button {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content {
+            height: 500px;
+        }
+
+        .content>aside {
+            float: left;
+            width: 50px;
+            height: 100%;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 0;
+
+        }
+
+
+        .footer {
+            height: 100px;
+        }
+    </style>
+</body>
+
+</html>

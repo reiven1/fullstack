@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+
+<body>
+    <h2>선언적 함수 이용하기</h2>
+    <script>
+        basicFunc(); // 호이스팅 가능
+        function basicFunc() {
+            console.log("우와 내가 선언한 첫 함수");
+        }
+        // 함수 호출하기
+        // basicFunc();
+
+        // 매개변수가 있는 함수 선언
+        // function paramFunc2(let name){} <- 하면안됨
+        function paramFunc(name, age, gender) {
+            // console.log(name, age, gender);
+            console.log(name.substring(1) + " " + (age - 2) + ' ' + gender);
+        }
+        paramFunc("하승우", 24, "남자");
+        // paramFunc(1, 2, 3);
+    </script>
+    <h3>매개변수에 기본값 대입하기</h3>
+    <script>
+        function paramFunc2(name = "아무개", age = 10, hobby = []) {
+            // 전달된 매개변수를 모두 관리하는 객체 : arguments
+            console.log(arguments);
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+            console.log(name + " " + age);
+            hobby.forEach((e, i) => {
+                console.log(i + " " + e);
+            })
+            // console.log(name, age, hobby);
+        }
+        // 매개변수의 인수를 다 전달하지 않아도 호출이 가능
+        paramFunc2("하승우", 24);
+        // 매개변수의 인수를 더 많이 전달해도 호출이 가능
+        paramFunc2("하승우", 24, ["운동", "게임"], 1, 2, 3, 4, 5);
+    </script>
+    <h3>중복선언이 가능함</h3>
+    <script>
+        basicFunc("test");
+        // function basicFunc(title) {
+        //     console.log(title);
+        // }
+        const basicFunc = function (title) {
+            console.log(title);
+        } // 위에서 선언해놨기 때문에 오류 발생
+    </script>
+    <div id="container">
+        <div id="input-container">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <button onclick="saveData()">저장</button>
+        </div>
+        <table></table>
+    </div>
+    <script>
+        function saveData() {
+            let result = "<tr>";
+            document.querySelectorAll("#input-container>input").forEach(e => {
+                result += addTd(e.value);
+            });
+            result += "</tr>";
+            document.querySelector("#container>table").innerHTML += result; // 누적, 덮어쓰기 하려면 innerTHML = result 로 변경
+        }
+        function addTd(value) {
+            return "<td>" + value + "</td>";
+        }
+    </script>
+    <h3>익명함수 이용하기</h3>
+    <script>
+        // annoFunc(); // 호이스팅은 되는데 아직 함수가 아니라서 오류
+        // functino(){}
+        // 변수(매개변수)에 저장 or 자동실행
+        var annoFunc = function () {
+            console.log("익명함수");
+        };
+        annoFunc();
+        var annoFunc = function () {
+            console.log("재정의");
+        }
+        annoFunc();
+
+        // const annoFunc = function () {
+        //     console.log("안돼");
+        // }
+
+        const annoParam = function (title, content) {
+            console.log(title, content);
+            console.log(arguments);
+        }
+        annoParam("크리스마스", "나혼자...ㅠ 케빈과 함께");
+
+        const calc = function (su = 0, su2 = 0) {
+            return su + su2;
+        }
+        console.log(calc(2));
+    </script>
+
+    <h3>매개변수로 함수 전달 하기</h3>
+    <p>
+        이벤트핸들러, js에서 제공하는 내장함수를 이용할 떄
+    </p>
+    <script>
+        function paramFunc3(title, fnTest) {
+            console.log(title);
+            if (typeof fnTest == 'function')
+                fnTest();
+            else
+                throw new Error("두번째 매개변수는 함수만 가능합니다");
+        }
+        paramFunc3("매개변수로 함수전달", function () { console.log("우와 신기하다") });
+        // paramFunc3("test", "test2");
+        paramFunc3("test", basicFunc);
+    </script>
+    <h2 id="target">이거 클릭해 봐</h2>
+    <script>
+        document.getElementById("target").addEventListener("click", function () {
+            alert("클릭했네");
+        })
+        // setTimeout(function () {
+        //     alert("쉬는시간!");
+        // }, 1000)
+    </script>
+
+    <h3>화살표함수</h3>
+    <p>
+        표현식 : ()=>{} <br>
+        매개변수가 한개 : 변수명=>{ 로직 } <br>
+        매개변수가 한개, 리턴값 : 변수명=>리턴값 <br>
+        로직+반환형 : ()=>{ 로직; return 값; }
+        매개변수,리턴값 : (변수명, 변수명 ...)=>{ 로직; return 값; }
+    </p>
+    <script>
+        const arrowFunc = () => {
+            console.log("화살표 함수");
+        }
+        arrowFunc();
+
+        const arrowParam = (name, age) => {
+            console.log(name, age);
+        }
+        arrowParam("하승우", 24);
+
+        const arrowOneParam = title => {
+            console.log(title);
+        }
+        arrowOneParam("title");
+
+        // const arrowReturn = () => "반환값";
+        const arrowReturn = (su) => su > 19 ? "성인" : "미성년";
+        // (su) => { return su > 19 ? "성인" : "미성년" }
+        console.log(arrowReturn(20));
+        console.log(arrowReturn(19));
+
+        const arrowReturnFunc = (title) => () => title + "호호호호";
+        console.log(arrowReturnFunc("우와")());
+
+        // function(title) {
+        //     return function () {
+        //         return title + '하하호호';
+        //     }
+        // }
+
+        // (str) => str.length;
+    </script>
+    <p>화살표함수는 arguments가 없다</p>
+    <script>
+        const arguTest = (data) => {
+            console.log(arguments);
+        }
+        const arguTest2 = (a, ...arg) => {
+            console.log(a);
+            console.log(arg);
+        } // 화살표 함수에서 arguments 객체처럼 쓰려면 ...arg
+        // arguTest("너 있니?");
+        arguTest2(1, 2, 3, 4, 5);
+    </script>
+    <h3>함수내부 this 예약어 확인하기</h3>
+    <p>
+        function(){} : 함수를 소유한 객체, 호출한 객체를 this에 저장 -> this값을 바인딩처리할 수 있음<br>
+        ()=>{} : this에 window객체를 저장, 바인딩 못함
+    </p>
+    <button id="btn">this값 테스트</button>
+    <script>
+        document.getElementById("btn").addEventListener("click",
+            // function(){
+            //     console.log(this);
+            // });  => 이벤트가 걸려있는 객체를 가르킴
+            () => {
+                console.log(this);
+            }); // => window 객체를 가르킴
+
+        const obj = {
+            name: "하승우",
+            thisTest: function () {
+                console.log(this);
+            },
+            arrowThis: () => {
+                console.log(this);
+            }
+        };
+        function testThis() {
+            console.log(this);
+        }
+        const testThis2 = () => {
+            console.log(this);
+        }
+        obj.thisTest();
+        obj.arrowThis();
+        testThis(); // window가 실행해서 window 객체 출력
+        // this 바인딩
+        testThis.call(obj); // 익명함수는 연결해서 사용 가능
+        testThis2.call(obj); // 화살표 함수에 대한 this값은 변경 불가능 => obj를 call() 해도 window객체
+    </script>
+
+    <h3>함수를 반환값으로 반환하기</h3>
+    <p>
+        function(){ <br>
+        <!-- return 값; -->
+        return function(){}; <br>
+        }
+    </p>
+    <script>
+        const returnFunc = () => {
+            const innerFunc = (msg) => {
+                console.log(msg);
+            }
+            return innerFunc;
+        }
+
+        const returnValue = returnFunc(); // returnFunc() 안에 innerFunc() 객체가 저장
+        // console.log(returnValue); 
+        returnValue("우와 신기방기"); // return이 function이니까 가능, 즉 innerFunc() 호출
+    </script>
+    <h3>closure 이용하기</h3>
+    <p>
+        함수 내부에 선언된 변수, 매개변수의 생명주기에 따라 호출하고 return 될 때 까지 이용이 가능 <br>
+        반환되는 함수에서 함수에서 선언된 변수나 매개변수를 이용하면 그 변수, 매개변수를 유지하는 것 -> closure
+    </p>
+    <script>
+        const closureTest = () => {
+            let num = 10;
+            return () => {
+                console.log(num--);
+            }
+        }
+        const test3 = closureTest();
+        test3(); // 10
+        test3(); // 9
+        const test4 = closureTest(); // test3이랑 다른 객체
+        test4(); // 10
+
+        const printMsg = (name) => {
+            return (msg) => {
+                console.log(name + " : " + msg);
+            }
+        }
+        const bsMsg = printMsg("BS");
+        const mjMsg = printMsg("MJ");
+        bsMsg("안녕");
+        mjMsg("헬로");
+
+        // 곱셈을 처리하는 기능
+        const multi = (su) => {
+            return (su1) => {
+                return su * su1;
+            }
+        }
+        const four = multi(4);
+        console.log(four(3));
+    </script>
+    <h3>클릭한 횟수 기록</h3>
+    <h4 id="countTarget">0</h4>
+    <button onclick="count()">클릭</button>
+    <script>
+        //  countValue 가 전역변수라서 console에서 접근가능
+        // let countValue = 0;
+        // const count = () => {
+        //     let val = document.getElementById("countTarget").innerText
+        //     Number(val) = ++countValue;
+        // }
+
+        // closure count 값이 console에서 접근 불가능
+        // const tempCount = () => {
+        //     let count = 0;
+        //     return () => {
+        //         document.getElementById("countTarget").innerText = ++count;
+        //     }
+        // }
+        // const count = tempCount();
+
+        // 자동실행 함수
+        const count = (() => {
+            let count = 0;
+            return () => {
+                document.getElementById("countTarget").innerText = ++count;
+            }
+        })();
+    </script>
+    <h3>첨부파일 등록 기능</h3>
+    <div id="file-container">
+        <fieldset>
+            <legend>
+                첨부파일
+                <span style="color:red">
+                    첨부파일은 5개까지 가능
+                </span>
+            </legend>
+            <button onclick="addFile()">추가</button>
+            <div id="file-input">
+                <input type="file" name="upfile">
+            </div>
+        </fieldset>
+    </div>
+
+    <script>
+        const addFile = ((inputClick = 0) => () => {
+            if (inputClick++ < 5) {
+                let inputStr = '<input type="file" name="upfile">';
+                document.getElementById("file-input").innerHTML += inputStr;
+            }
+            else {
+                alert("첨부파일은 5개까지 가능");
+            }
+
+        })(1); // inputClick을 1로 주고 파라미터 안넘겨도 됨
+
+        // 둘 다 같은방법 표현법만 다름
+        // const addFile = (() => {
+        //     let inputClick = 1;
+        //     return () => {
+        //         if (inputClick++<5) {
+        //             let inputStr = '<input type="file" name="upfile">';
+        //             document.getElementById("file-input").innerHTML += inputStr;
+        //         }
+        //         else {
+        //             alert("첨부파일은 5개까지 가능");
+        //         }
+        //     }
+        // })();
+    </script>
+
+</body>
+
+</html>

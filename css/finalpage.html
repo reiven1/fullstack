@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <style>
+        *:not(input) {
+            background-color: beige;
+            color: navy;
+            font-family: "Gamja Flower";
+        }
+
+        header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #logo-container {
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #title-container {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #login-container {
+            width: 25%;
+        }
+
+        #login-container div:first-child {
+            display: flex;
+            flex-direction: column;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 70px;
+            justify-content: space-evenly;
+        }
+
+        #login-container div:last-child {
+            display: flex;
+            justify-content: right;
+            padding-right: 5%;
+        }
+
+        section {
+            width: 100%;
+            height: 500px;
+            display: flex;
+        }
+
+        aside {
+            width: 15%;
+        }
+
+        aside>ul {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        aside li {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        article {
+            width: 85%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+
+        .product {
+            width: 200px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5%;
+        }
+
+        .product>* {
+            margin: 0;
+            padding: 0;
+        }
+
+        .product img {
+            border-radius: 100%;
+        }
+
+        .product h5:last-child {
+            text-align: right;
+            width: 70%;
+        }
+
+        .product img:hover {
+            transform: perspective(200px) rotateY(360deg);
+            transition-property: transform;
+            transition-duration: 500ms;
+        }
+
+        footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes menu {
+            to {
+                transform: translateX(3px);
+                color: magenta;
+                text-decoration: overline;
+            }
+
+            from {
+                transform: translateX(-3px);
+                color: lime;
+                text-decoration: overline;
+            }
+        }
+
+        aside li:hover {
+            animation: menu 0.5s infinite alternate;
+        }
+
+        aside li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="./image/jjangu.jpg" alt="짱구" width="80" height="80">
+        </div>
+        <div id="title-container">
+            <h2>타이틀</h2>
+        </div>
+        <div id="login-container">
+            <form action="">
+                <div>
+                    <input type="text" name="userId">
+                    <input type="password" name="password">
+                </div>
+                <div>
+                    <input type="submit" value="로그인">&nbsp;&nbsp;
+                    <input type="reset" value="취소">
+                </div>
+            </form>
+        </div>
+    </header>
+    <section>
+        <aside>
+            <ul>
+                <li>HOME</li>
+                <li>Board</li>
+                <li>Product</li>
+                <li>Q&A</li>
+            </ul>
+        </aside>
+        <article>
+            <div class="product">
+                <img src="https://m.mgoffice.kr/web/product/big/202101/c0aeee41f009be99db6c3a0b97c14810.jpg" alt="핫팩"
+                    width="150" height="150">
+                <h4>박상병 핫팩</h4>
+                <h5>군대 보급용 핫팩, 성능 끝내줘요!</h5>
+                <h5>25,000원</h5>
+            </div>
+            <div class="product">
+                <img src="https://m.mgoffice.kr/web/product/big/202101/c0aeee41f009be99db6c3a0b97c14810.jpg" alt="핫팩"
+                    width="150" height="150">
+                <h4>박상병 핫팩</h4>
+                <h5>군대 보급용 핫팩, 성능 끝내줘요!</h5>
+                <h5>25,000원</h5>
+            </div>
+            <div class="product">
+                <img src="https://m.mgoffice.kr/web/product/big/202101/c0aeee41f009be99db6c3a0b97c14810.jpg" alt="핫팩"
+                    width="150" height="150">
+                <h4>박상병 핫팩</h4>
+                <h5>군대 보급용 핫팩, 성능 끝내줘요!</h5>
+                <h5>25,000원</h5>
+            </div>
+            <div class="product">
+                <img src="https://m.mgoffice.kr/web/product/big/202101/c0aeee41f009be99db6c3a0b97c14810.jpg" alt="핫팩"
+                    width="150" height="150">
+                <h4>박상병 핫팩</h4>
+                <h5>군대 보급용 핫팩, 성능 끝내줘요!</h5>
+                <h5>25,000원</h5>
+            </div>
+            <div class="product">
+                <img src="https://m.mgoffice.kr/web/product/big/202101/c0aeee41f009be99db6c3a0b97c14810.jpg" alt="핫팩"
+                    width="150" height="150">
+                <h4>박상병 핫팩</h4>
+                <h5>군대 보급용 핫팩, 성능 끝내줘요!</h5>
+                <h5>25,000원</h5>
+            </div>
+        </article>
+    </section>
+    <footer>
+        <h3>Company.</h3>
+    </footer>
+</body>
+
+</html>

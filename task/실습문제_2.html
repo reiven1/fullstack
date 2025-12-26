@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 2</title>
+</head>
+
+<body>
+    <h2>문제 1. 색상 선택후 변경 버튼을 클릭하면 색상이 변경되도록 만들어 보시오</h2>
+    <div id="box1" class="box"></div>
+    <input type="color" id="color">
+    <button onclick="changeColor()">변경</button>
+
+    <hr>
+
+    <h2>문제 2. 버튼에 따른 크기 조절이 가능하게 만드세요</h2>
+
+    <div id="box2" class="box"></div>
+    <button onclick="changeSize(50)">50x50</button>
+    <button onclick="changeSize(100)">원본(100x100)</button>
+    <button onclick="changeSize(200)">200x200</button>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function changeColor() {
+            const color = document.getElementById("color").value;
+            document.getElementById("box1").style.backgroundColor = color;
+        }
+
+        function changeSize(size) {
+            const box = document.getElementById("box2");
+            box.style.width = size + "px";
+            box.style.height = size + "px";
+        }
+    </script>
+</body>
+
+</html>

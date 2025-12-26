@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 1</title>
+</head>
+
+<body>
+    <h2>행 열 갯수 각각 입력받아 테이블 만들기</h2>
+    <p>
+        힌트 : 반복문은 자바랑 같습니다. 다만! 변수만 var 데이터형이라는걸 기억해주세요. <br>
+        document.write()를 이용하여 표를 출력하면 됩니다!
+    </p>
+    <button onclick="mkTable()">테이블 생성</button>
+    <script>
+        function mkTable() {
+            var row = prompt("테이블 행의 갯수는?");
+            var col = prompt("테이블 열의 갯수는?");
+            var table = '<table border 1>';
+            for (let i = 0; i < col; i++) {
+                table += '<tr>'
+                for (let j = 1; j <= row; j++) {
+                    table += '<td>' + (i + j) + '</td>';
+                }
+                table += '</td>';
+            }
+            document.write(table);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자, 제어문</title>
+</head>
+
+<body>
+    <h3>연산자</h3>
+    <p>
+        비교연산자에서 타입까지 비교하는 연산자 <br>
+        ===, !==
+    </p>
+    <script>
+        const su = 100;
+        const strSu = "100";
+        const su2 = 100;
+        console.log(su == strSu); // 자동 형변환 때문에 true
+        console.log(su === strSu); // ===으로 타입까지 비교하기 때문에 false
+        console.log(su === su2); // 타입까지 같기 때문에 true
+    </script>
+    <p>짧은 조건문</p>
+    <script>
+        const result = strSu === 100 || "100점이야"; // false 이기 때문에 || 뒤 실행 반대로 true 일 땐 && 뒤 실행
+        console.log(result);
+    </script>
+    <div id="container">
+        <table>
+        </table>
+    </div>
+    <button onclick="createTable()">생성</button>
+    <script>
+        function createTable() {
+            let table = "<tr>";
+            table += "<th>번호</th>";
+            table += "<th>이름</th>";
+            table += "<th>성별</th>";
+            table += "</tr>";
+            document.querySelector("#container>table").innerHTML = table;
+        }
+    </script>
+
+
+    <!-- input#data에서 입력받은 값을 div#container2에 기록하는 기능 만들기 button.btn을 누르면 function addData()가 실행-->
+    <div>
+        <input type="text" id="data">
+        <div id="container2"></div>
+        <button onclick="addData()" class="btn">기록하기</button>
+    </div>
+    <script>
+        function addData() {
+            let data = document.getElementById("data").value;
+            document.getElementById("container2").innerHTML += data + "<br>" // "<p>"+data+"</p>";
+        }
+    </script>
+
+    <!-- 추가버튼을 클릭하면 작성된 내용을 테이블에 추가하는 기능 -->
+    <div class="container3">
+        <input type="text" name="div">
+        <input type="text" name="title">
+        <input type="text" name="writer">
+        <button onclick="addTd()">추가</button>
+    </div>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>구분</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function addTd() {
+            let table = "<tr>";
+            table += "<th>" + document.getElementsByName("div")[0].value + "</th>";
+            table += "<th>" + document.getElementsByName("title")[0].value + "</th>";
+            table += "<th>" + document.getElementsByName("writer")[0].value + "</th>";
+            table += "</tr>";
+            document.querySelector(".table-container>table").innerHTML += table;
+        }
+    </script>
+
+    <h3>조건문</h3>
+    <p>
+        if, if~else if~else, switch
+    </p>
+    <select name="month" onchange="choiceMonth()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <span id="msg"></span>
+    <script>
+        function choiceMonth() {
+            const month = document.getElementsByName("month")[0].value;
+            // console.log(month);
+            let msg;
+            if (month == 12 || month >= 1 && month <= 2) {
+                msg = "겨울이야";
+            }
+            else if (month >= 3 && month <= 5) {
+                msg = "봄이야";
+            }
+            else if (month >= 6 && month <= 8) {
+                msg = "여름이야";
+            }
+            else {
+                msg = "가을이야";
+            }
+
+            document.getElementById("msg").innerText = msg;
+        }
+    </script>
+    <h3>switch문</h3>
+    <script>
+        // switch(값){case break; default break;}
+        // let menu = Number(prompt("메뉴선택")); // prompt는 문자열로 받아옴
+        // switch (menu) { // 동등비교, === 으로 비교
+        //     case 1: console.log("1번선택"); break;
+        //     case 2: console.log("2번선택"); break;
+        //     case 3: console.log("3번선택"); break;
+        //     case 4: console.log("4번선택"); break;
+        //     default: console.log("없는 메뉴입니다."); break;
+        // }
+
+        // switch (menu % 2 == 0) {
+        //     case true: console.log("짝수"); break;
+        //     case false: console.log("홀수"); break;
+        // }
+    </script>
+
+    <h3>계산기 만들기</h3>
+    <div id="calc-container">
+        <input type="number" class="su">
+        <select name="operater">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" class="su">
+        <button onclick="calcRun()">계산하기</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calcRun() {
+            // 계산결과를 div#result 태그에 대입
+            let num1 = Number(document.getElementsByClassName("su")[0].value);
+            let num2 = Number(document.getElementsByClassName("su")[1].value);
+            // console.log(document.getElementsByClassName("su")[0].value);
+            // console.log(document.getElementsByClassName("su")[1].value);
+            let operater = document.getElementsByName("operater")[0].value;
+            // console.log(document.getElementsByName("operater")[0].value);
+            let result
+            switch (operater) {
+                case "+": result = num1 + num2; break;
+                case "-": result = num1 - num2; break;
+                case "*": result = num1 * num2; break;
+                case "/": result = num1 / num2; break;
+            }
+            console.log(result);
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+
+    <div id="user-container">
+        <input type="password" name="password"><br>
+        <input type="password"><span id="pwcheck"></span><br>
+        <button onclick="passwordCheck()">확인</button>
+    </div>
+    <script>
+        function passwordCheck() {
+            // 두개의 password 입력창에 입력된 값이 일치하면 span#pwcheck에 일치합니다.
+            // 불일치하면 span#pwcheck에 불입치합니다 를 출력하기
+            // 버전업
+            // 출력되는 문구를 일치할때는 녹색, 불일치할때는 빨간색으로 설정하기
+            const values = document.querySelectorAll("input[type='password']");
+            const $span = document.getElementById("pwcheck");
+            let msg, color;
+            if (values[0].value == values[1].value) {
+                // console.log("같다");
+                msg = "span#pwcheck에 일치합니다.";
+                color = "green";
+            }
+            else {
+                // console.log("다르다");
+                msg = "span#pwcheck에 불일치합니다.";
+                color = "red";
+            }
+            $span.innerText = msg;
+            $span.style.color = color;
+
+            /*
+            let password = document.getElementsByName("password")[0].value;
+            let pwcheck = document.querySelectorAll("[type=password]")[1].value;
+            let str;
+            password == pwcheck ? str = "span#pwcheck에 일치합니다" : str = "span#pwcheck에 불일치합니다"
+            document.getElementById("pwcheck").innerText = str;
+            password == pwcheck ? document.getElementById("pwcheck").style.color = "green" : document.getElementById("pwcheck").style.color = "red"
+            */
+        }
+    </script>
+    <h3>반복문</h3>
+    <p>
+        for문 <br>
+        for(초기식;조건식;증감식){}
+    </p>
+    <p>
+        while문 <br>
+        while(조건식){}
+    </p>
+    <script>
+        console.log("for문")
+        /*for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }*/
+        console.log("while문")
+        /*let j = 0;
+        while (j < 10) {
+            console.log(j++);
+        }*/
+    </script>
+    <h3>다수의 태그를 가져와 속성을 수정</h3>
+    <div id="h-container">
+        <h2>h2-1</h2>
+        <h2>h2-2</h2>
+        <h2>h2-3</h2>
+        <h2>h2-4</h2>
+        <h2>h2-5</h2>
+        <button onclick="changeColor()">변경</button>
+    </div>
+    <script>
+        function changeColor() {
+            const $h2List = document.querySelectorAll("#h-container>h2");
+            // console.log($h2List);
+            /*for (let i = 0; i < 5; i++) {
+                // console.log($h2List[i]);
+                if (i % 2 == 0) {
+                    $h2List[i].style.color = "lime";
+                }
+                else {
+                    $h2List[i].style.color = "magenta";
+                }
+            }*/
+            $h2List.forEach(elements => { elements.style.backgroundColor = "yellowgreen"; });
+        }
+    </script>
+    <h3>check된 input태그 확인하기</h3>
+    <div id="check-container">
+        <input type="checkbox" name="lang" value="html">html
+        <input type="checkbox" name="lang" value="css">css
+        <input type="checkbox" name="lang" value="javascript">javascript
+        <input type="checkbox" name="lang" value="jquery">jquery
+        <input type="checkbox" name="lang" value="react.js">react.js
+    </div>
+    <div>
+        <button onclick="inputCheck()">체크확인</button>
+        <button onclick="inputAllCheck()">전체선택</button>
+        <button onclick="checkedReverse()">반전</button>
+    </div>
+    <script>
+        function inputCheck() {
+            // check된 input값을 console로 출력하기
+            const $checkedList = document.querySelectorAll("[name=lang]:checked");
+            $checkedList.forEach(element => {
+                console.log(element.value);
+            });
+        }
+
+        function inputAllCheck() {
+            // checkbox 모두 check하기
+            const $checkboxList = document.querySelectorAll("[name=lang]");
+            $checkboxList.forEach(element => {
+                element.checked = true;
+            });
+        }
+
+        function checkedReverse() {
+            const $checkboxList = document.querySelectorAll("[name=lang]");
+            $checkboxList.forEach(element => {
+                if (element.checked) {
+                    element.checked = false;
+                }
+                else {
+                    element.checked = true;
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

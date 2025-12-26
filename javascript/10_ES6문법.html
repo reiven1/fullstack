@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 문법</title>
+</head>
+
+<body>
+    <h3>문자열 템플릿</h3>
+    <script>
+        // "문자열"+변수명+"문자열...";
+        // `문자열${변수명}문자열...`;
+        let name = "하승우";
+        result = name + "님 환영합니다.";
+        console.log(result);
+        result = `${name}님 환영합니다.`;
+        console.log(result);
+        const su = 10;
+        const su1 = 20;
+        result = `<p>수 ${su} ${su1}의 합은 : ${su} + ${su1}</p>`;
+        console.log(result);
+
+        const obj = { name: "하승우", age: 24 };
+        const array = [1, 2, 3, 4, 5];
+        result = `객체 이름 ${obj.name} 나이 ${obj['age']} 배열정보 : ${array[0] + array[2]} ${array.find(e => e > 3)}`;
+        console.log(result);
+    </script>
+    <h3>null, undefined 형을 처리하는 연산자</h3>
+    <p>
+        ?? : null, undefined 형에 대해 대체값을 지정하는 연산자 <br>
+        ?. : 객체의 속성에 접근했을 때 그 객체가 undefined 인 경우 Error 대신에 undefined 를 반환
+    </p>
+    <script>
+        let val = "곧 있으면 점심시간";
+        let val2 = null;
+        console.log(val ?? "null이나 undefined면 이거 출력");
+        console.log(val2 ?? "null이나 undefined면 이거 출력");
+        val = { name: "하승우", age: 24, hobby: ["게임", "코딩"] };
+        let obj2;
+        console.log(val.name);
+        console.log(obj2?.name ?? "아무개");
+    </script>
+    <h3>전개연산자(스프레드 연산자)</h3>
+    <p>
+        나열형 자료를 추출하거나 연결할 때 사용하는 연산자 -> 배열, 객체 <br>
+        ...배열명 or ...객체명
+    </p>
+    <script>
+        const arrNum = [1, 2, 3, 4, 5];
+        console.log(arrNum);
+        // 배열 복사
+        result = [...arrNum]; // 깊은 복사
+        console.log(result);
+        result[0] = 100;
+        console.log(arrNum);
+        console.log(result);
+
+        function test(su, su1, su2, su3) {
+            console.log(su, su1, su2, su3);
+        }
+        test(arrNum[0], arrNum[1], arrNum[2], arrNum[3]);
+        test(...arrNum);
+
+        const emp = {
+            name: "오수환",
+            age: 24,
+            job: "개발자",
+            salary: 30
+        }
+
+        const empCopy = { ...emp };
+        empCopy.name = "하승우";
+        console.log(emp);
+        console.log(empCopy);
+
+        const empCopy2 = {
+            ...emp,
+            name: "강원준늦잠",
+            salary: 10,
+            bonus: -0.5
+        }
+        console.log(empCopy2);
+
+        // 배열, 객체를 합치기
+        // concat()
+        const arr1 = ["대한민국", "북한", "미국", "바티칸시국"];
+        const arr2 = ["이순신", "세종대왕", "안중근", "김구"];
+        // arr1.concat(arr2);
+        result = [...arr1, ...arr2];
+        console.log(result);
+        // key 값이 같은 경우 덮어쓰기 됨
+        result = { ...emp, ...empCopy2 };
+        console.log(result);
+    </script>
+    <h3>구조분해할당</h3>
+    <p>
+        배열, 객체에 저장된 데이터를 각 변수에 저장할 때 사용
+    </p>
+    <script>
+        const height = [165.2, 176.3, 180.5, 152.3, 178.4];
+        // let a,b,c,e,d;
+        // a=height[0];
+        // b=height[1];
+        let [a, b, c, d, e] = height;
+        console.log(a, b, c, d, e);
+        let [num, num1, ...other] = height;
+        console.log(num, num1);
+        console.log(other);
+
+        const names = ["김재민", "박종권", "김태우"];
+        const [n, n2, n3, n4 = "김영호", n5 = "황지한"] = names;
+        console.log(n, n2, n3, n4, n5);
+
+        console.log(empCopy2);
+        // key 값이 일치 할 때 매칭
+        const { name2, salary, bonus } = empCopy2;
+        console.log(name2, salary, bonus);
+
+        function testObj({ name, salary, bonus, job }) {
+            console.log(name, salary, bonus, job);
+        }
+        testObj(empCopy);
+        testObj(empCopy2);
+
+        // const [data, setData] = useState(); // 배열
+        // function TestComponent({ props }) { } // 객체
+    </script>
+    <h3>class 활용</h3>
+    <script>
+        class Shape {
+            // 생성자
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            // 속성 선언
+            #name = "하승우";
+            score = [100, 99, 98];
+            // 메소드 선언
+            toString() {
+                return `${this.x} ${this.y} ${this.#name} ${this.score}`;
+            }
+            move(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            static staticVar = 100;
+            static staticFunc() {
+                console.log("test");
+            }
+        }
+        const s = new Shape(10, 10);
+        console.log(s);
+        console.log(s.toString());
+        s.move(20, 20);
+        console.log(s);
+        // s.name = "전재우늦잠";
+        // console.log(s.#name);
+        // console.log(Shape.score);
+
+        // static
+        console.log(Shape.staticVar);
+        Shape.staticVar = 200;
+        console.log(Shape.staticVar);
+        Shape.staticFunc();
+
+        class Circle extends Shape {
+            constructor(x, y, radius) {
+                super(x, y);
+                this.radius = radius;
+            }
+        }
+        const circle = new Circle(20, 20, 3);
+        console.log(circle);
+    </script>
+</body>
+
+</html>

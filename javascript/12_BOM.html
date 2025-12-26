@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+
+<body>
+    <h3>location 객체 이용하기</h3>
+    <p>
+        url창에 대한 정보를 관리하는 객체 <br>
+    </p>
+    <button onclick="location.href='https://naver.com';">요청 보내기</button>
+    <button onclick="location.assign('https://youtube.com')">assign()</button> <!-- assign : 뒤로가기 가능 -->
+    <button onclick="location.replace('https://youtube.com')">replace()</button> <!-- replace : 뒤로가기 불가능-->
+    <script>
+        Object.entries(location).forEach((e, i) => {
+            console.log(`${e[0]} : ${e[1]}`)
+        });
+
+        // search 값이 2개 이상인 경우
+        const parameter = {};
+        const data = location.search.substring(1);
+        data.split("&").forEach(e => {
+            const temp = e.split("=");
+            parameter[temp[0]] = temp[1];
+        });
+        console.log(parameter);
+    </script>
+    <h3>navigator</h3>
+    <h4>위, 경도 데이터 확인</h4>
+    <button onclick="checkPosition()">위치확인</button>
+    <script>
+        function checkPosition() {
+            const geo = navigator.geolocation;
+            console.log(geo);
+            geo.getCurrentPosition((position) => {
+                console.log(`위도 : ${position.coords.latitude}, 경도 : ${position.coords.longitude}`)
+            });
+        }
+    </script>
+    <h3>클립보드 이용하기</h3>
+    <div id="clipboard">
+        오늘 저녁은 뭐먹지
+    </div>
+    <button onclick="paste()">붙여넣기</button>
+    <div id="copy"></div>
+    <script>
+        function paste() {
+            navigator.clipboard.readText().then(data => {
+                document.getElementById("copy").innerText += data;
+            })
+        }
+        document.getElementById("clipboard").addEventListener("click", (e) => {
+            const content = e.target.innerText;
+            navigator.clipboard.writeText(content);
+            alert('클립보드에 복사됨');
+        })
+    </script>
+</body>
+
+</html>

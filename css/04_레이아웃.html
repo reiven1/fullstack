@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+</head>
+
+<body>
+    <h2>레이아웃</h2>
+    <p>
+        페이지에 태그들을 배치하는 css 설정들
+    </p>
+    <h3>태그의 크기를 설정</h3>
+    <p>
+        height : 높이 <br>
+        width : 폭 <br>
+        속성값 : 상대(%), 절대(px) <br>
+        min-height, max-height <br>
+        min-width, max-width <br>
+    </p>
+    <div id="container">
+        <div class="container1"></div>
+        <div class="container2">
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+            <p>너 왜 공간이 없어</p>
+
+        </div>
+    </div>
+    <style>
+        .container1 {
+            height: 200px;
+            width: 300px;
+            border: 1px solid red;
+        }
+
+        .container2 {
+            width: 70%;
+            max-height: 200px;
+            /* auto */
+            /* height: 50%; */
+            /* height: 300px; */
+            border: 1px solid blue;
+            overflow: auto;
+        }
+    </style>
+
+    <h2>태그를 출력하는 방식 설정</h2>
+    <p>
+        display 속성을 설정 <br>
+        block, inline, inline-block, none <br>
+        <!-- flex, grid -->
+    </p>
+    <div class="container3">
+        <button onclick="removeElement()">삭제</button>
+        <a href="">test1</a>
+        <a href="">test2</a>
+        <a href="">test3</a>
+        <a href="">test4</a>
+    </div>
+    <div class="display-inline">div</div>
+    <a href="" class="display-none">1</a>
+    <a href="">2</a>
+    <a href="">3</a>
+    <style>
+        .display-inline {
+            display: inline;
+        }
+
+        .container3>a {
+            display: block;
+        }
+
+        .display-none {
+            /* 공간 차지 o 공백 */
+            visibility: hidden;
+            /* 공간 차지 x 공백 */
+            /* display: none; */
+        }
+    </style>
+    <script>
+        const removeElement = () => {
+            const aTag = document.querySelector(".container3>a");
+            // aTag.style.display = 'none';
+            aTag.style.visibility = 'hidden';
+        }
+    </script>
+
+    <h2>여백 속성 설정하기</h2>
+    <p>
+        margin : 태그 사이의 간격을 설정 <br>
+        padding : 테두리와 내용의 간격을 설정 <br>
+        border : 테두리 설정 <br>
+    </p>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+        .padding-test {
+            /* padding: 10px; */
+            /* padding-left: 10px; */
+            /* padding-top: 10px; */
+            /* padding-bottom: 10px; */
+            /* 시계방향 순서, top right bottom left */
+            padding: 5px 10px 3px 20px;
+        }
+
+        .margin-test {
+            margin-right: 10px;
+        }
+
+        .container4>span {
+            border: 1px solid red;
+        }
+    </style>
+    <div class="container4">
+        <p class="padding-test">여백설정하자</p>
+        <span class="margin-test">span1</span>
+        <span class="margin-test">span2</span>
+        <span class="margin-test">span3</span>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li>메인화면</li>
+                <li>게시판</li>
+                <li>갤러리</li>
+                <li>자료실</li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        nav {
+            border: 1px solid red;
+        }
+
+        header li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header ul {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <h2>포지셔닝</h2>
+    <p>태그를 페이지의 원하는 위치에 배치하는 것</p>
+    <p>
+        position : relative, absolute, static(기본) <br>
+        top, left, right, bottom 속성들 <br>
+    </p>
+    <div class="parent">
+        <div class="child relative">div1</div>
+        <div class="child absolute">div2</div>
+        <!-- <img src="data:image/jpeg;base64,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"
+            alt="아이브" width="200" height="200" class="fixed"> -->
+    </div>
+
+    <style>
+        .parent {
+            width: 400px;
+            height: 400px;
+            border: 1px solid green;
+            position: relative;
+        }
+
+        .child {
+            width: 150px;
+            height: 150px;
+            border: 1px solid magenta;
+        }
+
+
+        .relative {
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+
+        /* 부모 태그의 position이 static인 경우에 페이지의 0,0(top, left)에서부터 적용 */
+        .absolute {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        /* 화면에 고정 */
+        .fixed {
+            position: fixed;
+            top: 33%;
+            left: 45%;
+        }
+    </style>
+
+    <h3>중첩배치된 태그의 순서를 부여</h3>
+    <p>
+        z-index속성
+    </p>
+
+    <div class="zindex-con">
+        <div class="z1"></div>
+        <div class="z2"></div>
+        <div class="z3"></div>
+    </div>
+    <style>
+        .zindex-con {
+            position: relative;
+            height: 300px;
+            width: 800px;
+        }
+
+        .zindex-con>div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        .z1 {
+            background-color: magenta;
+            top: 10px;
+            left: 10px;
+            z-index: 300;
+        }
+
+        .z2 {
+            background-color: lime;
+            top: 20px;
+            left: 20px;
+            z-index: 400;
+        }
+
+        .z3 {
+            background-color: aquamarine;
+            top: 30px;
+            left: 30px;
+            z-index: 500;
+        }
+    </style>
+
+    <h3>태그를 왼쪽, 오른쪽으로 배치</h3>
+    <p>
+        float 속성 <br>
+        left, right
+    </p>
+    <div class="container5">
+        <div class="left">
+            <img src="./image/jjangu.jpg" alt="짱구" width="80" height="80" />
+        </div>
+        <div class="right">
+            <input type="text">
+            <input type="text">
+        </div>
+        <p class="clear">안녕하세요</p>
+    </div>
+    <style>
+        .container5 {
+            border: 1px solid red;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+
+    <h3>display:flex 속성</h3>
+    <p>
+        자식 태그들을 flexible 하게 설정하는 속성 <br>
+    </p>
+    <p>
+        flex-direction : 자식 태그 배치 방향(가로-column, 세로-row(default)) <br>
+        justify-content : row-수평정렬, column-수직정렬 <br>
+        align-item : row-수직정렬, column-수평정렬 <br>
+        start(left/top), center, end(right/bottom) <br>
+        space-between, space-evenly, space-around <br>
+    </p>
+    <div class="container6">
+        <div>div 1</div>
+        <div>div 2</div>
+        <div>div 3</div>
+        <div>div 4</div>
+        <div>div 5</div>
+    </div>
+    <style>
+        .container6 {
+            border: 1px dotted rgb(209, 192, 255);
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .container6>div {
+            border: 1px solid lime;
+            width: 100px;
+            height: 100px;
+            /* display: flex; */
+            /* justify-content: space-evenly; */
+            /* align-items: center; */
+        }
+    </style>
+
+    <div class="header">
+        <div class="flex-center">
+            <img src="./image/jjangu.jpg" alt="짱구" width="80" height="80">
+        </div>
+        <div class="flex-center" id="header-title">
+            <h2>경남대 멋지다</h2>
+        </div>
+        <div class="flex-center">
+            <form action="">
+                <div>
+                    <input type="text" name="id" placeholder="ID 입력하세요">
+                    <input type="text" name="password" placeholder="PW 입력하세요">
+                </div>
+                <div>
+                    <input type="submit" value="로그인">
+                    <input type="reset" value="취소">
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+        .header {
+            width: 100%;
+            height: 200px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+            /* flex-direction: row-reverse; */
+        }
+
+        .header>div {
+            border: 1px solid blue;
+        }
+
+        .header>div:first-child {
+            width: 20%;
+        }
+
+        #header-title {
+            width: 60%;
+        }
+
+        .header>div:last-child {
+            width: 20%;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div>form>div:first-child {
+            display: flex;
+            flex-direction: column;
+        }
+
+        div>form>div:last-child {
+            display: flex;
+            justify-content: end;
+            /* justify-content: space-between; */
+        }
+
+        div>form>div:last-child>input:last-child {
+            margin-left: 50px;
+        }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체</title>
+</head>
+
+<body>
+    <h2>기본 제공하는 함수들</h2>
+    <p>
+        Object, String, Array, Number, Date ...
+    </p>
+    <script>
+        let obj = { name: "하승우", age: 19, gender: "남자", hobby: ["게임", "운동", "코딩"] };
+        console.log(obj.hasOwnProperty("height"));
+        console.log(obj.toString());
+        console.log(obj.valueOf());
+    </script>
+    <h3>String 객체</h3>
+    <script>
+        // 자바에서 제공하는 API
+        let str = "ALdjfALJlkj";
+        result = str.toLowerCase();
+        console.log(result);
+        result = str.toUpperCase();
+        console.log(result);
+
+        str = "banana";
+        result = str.replace("a", "i"); // 처음 하나만 바꿈
+        console.log(result);
+        result = str.replaceAll("a", "i");
+        console.log(result);
+
+        result = str.includes("a");
+        console.log(result);
+
+        str = "유병승,하승우,오수환,강민주,김재민,박종권,김태우,이경민";
+        result = str.split(",");
+        console.log(result);
+    </script>
+    <h3>Number 객체</h3>
+    <script>
+        result = 100 - "100원";
+        // console.log(result);
+        if (Number.isNaN(result)) {
+            console.log("계산 안됨");
+        }
+        else console.log(result);
+        let num = 100.2;
+        console.log(Number.isInteger(num))
+    </script>
+    <h3>Math 객체</h3>
+    <script>
+        console.log(Math.floor(12.34512)); // 버림
+        console.log(Math.round(12.34512)); // 반올림
+        console.log(Math.floor(Math.random() * 10)); // 0~10 난수
+    </script>
+    <h3>Date 객체</h3>
+    <input type="datetime-local" id="date">
+    <button onclick="checkDate()">날짜확인</button>
+    <script>
+        function checkDate() {
+            const d = document.getElementById("date").value;
+            console.log(d);
+            console.log(new Date(d));
+        }
+        let today = new Date();
+        console.log(today);
+        console.log(today.getFullYear());
+        console.log(today.getMonth() + 1); // 0부터 시작
+        console.log(today.getDate());
+        console.log(today.getHours());
+        console.log(today.getMinutes());
+        console.log(today.getSeconds());
+
+        birthDay = new Date(2002, 4 - 1, 10);
+        console.log(birthDay);
+        birthDay.setFullYear(1999);
+        console.log(birthDay);
+        console.log(birthDay.toDateString());
+        console.log(birthDay.toTimeString());
+        console.log(birthDay.toJSON());
+    </script>
+    <h3>eval() 함수</h3>
+    <textarea name="code" id="code"></textarea>
+    <button onclick="testEval()">실행</button>
+    <script>
+        function testEval() {
+            const code = document.getElementById("code").value;
+            // console.log(code);
+            eval(code);
+        }
+    </script>
+
+</body>
+
+</html>
