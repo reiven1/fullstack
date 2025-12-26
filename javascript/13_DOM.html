@@ -203,21 +203,17 @@
 
         const createTable = () => {
             const $table = document.createElement("table");
+            const $tr = document.createElement("tr");
+            const $td = document.createElement("td");
             tableData.map(v => {
-                const $tr = document.createElement("tr");
-                v.map(e => {
-                    const $td = document.createElement("td");
-                    $td.innerText = e;
-                    return $td;
-                }).forEach(e => {
-                    $tr.appendChild(e);
-                }).forEach(e => {
-                    $td.appendChild(e);
-                })
                 console.log(v)
-
+                Object.keys(v).forEach(e => {
+                    $td.innerText = e;
+                });
+                return $tr;
             })
-
+            $table.appendChild($tr);
+            document.getElementById("target5").appendChild($table);
         }
 
     </script>
