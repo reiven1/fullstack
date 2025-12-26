@@ -221,7 +221,6 @@
             $table.appendChild($header);
 
             const $body = tableData.reduce(($temp, member) => {
-                // const $tr = document.createElement("tr");
                 const $row = Object.values(member).reduce((tr, value) => {
                     const $td = document.createElement("td");
                     $td.innerText = value;
@@ -229,7 +228,9 @@
                     return tr;
                 }, document.createElement("tr"))
                 $temp.appendChild($row);
+                return $temp;
             }, document.createElement("tbody"))
+            $table.appendChild($body);
 
             document.getElementById("target5").appendChild($table);
 
