@@ -101,13 +101,16 @@
     <input type="password" id="pwck"><br>
     <span id="result"></span>
     <script>
-        document.getElementById("pwck").addEventListener("keyup", e => {
+        // document.getElementById("pwck").addEventListener("keyup", e => {
+        document.getElementById("pwck").addEventListener("blur", e => {
+            // if (e.target.value.length >= 4) { // input#pwck 길이가 4 이상일 때 동작
             let msg = '비밀번호가 일치하지 않습니다';
             const pwValue = document.getElementById("pw").value;
-            if () {
+            if (pwValue == e.target.value) {
                 msg = '비밀번호가 일치합니다';
-
             }
+            document.getElementById("result").innerText = msg;
+            // }
         })
     </script>
 </body>
