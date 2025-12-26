@@ -358,6 +358,7 @@
         <p>5</p>
     </div>
     <button onclick="removeTest()">삭제</button>
+    <button onclick="removeAll()">전체 삭제</button>
     <script>
         const removeTest = () => {
             const $parent = document.querySelector("#remove-container");
@@ -365,7 +366,29 @@
             // $parent.removeChild($p);
             $p.remove();
         }
+        const removeAll = () => {
+            const $container = document.querySelectorAll("#remove-container");
+            // console.log($container)
+            $container.forEache(e => {
+                e.remove();
+            })
+        }
     </script>
+
+    <fieldset>
+        <legend>첨부파일</legend>
+        <div>
+            <button>추가</button>
+            <button>삭제</button>
+        </div>
+        <div>
+            <input type="file" name="upfile">
+        </div>
+    </fieldset>
+    <!-- 
+        1. 추가 버튼을 누르면 input 태그가 div 에 추가, 삭제 버튼을 누르면 input태그 마지막이 삭제
+        2. 추가는 5개까지만 가능, 1개가 남으면 삭제가 불가능하게 설정
+     -->
 </body>
 
 </html>
