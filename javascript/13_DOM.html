@@ -44,20 +44,30 @@
                 throw new Error("매게변수 배열에 값이 없습니다.");
             }
             // map으로 해보기, 지금은 forEach
-            data.forEach(d=>{
-                
+            data.forEach(d => {
+                const $input = document.createElement("input");
+                $input.setAttribute("type", "checkbox");
+                $input.setAttribute("name", "hobby");
+                $input.setAttribute("value", d);
+                const $label = document.createElement("label");
+                $label.appendChild($input);
+                const $text = document.createTextNode(d);
+                $label.appendChild($text);
+                console.log($label);
+                document.getElementById("target2").appendChild($label);
             })
         }
 
         const addElement2 = () => {
-            const $input = document.createElement("input");
-            console.log($input);
-            // 속성에 직접접근하기
-            $input.type = "checkbox";
-            // setAttribute() 이용하기
-            $input.setAttribute("name", "hobby");
-            $input.setAttribute("value", "코딩");
-            document.getElementById("target2").appendChild($input);
+            createCheckBox(["코딩", "운동", "독서", "요리"]);
+            // const $input = document.createElement("input");
+            // console.log($input);
+            // // 속성에 직접접근하기
+            // $input.type = "checkbox";
+            // // setAttribute() 이용하기
+            // $input.setAttribute("name", "hobby");
+            // $input.setAttribute("value", "코딩");
+            // document.getElementById("target2").appendChild($input);
         }
     </script>
 </body>
