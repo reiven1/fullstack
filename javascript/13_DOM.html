@@ -27,7 +27,21 @@
             console.log(text);
             $h3.appendChild(text);
             console.log($h3);
-            document.getElementById("target").innerHTML = $h3;
+            document.getElementById("target").appendChild($h3);
+        }
+    </script>
+    <p>
+        택스트노드가 없는 태그는 속성설정으로 태그를 생성 <br>
+        1. 속성의 직접접근 -> HTMLElement.속성명="속성값" <br>
+        2. setAttribute("속성명","속성값") 함수 이용 <br>
+    </p>
+    <button onclick="addElement2">태그추가(속성)</button>
+    <div id="target2"></div>
+    <script>
+        const addElement2 = () => {
+            const $input = document.createElement("input");
+            console.log($input);
+            document.getElementById("target").appendChild($input);
         }
     </script>
 </body>
