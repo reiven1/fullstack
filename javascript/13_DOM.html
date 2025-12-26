@@ -326,12 +326,25 @@
             border: 1px solid red;
             width: 200px;
             height: 200px;
+            /* display: flex; */
         }
     </style>
     <button onclick="moveElement()">이동하기</button>
     <script>
         const moveElement = () => {
             const $container = document.getElementById("moveTest");
+            const $h1 = document.querySelector("#moveTest>h1");
+            // const $h1 = document.querySelector("#moveTest>*:first-child");
+            // $container.appendChild($h1);
+            $container.insertAdjacentElement("beforebegin", $h1);
+        }
+    </script>
+
+    <!-- 이미지 세 개를 가지고 순환하는 기능 만들기 -->
+    <div id=""></div>
+    <button onclick="rotateImg()"></button>
+    <script>
+        const rotateImg=()=>{
             
         }
     </script>
