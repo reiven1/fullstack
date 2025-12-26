@@ -255,12 +255,24 @@
         insertAdjacentElement("위치","배치할 태그") 함수를 이용 <br>
         위치 <br>
         형제 : 같은 레벨에 배치 <br>
-        beforebegin : <br>
-        afterend : <br>
+        beforebegin : 지정된 태그의 위쪽에 배치<br>
+        afterend : 지정된 태그의 아래에 배치<br>
         자식으로 배치 <br>
-        beforeend : <br>
-        afterbegin : <br>
+        beforeend : 지정된 태그의 맨 밑에 자식으로 배치 == appendChild() <br>
+        afterbegin : 지정된 태그의 맨 위에 자식으로 배치 <br>
     </p>
+    <div id="target6">
+        <h1 style="background-color: lime;color: magenta;">기준태그</h1>
+    </div>
+    <br><br><br><br>
+    <style>
+        div#target6 {
+            border: 1px solid red;
+            width: 300px;
+            height: 300px;
+            overflow: auto;
+        }
+    </style>
 </body>
 
 </html>
