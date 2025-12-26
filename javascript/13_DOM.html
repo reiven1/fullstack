@@ -367,9 +367,10 @@
             $p.remove();
         }
         const removeAll = () => {
-            const $container = document.querySelectorAll("#remove-container");
+            const $container = document.querySelector("#remove-container");
+            const $p = document.querySelectorAll("#remove-container>p");
             // console.log($container)
-            $container.forEache(e => {
+            $p.forEach(e => {
                 e.remove();
             })
         }
@@ -389,6 +390,21 @@
         1. 추가 버튼을 누르면 input 태그가 div 에 추가, 삭제 버튼을 누르면 input태그 마지막이 삭제
         2. 추가는 5개까지만 가능, 1개가 남으면 삭제가 불가능하게 설정
      -->
+
+    <h3>주변태그 확인하기</h3>
+    <p>
+        children : 직접 연결되어 있는 자식 태그들 ... <br>
+        parentElement : 부모태그를 저장한 속성 <br>
+        previousElementSibling : 같은 레벨의 바로 위에 있는 태그를 저장한 속성 <br>
+        nextElementSibling : 같은 레벨의 바로 아래 있는 태그를 저장한 속성 <br>
+    </p>
+    <script>
+        const testElement = document.getElementById("moveTest");
+        console.log(testElement.children);
+        console.log(testElement.parentElement);
+        console.log(testElement.previousElementSibling);
+        console.log(testElement.nextElementSibling);
+    </script>
 </body>
 
 </html>
