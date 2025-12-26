@@ -137,10 +137,12 @@
                 $option.value = e;
                 $option.innerText = e;
                 return $option;
+            }).forEach(e => {
+                document.getElementById("tag").appendChild(e);
             })
         }
         const addElement4 = () => {
-            const tag = document.querySelector("#tag>option:checked").value;
+            const tag = document.getElementById("tag").value;
             const text = document.getElementsByName("text")[0].value;
             const createTag = document.createElement(tag);
             createTag.innerText = text;
@@ -154,6 +156,17 @@
             imgTag.style.width = "200px";
             imgTag.style.height = "200px";
             document.getElementById("img-container").appendChild(imgTag);
+        }
+    </script>
+    <hr>
+    <h3>구조가 있는 태그 생성하기</h3>
+    <p>
+        리스트, 테이블 ...
+    </p>
+    <button onclick="createList()">리스트 만들기</button>
+    <script>
+        const createList = () => {
+
         }
     </script>
 </body>
