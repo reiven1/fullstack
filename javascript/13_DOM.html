@@ -348,7 +348,16 @@
     <button onclick="rotateImg()">순환</button>
     <script>
         const rotateImg = () => {
+            const $container = document.getElementById("container2");
             const $imgs = document.querySelectorAll('[name="img"]');
+            $imgs.map(v => {
+                const $img = document.createElement("img");
+                $img.setAttribute("src", v.value);
+                return $img;
+            }).forEach(e => {
+
+            })
+
         }
     </script>
     <hr>
