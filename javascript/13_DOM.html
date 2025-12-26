@@ -204,18 +204,15 @@
         const createTable = () => {
             const $table = document.createElement("table");
 
-            const $tr = document.createElement("tr");
             tableData.map(v => {
-                Object.keys(v).forEach(e => {
+                const $tr = document.createElement("tr");
+                Object.values(v).forEach(e => {
                     const $td = document.createElement("td");
                     $td.innerText = e;
-                    console.log($td)
                     $tr.appendChild($td)
                     console.log($tr)
                 })
                 return $tr;
-            }).forEach(e => {
-                $table.appendChild(e);
             })
 
             document.getElementById("target5").appendChild($table);
