@@ -37,7 +37,7 @@
     <h3>이벤트 설정</h3>
     <p>
         1. 태그의 이벤트 속성에 핸들러를 대입하기 <br>
-        2. 표준방식 addEventListener()함수를 이용 <br>
+        2. 표준방식 addEventListener()함수를 이용 => addEventListener("이벤트 속성", 이벤트 핸들러 => { } ) <br>
         3. on이벤트 속성명에 javascript 코드 작성 <br>
     </p>
     <div id="container">
@@ -59,7 +59,17 @@
             console.log(e);
             alert('속성으로 설정');
         }
+        lists[1].addEventListener("click", e => {
+            alert("표준 방식으로 적용");
+        })
     </script>
+    <h3>이벤트 객체</h3>
+    <p>
+        이벤트가 발생하면 이벤트 핸들러에 인수로 전달되는 객체 <br>
+        이벤트 속성별로 생성되는 객체가 다름 <br>
+        이벤트 객체의 target 속성, currentTarget 속성 -> 이벤트가 발생한 태그를 저장하는 속성 <br>
+        
+    </p>
 </body>
 
 </html>
