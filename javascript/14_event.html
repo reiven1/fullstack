@@ -32,7 +32,34 @@
     window(창) 이벤트 속성 <br>
     load : <br>
     resize : <br>
-    scroll : 
+    scroll :
+
+    <h3>이벤트 설정</h3>
+    <p>
+        1. 태그의 이벤트 속성에 핸들러를 대입하기 <br>
+        2. 표준방식 addEventListener()함수를 이용 <br>
+        3. on이벤트 속성명에 javascript 코드 작성 <br>
+    </p>
+    <div id="container">
+        <ul>
+            <li>
+                <h2>이벤트 속성 적용</h2>
+            </li>
+            <li>
+                <h2>표준방식</h2>
+            </li>
+            <li onclick="alert('인라인 방식')">
+                <h2>인라인 방식</h2>
+            </li>
+        </ul>
+    </div>
+    <script>
+        const lists = document.querySelectorAll("#container li");
+        lists[0].onclick = (e) => {
+            console.log(e);
+            alert('속성으로 설정');
+        }
+    </script>
 </body>
 
 </html>
