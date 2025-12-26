@@ -345,16 +345,21 @@
     <input type="text" name="img" placeholder="첫번째 이미지 링크">
     <input type="text" name="img" placeholder="두번째 이미지 링크">
     <input type="text" name="img" placeholder="세번째 이미지 링크">
+    <button onclick="makeImg()">이미지 생성</button>
     <button onclick="rotateImg()">순환</button>
     <script>
-        const rotateImg = () => {
+        const makeImg = () => {
             const $container = document.getElementById("container2");
             const imgs = document.querySelectorAll('[name="img"]');
             imgs.forEach(e => {
                 const $img = document.createElement("img");
-                $img.setAttribute("src", e);
+                $img.setAttribute("src", e.value);
                 $container.appendChild($img);
             })
+        }
+
+        const rotateImg = () => {
+
         }
     </script>
     <hr>
