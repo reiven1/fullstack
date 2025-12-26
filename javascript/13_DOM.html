@@ -108,22 +108,26 @@
         이미지 크기 200/200
         div#img-container에 반영
      -->
-    <select name="" id="tag">
-        <option value="h1">h1</option>
-        <option value="h2">h2</option>
-        <option value="h3">h3</option>
-        <option value="h4">h4</option>
-        <option value="h5">h5</option>
-        <option value="h6">h6</option>
-        <option value="span">span</option>
-        <option value="p">p</option>
-    </select>
-    <input type="text" name="text" placeholder="문구 작성">
-    <input type="text" name="img" placeholder="이미지 경로 작성">
-    <button onclick="addElement4()">태그 생성</button>
-    <button onclick="addImg()">이미지 생성</button>
-    <div id="target4"></div>
-    <div id="img-container"></div>
+    <div>
+        <select name="" id="tag">
+            <option value="h1">h1</option>
+            <option value="h2">h2</option>
+            <option value="h3">h3</option>
+            <option value="h4">h4</option>
+            <option value="h5">h5</option>
+            <option value="h6">h6</option>
+            <option value="span">span</option>
+            <option value="p">p</option>
+        </select>
+        <input type="text" name="text" placeholder="문구 작성">
+        <button onclick="addElement4()">태그 생성</button>
+        <div id="target4"></div>
+    </div>
+    <div>
+        <input type="text" name="img" placeholder="이미지 경로 작성">
+        <button onclick="addImg()">이미지 생성</button>
+        <div id="img-container"></div>
+    </div>
     <script>
         const addElement4 = () => {
             const $tag = document.querySelector("#tag>option:checked").value;
@@ -135,6 +139,11 @@
 
         const addImg = () => {
             const $img = document.getElementsByName("img")[0].value;
+            const $imgTag = document.createElement("img");
+            $imgTag.setAttribute("src", $img);
+            $imgTag.style.width = "200px";
+            $imgTag.style.height = "200px";
+            document.getElementById("img-container").appendChild($imgTag);
         }
     </script>
 </body>
