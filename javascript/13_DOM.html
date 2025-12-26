@@ -164,9 +164,22 @@
         리스트, 테이블 ...
     </p>
     <button onclick="createList()">리스트 만들기</button>
+    <button onclick="createTable()">테이블 만들기</button>
+    <div id="target5"></div>
     <script>
+        const targetList = ['html', 'css', 'javascript', 'jquery', 'react.js'];
         const createList = () => {
-
+            const $li = document.createElement("li");
+            targetList.map(e => {
+                const $ul = document.createElement("ul");
+                $ul.value = e;
+                $ul.innerText = e;
+                return $ul;
+            }).forEach(e => {
+                $li.appendChild(e);
+            })
+            console.log($li)
+            document.getElementById("target5").appendChild($li);
         }
     </script>
 </body>
