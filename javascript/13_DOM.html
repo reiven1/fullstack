@@ -78,9 +78,21 @@
     </p>
     <button onclick="addElement3()">스타일 적용한 태그</button>
     <div id="target3"></div>
+    <style>
+        .myfont {
+            font-size: 30px;
+            font-weight: bolder;
+            text-shadow: 3px 3px 5px;
+        }
+    </style>
     <script>
         const addElement3 = () => {
+            const $span = document.createElement("span");
+            $span.innerText = "첫번째 스타일 적용";
+            $span.style.color = "magenta";
+            $span.style.backgroundColor = "lime";
 
+            document.getElementById("target3").appendChild($span);
         }
     </script>
 </body>
