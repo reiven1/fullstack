@@ -165,7 +165,7 @@
     </p>
     <button onclick="createList()">리스트 만들기</button>
     <button onclick="createTable()">테이블 만들기</button>
-    <button>이름으로 조회</button>
+    <select id=""></select><input type="text" id="keyword"><button>이름으로 조회</button>
     <div id="target5"></div>
     <script>
         const targetList = ['html', 'css', 'javascript', 'jquery', 'react.js'];
@@ -261,6 +261,10 @@
         beforeend : 지정된 태그의 맨 밑에 자식으로 배치 == appendChild() <br>
         afterbegin : 지정된 태그의 맨 위에 자식으로 배치 <br>
     </p>
+    <button onclick="beforebeginTest()">beforebegin</button>
+    <button onclick="afterendTest()">afterend</button>
+    <button onclick="beforeendTest()">beforeend</button>
+    <button onclick="afterbeginTest()">afterbegin</button>
     <div id="target6">
         <h1 style="background-color: lime;color: magenta;">기준태그</h1>
     </div>
@@ -273,6 +277,28 @@
             overflow: auto;
         }
     </style>
+    <script>
+        let count = 0;
+        const createH4 = () => {
+            const $h4 = document.createElement("h4");
+            $h4.innerText = `새로 추가한 태그 ${count++}`;
+            return $h4
+        }
+        const beforebeginTest = () => {
+            const $h4 = createH4();
+            const $container = document.getElementById("target6");
+            
+        }
+        const afterendTest = () => {
+
+        }
+        const beforeendTest = () => {
+
+        }
+        const afterbeginTest = () => {
+
+        }
+    </script>
 </body>
 
 </html>
