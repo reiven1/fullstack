@@ -121,13 +121,20 @@
     <input type="text" name="text" placeholder="문구 작성">
     <input type="text" name="img" placeholder="이미지 경로 작성">
     <button onclick="addElement4()">태그 생성</button>
-    <button onclick="addImg()"></button>
+    <button onclick="addImg()">이미지 생성</button>
     <div id="target4"></div>
     <div id="img-container"></div>
     <script>
         const addElement4 = () => {
             const $tag = document.querySelector("#tag>option:checked").value;
-            console.log($tag);
+            const $text = document.getElementsByName("text")[0].value;
+            const $createTag = document.createElement($tag);
+            $createTag.innerText = $text;
+            document.getElementById("target4").appendChild($createTag);
+        }
+
+        const addImg = () => {
+            const $img = document.getElementsByName("img")[0].value;
         }
     </script>
 </body>
