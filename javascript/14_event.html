@@ -132,11 +132,11 @@
             e.preventDefault();
         })
     </script>
-    <div id="container3" class="test">
+    <div id="container3" class="test1">
         parent
-        <div class="test">
+        <div class="test1">
             child
-            <div class="test">
+            <div class="test1">
                 inner child
             </div>
         </div>
@@ -149,16 +149,17 @@
             border: 1px solid magenta;
         }
 
-        .test {
+        .test1 {
             padding: 20px;
             border: 1px dotted lime;
         }
     </style>
     <script>
-        document.querySelectorAll(".test").forEach(e => {
+        document.querySelectorAll(".test1").forEach(e => {
             e.addEventListener("click", e => {
-                const content = e.target.textContent;
-                alert(content);
+                e.stopPropagation();
+                const content = e.currentTarget.innerText;
+                console.log(content);
             })
         })
     </script>
