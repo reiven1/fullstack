@@ -22,5 +22,9 @@ git : 작성된 코드(파일)의 이력을 관리해주는 프로그램
 git 으로 프로젝트 관리하기
     1. 프로젝트 생성
     2. local-repository 생성 -> git -> git init -> .git
-        - 자동으로 기본 브랜치(master) 생성 -> 프로젝트를 관리
+        - 자동으로 기본 브랜치(master -> main) 생성 -> 프로젝트를 관리
     3. 프로젝트의 파일 중 관리할 파일을 선택 / 설정 -> 인덱스 부여 -> git add 경로/파일명
+        - 지정된 파일은 tracked 상태로 변경
+        - .gitignore 파일에 관리하지 않을 파일을 설정
+    4. 프로젝트 개발 -> 코드 작성 -> 파일 변경상태 확인 -> git status 
+        - modified 상태 -> staged 
