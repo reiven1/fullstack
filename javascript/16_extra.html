@@ -117,14 +117,35 @@
     </p>
     <script>
         function* generatorTest(title = "basic") {
-            let count = 0;
+            let count = 1;
             while (true) {
-                yield`$[title]_count++`;
+                yield `${title}_${count++}`;
             }
         }
         const studentNoGen = generatorTest("std");
         console.log(studentNoGen);
         console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+        console.log(studentNoGen.next().value);
+
+        function* genTest2() {
+            let [total, pre] = [0, 1];
+            while (true) {
+                yield total;
+                [total, pre] = [pre, pre + total];
+            }
+        }
+        const genTest = genTest2();
+        for (let i = 0; i < 5; i++) {
+            console.log(genTest.next().value);
+        }
     </script>
 </body>
 
