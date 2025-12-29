@@ -27,10 +27,20 @@
         $('p') // == document.querySelectorAll("p")
         console.log($('p'));
         $('#container>p').html("우와 신기하다");
-        $('#container>p').css({ "backgroundColor": "magenta", "color": "lime", "fontSize": "30px" });
+        // $('#container>p').css({ "backgroundColor": "magenta", "color": "lime", "fontSize": "30px" });
         $('#container>p').each((i, v) => {
             console.log(v);
+            if (i % 2 == 0) {
+                $(v).css({ "backgroundColor": "magenta", "color": "lime", "fontSize": "30px" });
+            }
         });
+    </script>
+    
+    <h3>태그생성</h3>
+    <div id="container2"></div>
+    <button id="btn">태그생성</button>
+    <script>
+
     </script>
 </body>
 
