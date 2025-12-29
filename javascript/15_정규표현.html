@@ -35,8 +35,18 @@
         //g|m|i <br>
         g : 전체 검색을 하는 옵션 <br>
         m : 개행을 새로운 문자열로 인식하는 옵션 <br>
-        i : 
+        i : 대소문자 구분 없이 인식하는 옵션 <br>
     </p>
+    <script>
+        let target = "javascript jquery ajax sass";
+        reg = /as/g;
+        result = target.replace(reg, '($&)'); // 찾을 문자(reg에 저장된 문자열)에 () 씌우기
+        console.log(result);
+        reg = /AS/gi; // i 옵션으로 대소문자 구분 x
+        result = target.replace(reg, '($&)');
+        console.log(result);
+        reg = /^j/; // ^는 시작문자 지정
+    </script>
 </body>
 
 </html>
