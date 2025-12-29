@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>정규표현식</title>
 </head>
+
 <body>
     <h2>정규표현식</h2>
     <p>
         특정 형태(패턴)의 문자열을 찾을 때 사용하는 문법
     </p>
-    
+    <p>
+        RegExp 객체 -> new new RegExp(정규표현식)
+        리터럴 -> /정규표현식/flag
+    </p>
+    <p>
+        검사하는 함수
+        test() boolean / exec() 문자열
+    </p>
+    <script>
+        // let reg = new RegExp("javascript");
+        let reg = new RegExp(/[ja]{4}/);
+        console.log(reg.test("java"));
+    </script>
 </body>
+
 </html>
