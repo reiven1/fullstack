@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/jquery-3.7.1.min.js"></script>
     <title>jQuery</title>
 </head>
+
 <body>
     <h2>jquery</h2>
     <p>
         자바스크립트 라이브러리 <br>
         DOM을 다룰 때 편리한 함수를 제공
     </p>
-
+    <div id="container">
+        <p>이건 뭐지</p>
+        <p>이건 뭐지</p>
+        <p>이건 뭐지</p>
+        <p>이건 뭐지</p>
+        <p>이건 뭐지</p>
+        <p>이건 뭐지</p>
+    </div>
+    <script>
+        // jQuery 객체 이용하기
+        $('p') // == document.querySelectorAll("p")
+        console.log($('p'));
+        $('#container>p').html("우와 신기하다");
+        $('#container>p').css("backgroundColor", "magenta");
+    </script>
 </body>
+
 </html>
