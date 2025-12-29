@@ -65,9 +65,17 @@
             }, 1000);
         })
         result.then(() => {
+            const p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("두번째 비동기 함수");
+                    resolve();
+                }, 500);
+            })
+            return p;
+        }).then((p) => {
             setTimeout(() => {
-                console.log("두번째 비동기 함수");
-            }, 500);
+                console.log("세번째 비동기 함수");
+            }, 100);
         })
     </script>
 </body>
