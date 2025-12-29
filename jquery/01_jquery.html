@@ -27,7 +27,10 @@
         $('p') // == document.querySelectorAll("p")
         console.log($('p'));
         $('#container>p').html("우와 신기하다");
-        $('#container>p').css("backgroundColor", "magenta");
+        $('#container>p').css({ "backgroundColor": "magenta", "color": "lime", "fontSize": "30px" });
+        $('#container>p').each((i, v) => {
+            console.log(v);
+        });
     </script>
 </body>
 
