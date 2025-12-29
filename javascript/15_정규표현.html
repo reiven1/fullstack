@@ -117,7 +117,7 @@
         document.getElementById("btn").addEventListener("click", e => {
             reg = /01[01689]-?[0-9]{3,4}-?[0-9]{4}/;
             const $phone = document.getElementById("phone").value;
-            console.log(reg.test($phone))
+            console.log(reg.test($phone) ? "번호가 맞음" : "번호가 틀림")
         })
     </script>
 </body>
