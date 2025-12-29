@@ -115,8 +115,9 @@
     <input type="text" id="phone"><button id="btn">번호확인</button>
     <script>
         document.getElementById("btn").addEventListener("click", e => {
-            reg = /01[0-9]-?[0-9]{3,4}-?[0-9]{4}/;
-
+            reg = /01[01689]-?[0-9]{3,4}-?[0-9]{4}/;
+            const $phone = document.getElementById("phone").value;
+            console.log(reg.test($phone))
         })
     </script>
 </body>
