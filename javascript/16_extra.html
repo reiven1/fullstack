@@ -31,7 +31,13 @@
     </script>
     <div id="menu"></div>
     <script>
-        const order = ["menu": "아이스아메리카노", ms: 1000,]
+        const order = [{ "menu": "아이스아메리카노", ms: 1000 }, { "menu": "돌체라떼", ms: 3000 }, { "menu": "아이스티", ms: 500 }]
+        for (let i = 0; i < order.length; i++) {
+            setTimeout(() => {
+                menu.innerHTML += `<h1>${order[i].menu} ${order[i].ms}ms<h1>`;
+            }, order[i].ms);
+        }
+
     </script>
 </body>
 
