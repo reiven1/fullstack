@@ -105,7 +105,19 @@
         reg = /.*b$/;
         reg = /[가-힣]+kn/;
         reg = /\d?\d\d(kg)/;
-        let weight = 65kg;
+        let weight = '65kg';
+        console.log(weight.replace(reg, '($&)'));
+        weight = '65';
+        console.log(weight.replace(reg, '($&)'));
+        weight = '120';
+        console.log(weight.replace(reg, '($&)'));
+    </script>
+    <input type="text" id="phone"><button id="btn">번호확인</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", e => {
+            reg = /01[0-9]-?[0-9]{3,4}-?[0-9]{4}/;
+
+        })
     </script>
 </body>
 
