@@ -28,3 +28,7 @@ git 으로 프로젝트 관리하기
         - .gitignore 파일에 관리하지 않을 파일을 설정
     4. 프로젝트 개발 -> 코드 작성 -> 파일 변경상태 확인 -> git status 
         - modified 상태 -> staged 
+    5. 파일 commit 처리하기 -> 새로운 이력을 저장 -> git commit -m "" -a
+        - 대상이 되는 파일 : staged에 있는 파일
+        - commit 할 때는 반드시 메세지를 기록
+    6. 원격 레포지토리 생성(github)
