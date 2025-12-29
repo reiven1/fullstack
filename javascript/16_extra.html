@@ -115,7 +115,17 @@
         function* 함수명(){} <br>
         const test = function*(){}
     </p>
-
+    <script>
+        function* generatorTest(title = "basic") {
+            let count = 0;
+            while (true) {
+                yield`$[title]_count++`;
+            }
+        }
+        const studentNoGen = generatorTest("std");
+        console.log(studentNoGen);
+        console.log(studentNoGen.next().value);
+    </script>
 </body>
 
 </html>
