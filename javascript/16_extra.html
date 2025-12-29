@@ -59,24 +59,37 @@
             console.log("기본 프로미스 실행");
             // 비동기함수 호출
             setTimeout(() => {
-                console.log("첫번째 비동기 함수");
-                resolve();
+                // console.log("첫번째 비동기 함수");
+                const data = '전달할 값';
+                resolve(data);
                 // reject(new Error("제대로 처리하지 못함"));
             }, 1000);
         })
-        result.then(() => {
-            const p = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    console.log("두번째 비동기 함수");
-                    resolve();
-                }, 500);
-            })
-            return p;
+        result.then((v) => {
+            console.log('test');
+            console.log(v);
+            // const p = new Promise((resolve, reject) => {
+            //     setTimeout(() => {
+            //         console.log("두번째 비동기 함수");
+            //         resolve();
+            //     }, 500);
+            // })
+            // return p;
+            return v + '추가 값 설정';
         }).then((p) => {
-            setTimeout(() => {
-                console.log("세번째 비동기 함수");
-            }, 100);
+            console.log(p);
         })
+    </script>
+
+    <div id="menu2"></div>
+    <script>
+        function promiseOrder(menu, ms) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    menu2.innerHTML += `<h2>${menu} ${ms}ms </h2>`;
+                }, ms);
+            })
+        }
     </script>
 </body>
 
