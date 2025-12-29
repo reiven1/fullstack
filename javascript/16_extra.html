@@ -147,6 +147,7 @@
             console.log(genTest.next().value);
         }
     </script>
+    <div id="poke"></div>
     <script>
         // 비동기요청 -> ajax
         fetch("https://pokeapi.co/api/v2/pokemon/ditto").then((response) => {
@@ -160,6 +161,12 @@
             const $ul = document.createElement("ul");
             const $nameLi = document.createElement("li");
             $nameLi.innerText = `이름 : ${data.name}`;
+            $ul.appendChild($nameLi);
+            $div.appendChild($ul);
+            const $img = document.createElement("img");
+            $img.src = data.sprites.front_shiny;
+            $div.appendChild($img);
+            poke.appendChild($div);
         })
     </script>
 </body>
