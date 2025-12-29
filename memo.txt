@@ -11,4 +11,10 @@ git : 작성된 코드(파일)의 이력을 관리해주는 프로그램
     branch : 작업공간(코드를 수정, 보수)
 
     파일관리상태 (git)
-    
+        tracked : git에 의해 파일이 관리되고 있는 상태 -> index 부여된 상태
+        untracked : git에 의해 파일이 관리되지 않는 상태 -> .gitignore에 등록된 파일
+
+    관리되는 파일의 처리상태
+        commited : 새로운 이력을 추가한 상태 -> 저장 -> commit 명령을 실행함
+        modified : 파일을 수정한 상태 -> 수정해서 파일내용이 변경된 상태
+        staged : 수정된 파일을 commit 하기 전 상태
