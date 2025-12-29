@@ -3,3 +3,9 @@
 -> git, svn, cvs ...
 
 git : 작성된 코드(파일)의 이력을 관리해주는 프로그램
+
+    주요개념
+    local-repository : 개발자 컴퓨터에서 git으로 코드를 관리하는 저장소
+    remote-repository : 원격 저장소 -> 네트워크상에서 제공하는 저장소
+        -> 서버(github, gitlab, gittree ...)
+    branch : 작업공간(코드를 수정, 보수)
