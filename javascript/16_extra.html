@@ -90,20 +90,23 @@
                 }, ms);
             })
         }
-        promiseOrder(order[0].menu, order[0].ms).then((msg) => {
-            menu2.innerHTML += msg;
-            return promiseOrder(order[1].menu, order[1].ms);
-        }).then((msg) => {
-            menu2.innerHTML += msg;
-            return promiseOrder(order[2].menu, order[2].ms);
-        }).then((msg) => {
-            menu2.innerHTML += msg;
-        })
+        // promiseOrder(order[0].menu, order[0].ms).then((msg) => {
+        //     menu2.innerHTML += msg;
+        //     return promiseOrder(order[1].menu, order[1].ms);
+        // }).then((msg) => {
+        //     menu2.innerHTML += msg;
+        //     return promiseOrder(order[2].menu, order[2].ms);
+        // }).then((msg) => {
+        //     menu2.innerHTML += msg;
+        // })
 
         // async / await 예약어
-        async function asyncTest() {
-
+        async function asyncTest(order) {
+            for (const o of order) {
+                menu2.innerHTML += await promiseOrder(o.menu, o.ms);
+            }
         }
+        asyncTest(order);
     </script>
 </body>
 
