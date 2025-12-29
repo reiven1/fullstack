@@ -115,9 +115,11 @@
     <input type="text" id="phone"><button id="btn">번호확인</button>
     <script>
         document.getElementById("btn").addEventListener("click", e => {
-            reg = /01[01689]-?[0-9]{3,4}-?[0-9]{4}/;
             const $phone = document.getElementById("phone").value;
-            console.log(reg.test($phone) ? "번호가 맞음" : "번호가 틀림")
+            if ($phone.trim().length >= 10) {
+                reg = /^01[01689]-?[\d]{3,4}-?[\d]{4}$/;
+                alert(reg.test($phone) ? "번호가 맞음" : "번호가 틀림")
+            }
         })
     </script>
 </body>
