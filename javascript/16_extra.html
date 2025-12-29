@@ -16,9 +16,15 @@
             data = "test";
         }
         function test1() {
-            console.log("test2");
+            console.log("test1");
             console.log(data);
         }
+        setTimeout(() => {
+            test();
+        }, 1000);
+        setTimeout(() => {
+            test1();
+        }, 500);
     </script>
 </body>
 
