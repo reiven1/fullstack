@@ -35,12 +35,15 @@
             }
         });
     </script>
-    
+
     <h3>태그생성</h3>
     <div id="container2"></div>
     <button id="btn">태그생성</button>
     <script>
-
+        $('#btn').click(() => {
+            $('#container2').append($("<h3>").text("우와 이거 뭐지?"));
+            $("<input>").attr();
+        })
     </script>
 </body>
 
