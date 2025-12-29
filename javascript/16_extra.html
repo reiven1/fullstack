@@ -60,8 +60,9 @@
             // 비동기함수 호출
             setTimeout(() => {
                 console.log("첫번째 비동기 함수");
+                resolve();
+                // reject(new Error("제대로 처리하지 못함"));
             }, 1000);
-            resolve();
         })
         result.then(() => {
             setTimeout(() => {
