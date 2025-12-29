@@ -42,7 +42,8 @@
     <script>
         $('#btn').click(() => {
             $('#container2').append($("<h3>").text("우와 이거 뭐지?"));
-            $("<input>").attr();
+            const $input = $("<input>").attr({ "type": "text", "name": "id", "placeholder": "아이디 입력" });
+            $('#container2').append($input);
         })
     </script>
 </body>
