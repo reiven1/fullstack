@@ -21,10 +21,13 @@
         }
         setTimeout(() => {
             test();
+            setTimeout(() => {
+                test1();
+            }, 500);
         }, 1000);
-        setTimeout(() => {
-            test1();
-        }, 500);
+        // setTimeout(() => {
+        //     test1();
+        // }, 500);
     </script>
 </body>
 
