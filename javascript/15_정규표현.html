@@ -73,8 +73,17 @@
 
         target = "d  b";
         console.log(target.replace(reg, '($&)'));
-        
+
+        reg = /d.\.b/;
+        console.log("d .b".replace(reg, '($&)'));
+        console.log("d  b".replace(reg, '($&)'));
     </script>
+    <h3>[]</h3>
+    <p>
+        []안에 여러 문자열을 작성, 작성한 문자열을 or로 연결, []는 한글자로 인지 <br>
+        /[abcdefghrj].b/ -> a~j로 시작하고 b로 끝나는 세글자 <br>
+        [a-z] / [A-Z] / [0-9] <br>
+    </p>
 </body>
 
 </html>
