@@ -150,12 +150,16 @@
     <script>
         // 비동기요청 -> ajax
         fetch("https://pokeapi.co/api/v2/pokemon/ditto").then((response) => {
-            if (!response.ok()) {
+            if (!response.ok) {
                 throw new Error("서버에 접속할 수 없습니다.");
             }
             return response.json();
         }).then(data => {
             console.log(data);
+            const $div = document.createElement("div");
+            const $ul = document.createElement("ul");
+            const $nameLi = document.createElement("li");
+            $nameLi.innerText = `이름 : ${data.name}`;
         })
     </script>
 </body>
