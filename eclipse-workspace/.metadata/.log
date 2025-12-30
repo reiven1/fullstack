@@ -718,3 +718,115 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 4 0 2025-12-30 11:27:36.528
+!MESSAGE 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+!STACK 0
+java.io.IOException: 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:287)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.fillBuffer(AutoLFInputStream.java:213)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.read(AutoLFInputStream.java:169)
+	at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:212)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:117)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:92)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:272)
+	at org.eclipse.egit.ui.internal.staging.StagingView$60.run(StagingView.java:3920)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2025-12-30 11:27:36.689
+!MESSAGE 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+!STACK 0
+java.io.IOException: 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:287)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.fillBuffer(AutoLFInputStream.java:213)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.read(AutoLFInputStream.java:169)
+	at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:212)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:117)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:92)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:272)
+	at org.eclipse.egit.ui.internal.staging.StagingView$60.run(StagingView.java:3920)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2025-12-30 11:27:36.858
+!MESSAGE 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+!STACK 0
+java.io.IOException: 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:287)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.fillBuffer(AutoLFInputStream.java:213)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.read(AutoLFInputStream.java:169)
+	at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:212)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:117)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:92)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:272)
+	at org.eclipse.egit.ui.internal.staging.StagingView$60.run(StagingView.java:3920)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2025-12-30 11:27:45.032
+!MESSAGE 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+!STACK 0
+java.io.IOException: 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:287)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.fillBuffer(AutoLFInputStream.java:213)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.read(AutoLFInputStream.java:169)
+	at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:212)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:117)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:92)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:272)
+	at org.eclipse.egit.ui.internal.staging.StagingView$60.run(StagingView.java:3920)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2025-12-30 11:27:55.284
+!MESSAGE 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+!STACK 0
+java.io.IOException: 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:287)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.fillBuffer(AutoLFInputStream.java:213)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.read(AutoLFInputStream.java:169)
+	at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:212)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:117)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:92)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:272)
+	at org.eclipse.egit.ui.internal.staging.StagingView$60.run(StagingView.java:3920)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2025-12-30 11:28:03.987
+!MESSAGE 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+!STACK 0
+java.io.IOException: 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:287)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.fillBuffer(AutoLFInputStream.java:213)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.read(AutoLFInputStream.java:169)
+	at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:212)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:117)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:92)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:272)
+	at org.eclipse.egit.ui.internal.staging.StagingView$60.run(StagingView.java:3920)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2025-12-30 11:28:33.218
+!MESSAGE 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+!STACK 0
+java.io.IOException: 다른 프로세스가 파일의 한 부분을 잠갔으므로, 프로세스가 해당 파일을 액세스할 수 없습니다
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:287)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.fillBuffer(AutoLFInputStream.java:213)
+	at org.eclipse.jgit.util.io.AutoLFInputStream.read(AutoLFInputStream.java:169)
+	at java.base/java.io.InputStream.readNBytes(InputStream.java:509)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:212)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:117)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:92)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:272)
+	at org.eclipse.egit.ui.internal.staging.StagingView$60.run(StagingView.java:3920)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
