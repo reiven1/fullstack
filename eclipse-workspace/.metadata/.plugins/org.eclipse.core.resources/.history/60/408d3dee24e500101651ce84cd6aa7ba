@@ -1,7 +1,0 @@
-package snippet;
-
-public class Snippet {
-	- git pull/push 원격레포지토리주소(원격주소명) 브랜치명
-	
-}
-
