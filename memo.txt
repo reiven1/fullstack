@@ -37,8 +37,9 @@ git 으로 프로젝트 관리하기
         - github에 계정 생성
         - repository 생성 -> remote-repository = https : url / key : ssh
     7. 원격 레포지토리와 로컬 레포지토리 연결(등록)
-        - 생성한 원격 레포지토리를 등록 -> git remote add remote명칭 url
-
-    7. pull(fetch) / push -> 코드 merge(병합) -> 대상 : 브랜치(로컬, 원격)
+        - 생성한 원격 레포지토리를 등록 -> git remote add remote명칭(origin) url
+    8. pull : 원격 레포지토리에 있는 데이터를 가져와 병합하는 것 -> git pull 원격 레포지토리명 [브랜치명]
+    9. fetch : 원격 레포지토리에 있는 데이터를 가져오는 것 > 병합 x, 별도 명령어로 병합처리 해야함
+    . push -> 코드 merge(병합) -> 대상 : 브랜치(로컬, 원격)
         - git pull/push 원격레포지토리주소(원격주소명) 브랜치명
         - git merge 브랜치명
